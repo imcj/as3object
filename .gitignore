@@ -1,9 +1,9 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-
-# Project property files
 .actionScriptProperties
 .flexProperties
-.settings/
 .project
+.settings
+bin-debug
+src/*-app.xml
+src/*.mxml
+.FlexUnitSettings
+*.swp
