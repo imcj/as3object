@@ -4,7 +4,7 @@ package me.imcj.as3object
     import flash.data.SQLMode;
     import flash.filesystem.File;
 
-    public class SQLiteRepository extends Repository
+    public class SQLiteRepository extends Repository implements IRepository
     {
         static protected var _connection : SQLConnection;
         static protected var _factory : Factory;
@@ -19,21 +19,30 @@ package me.imcj.as3object
             
             _connection = new SQLConnection ( );
             if ( connection is String )
-                _connection.openAsync ( new File ( connection ), SQLMode.CREATE );
+                _connection.openAsync ( new File ( String ( connection ) ), SQLMode.CREATE );
             else if ( connection is File )
                 _connection.openAsync ( connection, SQLMode.CREATE );
             
-            super();
         }
         
-        override public function save ( object : Object ) : Object
+        public function add ( object : Object ) : Object
         {
-            _factory.cache.get ( object ).insert ( );
+//            _factory.cache.get ( object ).insert ( );
             return object;
         }
-        
-        protected function convertToSQL(object:Object):void
-        {
-        }
-    }
+		
+		public function update ( object : Object ) : Object
+		{
+			return object;
+		}
+		
+		public function remove ( object : Object ) : void
+		{
+		}
+		
+		public function findAll ( ) : Array
+		{
+			return null;
+		}
+	}
 }
