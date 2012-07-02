@@ -41,8 +41,14 @@ package me.imcj.as3object.expression
             
         }
         
-        static public  function and ( expression : Expression ) : void
+        static public  function and ( left : Expression, right : Expression ) : LogicalExpression
         {
+			return new AndExpression ( left, right );
         }
-    }
+		
+		static public function or ( left : Expression, right : Expression ) : OrExpression
+		{
+			return new OrExpression ( left, right );
+		}
+	}
 }

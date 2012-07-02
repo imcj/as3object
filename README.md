@@ -1,8 +1,8 @@
 as3object
 ===
 
-# as3object
 as3object是一个提供一组操作对象的API，特性包括：ORM和AOP。
+
 
 ## How to use
 ```
@@ -12,8 +12,7 @@ class Animal
     public var age  : int;
 }
 
-[Store]
-class Cat
+class Cat extends Animal
 {
 }
 ```
@@ -38,6 +37,8 @@ Cat.find ( ge ( "age", 1 ) )
 
 Cat.find ( and ( ge ( "age", 1 ), eq ( "name" , "2B" ) ) )
 [ <Cat "2B"> ]
+
+Cat.find ( ).limit ( 0, 100 ).order ( "name", Order.ASC )
 ```
 
 ### 领域模型

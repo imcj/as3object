@@ -1,7 +1,7 @@
 package me.imcj.as3object.expression
 {
-    public function and ( expression : Expression ) : Expression
+    public function and ( left : Expression, right : Expression ) : Expression
     {
-        Expression.and ( expression );
+        Expression.and ( left, right );
     }
 }
