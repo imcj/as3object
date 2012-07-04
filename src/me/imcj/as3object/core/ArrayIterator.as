@@ -12,19 +12,19 @@ package me.imcj.as3object.core
         
         public function get hasNext():Boolean
         {
-            if ( _index < _array.length - 1)
+            if ( _index < _array.length )
                 return true;
             
             return false;
         }
         
-        public function get next():Object
+        public function next() : Object
         {
             if ( ! hasNext )
                 return null;
-            
+            var returns : Object = _array [ _index ];
             _index += 1;
-            return _array [ _index ];
+            return returns;
         }
         
         public function remove():Object

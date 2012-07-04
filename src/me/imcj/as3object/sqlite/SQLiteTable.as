@@ -5,7 +5,7 @@ package me.imcj.as3object.sqlite
 	
 	public class SQLiteTable extends Table
 	{
-		public function SQLiteTable ( type : Class = null )
+		public function SQLiteTable ( type : Object = null )
 		{
 			_builder = new SQLiteFieldBuilder ( );
 			_sql     = new SQLite ( this );

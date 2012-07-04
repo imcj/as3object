@@ -31,33 +31,44 @@ package flexUnitTests
         [Test]
         public function testCreateStatement ( ) : void
         {
-            var createStatement : String = table.sql.creationStatement ( );
+            var createStatement : String = table.creationStatement ( );
             assertEquals ( "CREATE TABLE Cat ( id INTEGER PRIMARY KEY asc AUTOINCREMENT, name TEXT, age INTEGER );", createStatement );
         }
 		
 		[Test]
 		public function testInsert ( ) : void
 		{
-			var sql : String = table.sql.insert ( cat );
+			var sql : String = table.insert ( cat );
             assertEquals ( "INSERT INTO Cat ( id, name, age ) VALUES ( 0, '2B', 2 );\n", sql );
+		}
+		
+		[Test]
+		public function testInsertArray ( ) : void
+		{
+			var cat2 : Cat = new Cat ( );
+			cat2.name = "Xiao Hua";
+			cat2.age  = 1;
+			var sql : String = table.insert ( [ cat, cat2 ] );
+			trace ( sql );
+			assertEquals ( "INSERT INTO Cat ( id, name, age ) VALUES ( 0, '2B', 2 );\n", sql );
 		}
 		
 		[Test]
 		public function testRemove ( ) : void
 		{
-			var sql : String = table.sql.remove ( cat );
+//			var sql : String = table.remove ( cat );
 		}
 		
 		[Test]
 		public function testUpdate ( ) : void
 		{
-			var sql : String = table.sql.update ( cat );
+//			var sql : String = table.update ( cat );
 		}
         
         [Test]
         public function testSelect ( ) : void
         {
-            var select : String = table.sql.select ( and ( eq ( "id", 1 ), eq ( "id", 1 ) ) ); 
+            var select : String = table.select ( and ( eq ( "id", 1 ), eq ( "id", 1 ) ) ); 
             trace ( select );
         }
 	}

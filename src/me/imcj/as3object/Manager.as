@@ -1,6 +1,6 @@
 package me.imcj.as3object
 {
-    public class Manager implements IRepository
+    public class Manager implements AsyncRepository
     {
         public function Manager()
         {

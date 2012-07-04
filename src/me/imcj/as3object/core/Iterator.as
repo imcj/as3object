@@ -14,7 +14,7 @@ package me.imcj.as3object.core
         * Returns the next element in the iteration.
         * 
         */
-        function get next ( ) : Object;
+        function next ( ) : Object;
         
         /**
         * 

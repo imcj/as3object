@@ -65,9 +65,10 @@ package me.imcj.as3object.sqlite
             var size   : int;
             var values : Array;
             var objects : Iterator;
-            
+            var field   : Field;
+			
             if ( object is Array )
-                objects = new ArrayIterator ( Array ( object ) );
+                objects = new ArrayIterator ( object as Array );
             else
                 objects =  new ArrayIterator ( [ object ] );
             
@@ -79,17 +80,28 @@ package me.imcj.as3object.sqlite
             
             buffer.writeUTFBytes ( "VALUES " );
             
-            while ( object = objects.next ) {
+            while ( objects.hasNext ) {
+				object = objects.next ( );
                 buffer.writeUTFBytes ( " ( " );
-                
                 keys = new ArrayIterator ( _table.fields.keys );
                 values = new Array ( );
-                while ( key = String ( keys.next ) )
+                while ( keys.hasNext ) {
+					key = String ( keys.next ( ) );
+					field = Field (  _table.fields.get ( key ) );
+					
+//					if ( field.primaryKey && field.name == "id" )
+//						continue;
+					
                     if ( _table.fields.get ( key ) is TextField )
-                        buffer.writeUTFBytes ( "'" + object[key] + "'" + keys.hasNext ? ", " : "" );
+                        buffer.writeUTFBytes ( "'" + object[key] + "'" );
+					else if ( field.primaryKey && field.name == "id" )
+						buffer.writeUTFBytes ( "NULL" );
                     else
-                        buffer.writeUTFBytes (  object[key] + keys.hasNext ? ", " : "" );
-                
+                        buffer.writeUTFBytes (  object[key] );
+					
+					if ( keys.hasNext )
+						buffer.writeUTFBytes ( ", " );
+				}
                 buffer.writeUTFBytes ( " )" );
                 
                 if ( objects.hasNext )
@@ -117,7 +129,7 @@ package me.imcj.as3object.sqlite
 			return null;
 		}
 		
-		public function update ( arguments : Array ) : String
+		public function update ( object : Object, expression : Expression ) : String
 		{
 			return null;
 		}

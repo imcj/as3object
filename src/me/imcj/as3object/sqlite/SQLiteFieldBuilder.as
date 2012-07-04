@@ -1,6 +1,8 @@
 package me.imcj.as3object.sqlite
 {
 	import flash.utils.describeType;
+	import flash.utils.getDefinitionByName;
+	import flash.utils.getQualifiedClassName;
 	
 	import me.imcj.as3object.Table;
 	import me.imcj.as3object.field.IFieldBuilder;
@@ -12,9 +14,9 @@ package me.imcj.as3object.sqlite
 		{
 		}
 		
-		public function generate ( type : Class ) : Array
+		public function generate ( type : Object ) : Array
 		{
-			var describe : XML = describeType( type );
+			var describe : XML = type is Class ? describeType( type ) : describeType ( getDefinitionByName ( getQualifiedClassName ( type ) ) );
 			var variable : XML;
 			var metadata : XML;
 			var ignore   : Boolean = false;
@@ -38,7 +40,7 @@ package me.imcj.as3object.sqlite
 			
 			for each ( variable in describe.factory.method ) {
 				
-				if ( ! String ( variable.@name ).substr ( 0, 3 ) == "get" )
+				if ( String ( variable.@name ).substr ( 0, 3 ) != "get" )
 					continue;
 				
 				name = String ( variable.@name ).substr ( 3 );

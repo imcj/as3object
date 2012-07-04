@@ -3,10 +3,7 @@ package me.imcj.as3object
     import avmplus.getQualifiedClassName;
     
     import flash.utils.Dictionary;
-    import flash.utils.describeType;
-    import flash.utils.getQualifiedClassName;
     
-    import me.imcj.as3object.sqlite.SQLite;
     import me.imcj.as3object.sqlite.SQLiteTable;
 
     public class Facade
@@ -52,9 +49,10 @@ package me.imcj.as3object
             if ( _tableCache.has ( qname ) )
                 table = SQLiteTable ( _tableCache.get ( qname ) );
             else {
-                table = new SQLiteTable ( object );
+                table = new SQLiteTable ( object  );
                 _tableCache.add ( qname, table );
             }
+//			table.data = object;
             return table;
         }
     }

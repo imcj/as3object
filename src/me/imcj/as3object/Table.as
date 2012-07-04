@@ -19,9 +19,9 @@ package me.imcj.as3object
 		
 		protected var _sql     : SQL;
 		protected var _builder : IFieldBuilder;
-		protected var _type    : Class;
+		protected var _type    : Object;
 		
-        public function Table ( type : Class = null )
+        public function Table ( type : Object = null )
         {
 			var fullName : Array;
 			var field    : Field;
