@@ -2,9 +2,9 @@ package me.imcj.as3object.expression
 {
 	public class AndExpression extends LogicalExpression
 	{
-		public function AndExpression(left:Expression, right:Expression)
+		public function AndExpression ( argument : Array )
 		{
-			super(left, right);
+			super ( argument );
 		}
 	}
 }

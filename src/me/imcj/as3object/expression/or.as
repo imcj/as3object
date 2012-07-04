@@ -1,7 +1,7 @@
 package me.imcj.as3object.expression
 {
-	public function or ( left : Expression, right : Expression ) : OrExpression
+	public function or ( ... argument ) : OrExpression
 	{
-		return Expression.or ( left, right );
+		return Expression.or ( argument );
 	}
 }

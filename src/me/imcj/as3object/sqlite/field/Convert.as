@@ -10,10 +10,15 @@ package me.imcj.as3object.sqlite.field
 	public class Convert
 	{
 		static protected var mapping : Object = {
-			"String" : "TextField",
-			"int"    : "IntegerField",
-			"number" : "NumberField"
-		}
+ 			"String"  : "TEXT",
+			"int"     : "INTEGER",
+            "uint"    : "INTEGER",
+			"Number"  : "REAL",
+            "Date"    : "TEXT",
+            "Boolean" : "INTEGER"
+            
+		};
+
 		public function Convert (  )
 		{
 			TextField;
@@ -23,10 +28,7 @@ package me.imcj.as3object.sqlite.field
 		
 		static public function to ( type : String, name : String ) : Field
 		{
-			var qname : String = StringUtil.substitute ( "me.imcj.as3object.sqlite.field::{0}", mapping[type] );
-			trace ( getQualifiedClassName ( new TextField ( "name" ) ) );
-			
-			return new ( getDefinitionByName ( qname ) ) ( name ) ;
+
 		}
 	}
 }

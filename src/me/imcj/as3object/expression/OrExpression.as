@@ -2,9 +2,9 @@ package me.imcj.as3object.expression
 {
 	public class OrExpression extends LogicalExpression
 	{
-		public function OrExpression(left:Expression, right:Expression)
+		public function OrExpression ( ... arguments )
 		{
-			super(left, right);
+			super ( arguments );
 		}
 	}
 }

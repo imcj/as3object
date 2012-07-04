@@ -3,6 +3,8 @@ package flexUnitTests
 	import me.imcj.as3object.IRepository;
 	import me.imcj.as3object.SQLiteRepository;
 	import me.imcj.as3object.fixture.Cat;
+	
+	import org.flexunit.asserts.assertEquals;
 
 	public class TestRepository
 	{
@@ -26,7 +28,9 @@ package flexUnitTests
 			var cat : Cat = new Cat ( );
 			cat.name = "2B";
 			cat.age = 2;
+            
 			repository.add ( cat );
+            assertEquals ( 1, cat.id );
 		}
 		
 		[Test]

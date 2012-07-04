@@ -52,10 +52,7 @@ package me.imcj.as3object.sqlite
 				if ( hasMetadata ( "Exclude", variable.metadata ) )
 					continue;
 				
-				try {
-					fields.push ( Convert.to ( variable.@type, variable.@name ) );
-				} catch ( error : Error ) {
-				}
+				fields.push ( SQLiteField.create ( variable.@name, variable.@type ) );
 			}
 			
 			return fields;

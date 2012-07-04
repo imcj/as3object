@@ -1,7 +1,9 @@
 package me.imcj.as3object.expression
 {
-    public function and ( left : Expression, right : Expression ) : Expression
+    import flash.utils.getQualifiedClassName;
+
+    public function and ( ... argument ) : Expression
     {
-        Expression.and ( left, right );
+        return Expression.and ( argument );
     }
 }

@@ -9,6 +9,6 @@ package me.imcj.as3object
 		function add ( object : Object ) : Object;
 		function update ( object : Object ) : Object;
 		function remove ( object : Object ) : void;
-		function findAll ( ) : Array;
+		function find ( ) : Array;
 	}
 }

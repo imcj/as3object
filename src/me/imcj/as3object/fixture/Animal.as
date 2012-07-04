@@ -1,10 +1,10 @@
 package me.imcj.as3object.fixture
 {
-	[Store]
 	public class Animal
 	{
+        public var id   : int;
 		public var name : String;
-		public var age : int;
+		public var age  : int;
 		
 		public function Animal()
 		{

@@ -2,15 +2,19 @@ package me.imcj.as3object.expression
 {
     public class LogicalExpression extends Expression
     {
-		protected var _left  : Expression;
-		protected var _right : Expression;
-		
-        public function LogicalExpression ( left : Expression, right : Expression )
+		protected var _expressions : Array;
+        
+        public function LogicalExpression ( argument : Array )
         {
-			_left  = left;
-			_right = right;
+			_expressions = argument;
 			
             super ( );
         }
+
+        public function get expressions ( ) : Array
+        {
+            return _expressions;
+        }
+
     }
 }

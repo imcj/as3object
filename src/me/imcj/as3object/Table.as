@@ -3,12 +3,13 @@ package me.imcj.as3object
     import flash.utils.describeType;
     import flash.utils.getQualifiedClassName;
     
+    import me.imcj.as3object.expression.Expression;
     import me.imcj.as3object.field.Field;
     import me.imcj.as3object.field.IFieldBuilder;
     import me.imcj.as3object.sqlite.SQLite;
     import me.imcj.as3object.sqlite.field.*;
 
-    public class Table
+    public class Table implements SQL
     {
         protected var _data      : Object;
         protected var _fields    : Dict;
@@ -16,7 +17,7 @@ package me.imcj.as3object
         protected var _package   : String;
         protected var _shortName : String;
 		
-		protected var _sql     : ISQL;
+		protected var _sql     : SQL;
 		protected var _builder : IFieldBuilder;
 		protected var _type    : Class;
 		
@@ -28,7 +29,7 @@ package me.imcj.as3object
             _fields    = new Dict ( );
 			_type      = type;
             _name      = getQualifiedClassName ( type );
-            fullName   = _name.split ( ":" );
+            fullName   = _name.split ( "::" );
             _shortName = fullName[1];
             _package   = fullName[0];
 			
@@ -61,14 +62,34 @@ package me.imcj.as3object
             _data = value;
         }
 		
-		public function get sql ( ) : ISQL
-		{
-			return _sql;
-		}
-		
-		public function set sql ( value : ISQL ) : void
-		{
-			_sql = value;
-		}
+        public function get shortName():String
+        {
+            return _shortName;
+        }
+
+        public function creationStatement () : String
+        {
+            throw new Error ( "Not implement this method." );
+        }
+        
+        public function insert ( object : Object ) : String
+        {
+            throw new Error ( "Not implement this method." );
+        }
+        
+        public function update ( object : Object, expression : Expression ) : String
+        {
+            throw new Error ( "Not implement this method." );
+        }
+        
+        public function remove ( object : Object, expression : Expression ) : String
+        {
+            throw new Error ( "Not implement this method." );
+        }
+        
+        public function select ( expression : Expression ) : String
+        {
+            throw new Error ( "Not implement this method." );
+        }
     }
 }
