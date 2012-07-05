@@ -12,9 +12,9 @@ package me.imcj.as3object.sqlite
 			super(type);
 		}
         
-        override public function creationStatement () : String
+        override public function creationStatement ( ifNotExists : Boolean = false ) : String
         {
-            return _sql.creationStatement ( );
+            return _sql.creationStatement ( ifNotExists );
         }
         
         override public function insert ( object : Object ) : String

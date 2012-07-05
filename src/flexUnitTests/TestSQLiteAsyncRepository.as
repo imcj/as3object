@@ -1,12 +1,18 @@
 package flexUnitTests
 {
+	import flash.data.SQLResult;
+	import flash.errors.SQLError;
 	import flash.events.Event;
 	import flash.events.SQLEvent;
+	import flash.net.Responder;
 	
 	import me.imcj.as3object.AsyncRepository;
 	import me.imcj.as3object.ObjectEvent;
 	import me.imcj.as3object.SQLiteAsyncRepository;
 	import me.imcj.as3object.fixture.Cat;
+	import me.imcj.as3object.responder.AS3ObjectResponder;
+	
+	import mx.rpc.IResponder;
 	
 	import org.flexunit.asserts.assertEquals;
 	import org.flexunit.async.Async;
@@ -18,7 +24,7 @@ package flexUnitTests
 		[Before(async,order=1)]
 		public function setUp():void
 		{
-			repository = new SQLiteAsyncRepository ( null );
+			repository = new SQLiteAsyncRepository ( null, Cat );
 			Async.proceedOnEvent ( this, repository, SQLEvent.OPEN );
 		}
 		
@@ -30,7 +36,7 @@ package flexUnitTests
 		[Before(order=2)]
 		public function setUp2 () : void
 		{
-			repository.creationStatement ( Cat );
+			repository.creationStatement ( Cat, null, true );
 		}
 		
 		
@@ -41,20 +47,28 @@ package flexUnitTests
 			cat.name = "2B";
 			cat.age = 2;
             
-			var handlerAssert : Function = function ( event : ObjectEvent, passThroughData : Object = null ) : void
-			{
-				assertEquals ( 2, Cat ( event.result ).age );
-			};
-			var handlerAsync : Function = Async.asyncHandler ( this, handlerAssert, 10 );
-			
-			repository.add ( cat );
-			repository.addEventListener ( ObjectEvent.RESULT, handlerAsync );
+			var responder : AddResponder = new AddResponder ( );
+			repository.add ( cat, Async.asyncResponder ( this, responder, 10 ) );
 		}
 		
 		[Test(async,order=2)]
 		public function testFindAll ( ) : void
 		{
-			
+			repository.findAll (
+                Async.asyncResponder (
+                    this,
+                    new AS3ObjectResponder (
+                        function ( data : Object )
+                        {
+                            trace ( data );
+                        },
+                        function ( info : Object )
+                        {
+                        }
+                    ),
+                    10
+                )
+            );
 		}
 	}
 }

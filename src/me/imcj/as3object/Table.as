@@ -1,6 +1,7 @@
 package me.imcj.as3object
 {
     import flash.utils.describeType;
+    import flash.utils.getDefinitionByName;
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.expression.Expression;
@@ -19,7 +20,7 @@ package me.imcj.as3object
 		
 		protected var _sql     : SQL;
 		protected var _builder : IFieldBuilder;
-		protected var _type    : Object;
+		protected var _type    : Class;
 		
         public function Table ( type : Object = null )
         {
@@ -27,7 +28,7 @@ package me.imcj.as3object
 			var field    : Field;
 			
             _fields    = new Dict ( );
-			_type      = type;
+			_type      = type is Class ? Class ( type ) : Class ( getDefinitionByName ( getQualifiedClassName ( type ) ) );
             _name      = getQualifiedClassName ( type );
             fullName   = _name.split ( "::" );
             _shortName = fullName[1];
@@ -36,7 +37,7 @@ package me.imcj.as3object
 			if ( null == _builder )
 				throw new Error ( "_builder is require." );
 			
-			for each ( field in _builder.generate ( type ) )
+			for each ( field in _builder.generate ( _type ) )
 				addField ( field );
         }
         
@@ -67,7 +68,7 @@ package me.imcj.as3object
             return _shortName;
         }
 
-        public function creationStatement () : String
+        public function creationStatement ( ifNotExists : Boolean = false ) : String
         {
             throw new Error ( "Not implement this method." );
         }

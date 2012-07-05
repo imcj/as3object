@@ -14,9 +14,9 @@ package me.imcj.as3object.sqlite
 		{
 		}
 		
-		public function generate ( type : Object ) : Array
+		public function generate ( type : Class ) : Array
 		{
-			var describe : XML = type is Class ? describeType( type ) : describeType ( getDefinitionByName ( getQualifiedClassName ( type ) ) );
+			var describe : XML = describeType( type );
 			var variable : XML;
 			var metadata : XML;
 			var ignore   : Boolean = false;

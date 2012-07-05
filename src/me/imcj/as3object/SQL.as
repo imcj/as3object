@@ -4,7 +4,7 @@ package me.imcj.as3object
 
 	public interface SQL
 	{
-        function creationStatement ( ) : String;
+        function creationStatement ( ifNotExists : Boolean = false ) : String;
 		function insert ( object : Object ) : String;
 		function update ( object : Object, expression : Expression ) : String;
 		function remove ( object : Object, expression : Expression ) : String;

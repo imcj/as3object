@@ -19,7 +19,7 @@ package me.imcj.as3object.sqlite
 			_table = table;
 		}
         
-        public function creationStatement () : String
+        public function creationStatement ( ifNotExists : Boolean = false ) : String
         {
             // FIXME 迭代器模式
             // TODO 表字段类型和数据类型的映射
@@ -29,6 +29,8 @@ package me.imcj.as3object.sqlite
             var keys : Array = _table.fields.keys;
             var statement : ByteArray = new ByteArray ( );
             statement.writeUTFBytes ( "CREATE TABLE " );
+            if ( ifNotExists )
+                statement.writeUTFBytes ( "IF NOT EXISTS " );
             statement.writeUTFBytes ( _table.shortName );
             statement.writeUTFBytes ( " ( " );
             for ( ; i < size; i++ ) {
