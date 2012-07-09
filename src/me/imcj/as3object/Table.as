@@ -92,5 +92,11 @@ package me.imcj.as3object
         {
             throw new Error ( "Not implement this method." );
         }
+
+        public function get type():Class
+        {
+            return _type;
+        }
+
     }
 }
