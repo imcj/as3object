@@ -7,6 +7,7 @@ package me.imcj.as3object.sqlite
 	import me.imcj.as3object.core.ArrayIterator;
 	import me.imcj.as3object.core.Iterator;
 	import me.imcj.as3object.expression.Expression;
+	import me.imcj.as3object.expression.eq;
 	import me.imcj.as3object.field.Field;
 	import me.imcj.as3object.sqlite.field.TextField;
 
@@ -133,7 +134,39 @@ package me.imcj.as3object.sqlite
 		
 		public function update ( object : Object, expression : Expression ) : String
 		{
-			return null;
+//            var primaryKey : String = _table.primaryKey.name;
+//            if ( ! expression ) {
+//                expression = eq ( primaryKey, object );
+//            }
+            
+            var buffer : ByteArray = new ByteArray ( );
+            buffer.writeUTFBytes ( "UPDATE " );
+            buffer.writeUTFBytes ( _table.shortName );
+            buffer.writeUTFBytes ( " SET " );
+            
+            var iter : Iterator = new ArrayIterator ( _table.fields.keys );
+            var key : String;
+            while ( iter.hasNext ) {
+                key = String ( iter.next ( ) );
+                
+                buffer.writeUTFBytes ( key );
+                buffer.writeUTFBytes ( " = " );
+                if ( _table.fields.get ( key ) is TextField )
+                    buffer.writeUTFBytes ( "'" + object[key] + "'" );
+                else
+                    buffer.writeUTFBytes ( object[key] );
+                
+                if ( iter.hasNext )
+                    buffer.writeUTFBytes ( ", " );
+            }
+            
+            if ( expression ) {
+                buffer.writeUTFBytes ( " WHERE " );
+                dumpExpressionSQLCondition ( buffer, expression );
+            }
+            
+            buffer.position = 0;
+			return buffer.readUTFBytes ( buffer.length );
 		}
 		
 		public function select ( expression : Expression ) : String

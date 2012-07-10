@@ -10,7 +10,7 @@ package me.imcj.as3object
 	public interface AsyncRepository extends IEventDispatcher
 	{
 		function add ( object : Object, responder : IResponder ) : Object;
-		function update ( object : Object ) : Object;
+		function update ( object : Object, responder : IResponder ) : void;
 		function remove ( object : Object ) : void;
 		function find ( expression : Expression, responder : IResponder ) : void;
         function findAll ( responder : IResponder ) : void;

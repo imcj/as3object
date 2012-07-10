@@ -17,6 +17,16 @@ package me.imcj.as3object
             return this;
         }
         
+        public function addOrder ( order : Order ) : Criteria
+        {
+            return this;
+        }
+        
+        public function setLimit ( min : int, max : int = -1 ) : Criteria
+        {
+            return this;
+        }
+        
         public function list ( ) : Array
         {
             

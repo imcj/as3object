@@ -18,9 +18,10 @@ package me.imcj.as3object
         protected var _package   : String;
         protected var _shortName : String;
 		
-		protected var _sql     : SQL;
-		protected var _builder : IFieldBuilder;
-		protected var _type    : Class;
+		protected var _sql       : SQL;
+		protected var _builder   : IFieldBuilder;
+		protected var _type      : Class;
+		protected var _primaryKey : Field;
 		
         public function Table ( type : Object = null )
         {
@@ -44,6 +45,9 @@ package me.imcj.as3object
         
         public function addField ( field : Field ) : Field
         {
+            if ( field.primaryKey )
+                _primaryKey = field;
+            
             _fields.add ( field.name, field );
             return field;
         }
@@ -98,5 +102,9 @@ package me.imcj.as3object
             return _type;
         }
 
+        public function get primaryKey():Field
+        {
+            return _primaryKey;
+        }
     }
 }

@@ -24,7 +24,7 @@ package flexUnitTests
 		[Test]
 		public function testFieldLength () : void
 		{
-			assertEquals ( 2, table.fields.keys.length );
+			assertEquals ( 3, table.fields.keys.length );
 		}
 	}
 }

@@ -9,6 +9,7 @@ package me.imcj.as3object
     import flash.net.Responder;
     
     import me.imcj.as3object.expression.Expression;
+    import me.imcj.as3object.expression.eq;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
     import mx.rpc.IResponder;
@@ -71,9 +72,28 @@ package me.imcj.as3object
         }
 
         
-		public function update ( object : Object ) : Object
+		public function update ( object : Object, responder : IResponder ) : void
 		{
-			return object;
+            var statement : SQLStatement = new SQLStatement ( );
+            var handlerInsertResult : Function = function  ( event : SQLEvent ) : void
+            {
+                statement.removeEventListener ( SQLEvent.RESULT, handlerInsertResult );
+                
+                var result : SQLResult = statement.getResult ( );
+                
+                dispatchEvent ( new me.imcj.as3object.ObjectEvent ( me.imcj.as3object.ObjectEvent.RESULT, object ) );
+            };
+            
+            if ( null == responder )
+                statement.addEventListener ( SQLEvent.RESULT, handlerInsertResult );
+            
+            var expression : Expression;
+            if ( _table.primaryKey )
+                expression = eq ( _table.primaryKey.name, object[_table.primaryKey.name] );
+            // TODO 如果没有主键,使用其它索引代替
+            statement.sqlConnection = _connection;
+            statement.text = _table.update ( object, expression );
+            statement.execute ( -1, new UpdateResponder ( object, responder ) );
 		}
 		
 		public function remove ( object : Object ) : void
@@ -82,7 +102,6 @@ package me.imcj.as3object
         
         public function find ( expression : Expression, responder : IResponder ) : void
         {
-            // TODO 重建对象
             var statement : SQLStatement = new SQLStatement ( );
             statement.addEventListener ( SQLEvent.RESULT, handlerFindResult );
             statement.sqlConnection = _connection;
@@ -190,6 +209,30 @@ class InsertResponder extends Responder
     }
 }
 
+class UpdateResponder extends Responder
+{
+    protected var _object    : Object;
+    protected var _responder : IResponder;
+    
+    public function UpdateResponder ( object : Object, responder : IResponder )
+    {
+        _object = object;
+        _responder = responder;
+        
+        super ( result, fault );
+    }
+    
+    public function fault ( info : SQLError ) : void
+    {
+        // TODO Update fault
+    }
+    
+    public function result ( result : SQLResult ) : void
+    {
+        _responder.result ( _object );
+    }
+}
+
 class SelectResponder extends Responder
 {
 //    static protected var _facade : Facade = Facade.instance;
@@ -230,6 +273,13 @@ class SelectResponder extends Responder
     
     public function fault ( info : SQLError ) : void
     {
-        _responder.fault ( info );
+        if ( null != _responder.fault ) {
+            try {
+            _responder.fault ( info );
+            } catch ( error : Error ) {
+                _responder.result ( null );
+            }
+        } else
+            _responder.result ( null );
     }
 }
