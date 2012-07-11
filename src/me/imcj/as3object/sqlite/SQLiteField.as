@@ -59,10 +59,18 @@ package me.imcj.as3object.sqlite
                 return null;
             
             qname = StringUtil.substitute ( "me.imcj.as3object.sqlite.field.{0}Field", type );
-            var fieldClass : Class = Class ( getDefinitionByName ( qname ) );  
-//            if ( isDomain && "ArrayCollection" == type )
-//                return new fieldClass ( name, domain );
-            return new fieldClass ( name );
+			var fieldClass : Class = Class ( getDefinitionByName ( qname ) );
+			var instance : Field;
+			switch ( type ) {
+				case "ArrayCollection":
+//					return new fieldClass ( name, 
+					break;
+				default:
+					instance = new fieldClass ( name );
+					break;
+			}
+			
+			return instance;
         }
         
         static protected function hasMetadata ( name : String, metadata : XMLList ) : Boolean

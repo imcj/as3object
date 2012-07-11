@@ -4,6 +4,7 @@ package me.imcj.as3object
     import flash.data.SQLMode;
     import flash.data.SQLResult;
     import flash.data.SQLStatement;
+    import flash.events.EventDispatcher;
     import flash.events.SQLEvent;
     import flash.filesystem.File;
     import flash.net.Responder;
@@ -14,10 +15,9 @@ package me.imcj.as3object
     
     import mx.rpc.IResponder;
 
-	[Event(name="open", type="flash.events.SQLEvent")]
 	[Event(name="result", type="me.imcj.as3object.ObjectEvent")]
-	[Event(name="ready", type="me.imcj.as3object.AsyncRepositoryEvent")]
-    public class SQLiteAsyncRepository extends Repository implements AsyncRepository
+	[Event(name="ready",  type="me.imcj.as3object.AsyncRepositoryEvent")]
+    public class SQLiteAsyncRepository extends EventDispatcher implements AsyncRepository
     {
         static protected var _connection : SQLConnection;
         static protected var _facade : Facade = Facade.instance;
