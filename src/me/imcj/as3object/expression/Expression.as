@@ -1,7 +1,5 @@
 package me.imcj.as3object.expression
 {
-    import org.hamcrest.mxml.number.GreaterThan;
-
     public class Expression
     {
         public function Expression ( )

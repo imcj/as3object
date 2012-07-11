@@ -16,6 +16,7 @@ package me.imcj.as3object
 
 	[Event(name="open", type="flash.events.SQLEvent")]
 	[Event(name="result", type="me.imcj.as3object.ObjectEvent")]
+	[Event(name="ready", type="me.imcj.as3object.AsyncRepositoryEvent")]
     public class SQLiteAsyncRepository extends Repository implements AsyncRepository
     {
         static protected var _connection : SQLConnection;
@@ -43,7 +44,8 @@ package me.imcj.as3object
         
         protected function handlerOpen(event:SQLEvent):void
         {
-			dispatchEvent ( event );
+			_connection.removeEventListener ( SQLEvent.OPEN, handlerOpen );
+			dispatchEvent ( new AsyncRepositoryEvent ( AsyncRepositoryEvent.READY ) );
         }
         
         public function add ( object : Object, responder : IResponder ) : Object
