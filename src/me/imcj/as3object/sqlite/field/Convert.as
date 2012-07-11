@@ -23,7 +23,7 @@ package me.imcj.as3object.sqlite.field
 		{
 			TextField;
 			IntegerField;
-			NumberField;
+			RealField;
 		}
 		
 		static public function to ( type : String, name : String ) : Field

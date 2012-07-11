@@ -57,5 +57,10 @@ package me.imcj.as3object.field
             
             return _autoIncrement;
         }
+        
+        public function fill ( instance : Object, data : Object ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
     }
 }

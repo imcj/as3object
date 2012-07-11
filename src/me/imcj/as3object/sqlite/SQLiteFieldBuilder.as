@@ -5,6 +5,7 @@ package me.imcj.as3object.sqlite
 	import flash.utils.getQualifiedClassName;
 	
 	import me.imcj.as3object.Table;
+	import me.imcj.as3object.field.Field;
 	import me.imcj.as3object.field.IFieldBuilder;
 	import me.imcj.as3object.sqlite.field.Convert;
 	
@@ -25,6 +26,7 @@ package me.imcj.as3object.sqlite
 			
 			var fields : Array = new Array ( );
 			var name   : String;
+            var field  : Field;
 			
 			for each ( variable in describe.factory.variable ) {
 				objectField = <field name={variable.@name} type={variable.@type} />;
@@ -51,18 +53,12 @@ package me.imcj.as3object.sqlite
 			}
 			
 			for each ( variable in objectFields.field ) {
-				if ( hasMetadata ( "Exclude", variable.metadata ) )
-					continue;
-				
-				fields.push ( SQLiteField.create ( variable.@name, variable.@type ) );
+                field = SQLiteField.create ( variable );
+                if ( field )
+				    fields.push ( field );
 			}
 			
 			return fields;
-		}
-		
-		protected function hasMetadata ( name : String, metadata : XMLList ) : Boolean
-		{
-			return metadata.( @name == name ).length () > 0 ? true : false;
 		}
 	}
 }

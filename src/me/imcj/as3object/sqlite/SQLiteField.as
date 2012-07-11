@@ -4,8 +4,9 @@ package me.imcj.as3object.sqlite
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.field.Field;
+    import me.imcj.as3object.sqlite.field.ArrayCollectionField;
     import me.imcj.as3object.sqlite.field.IntegerField;
-    import me.imcj.as3object.sqlite.field.NumberField;
+    import me.imcj.as3object.sqlite.field.RealField;
     import me.imcj.as3object.sqlite.field.TextField;
     
     import mx.utils.StringUtil;
@@ -13,12 +14,13 @@ package me.imcj.as3object.sqlite
     public class SQLiteField extends Field
     {
         static protected var mapping : Object = {
-            "String"  : "TEXT",
-            "int"     : "INTEGER",
-            "uint"    : "INTEGER",
-            "Number"  : "REAL",
-            "Date"    : "TEXT",
-            "Boolean" : "INTEGER"
+            "String"  : "Text",
+            "int"     : "Integer",
+            "uint"    : "Integer",
+            "Number"  : "Real",
+            "Date"    : "DateTime",
+            "Boolean" : "Integer",
+            "mx.collections::ArrayCollection" : "ArrayCollection"
         };
         
         public function SQLiteField(name:String)
@@ -36,16 +38,36 @@ package me.imcj.as3object.sqlite
             return String ( name ).toUpperCase ( );
         }
         
-        static public function create ( name : String, type : String ) : SQLiteField
+        static public function create ( variable : XML ) : SQLiteField
         {
             TextField;
-            NumberField;
+            RealField;
             IntegerField;
+            ArrayCollectionField;
             
-            type = String ( mapping[type] ).substr ( 0, 1 ).toUpperCase ( ) + String ( mapping[type] ).substr ( 1 ).toLowerCase ( );
+            var name : String = variable.@name, type : String = variable.@type;
+            var qname : String;
+//            type = String ( mapping[type] ).substr ( 0, 1 ).toUpperCase ( ) + String ( mapping[type] ).substr ( 1 ).toLowerCase ( );
+            type = mapping[type];
             
-            var fieldClass : Class = Class ( getDefinitionByName ( StringUtil.substitute ( "me.imcj.as3object.sqlite.field.{0}Field", type ) ) );  
+            if ( hasMetadata ( "Ignore", variable.metadata ) )
+                return null;
+            
+            // TODO as3-commons-reflection
+//            var isDomain : XML = variable.metadata.( @name == "Domain" )[0];
+            if ( "ArrayCollection" == type )
+                return null;
+            
+            qname = StringUtil.substitute ( "me.imcj.as3object.sqlite.field.{0}Field", type );
+            var fieldClass : Class = Class ( getDefinitionByName ( qname ) );  
+//            if ( isDomain && "ArrayCollection" == type )
+//                return new fieldClass ( name, domain );
             return new fieldClass ( name );
+        }
+        
+        static protected function hasMetadata ( name : String, metadata : XMLList ) : Boolean
+        {
+            return metadata.( @name == name ).length () > 0 ? true : false;
         }
     }
 }

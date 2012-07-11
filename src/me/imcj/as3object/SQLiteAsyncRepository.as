@@ -26,6 +26,8 @@ package me.imcj.as3object
         
         public function SQLiteAsyncRepository ( connection : Object, object : Object = null )
         {
+            _table = SQLiteTable ( _facade.getTable ( object ) );
+            
             if (  _connection )
                 return;
             
@@ -38,8 +40,6 @@ package me.imcj.as3object
                 _connection.openAsync ( connection, SQLMode.CREATE );
             else
                 _connection.openAsync ( null, SQLMode.CREATE );
-            
-            _table = SQLiteTable ( _facade.getTable ( object ) );
         }
         
         protected function handlerOpen(event:SQLEvent):void
@@ -264,11 +264,11 @@ class SelectResponder extends Responder
     
     protected function create ( object : Object ) : Object
     {
-        var field : Object;
+        var field : String;
         var instance : Object = new _table.type ( ) ;
         
         for ( field in object )
-            instance[field] = object[field]
+            _table.fields.get ( field ).fill ( instance, object );
                 
         return instance;
     }

@@ -10,6 +10,11 @@ package me.imcj.as3object.sqlite.field
             super ( name );
         }
         
+        override public function fill ( instance : Object, data : Object ) : void
+        {
+            instance[name] = String ( data[name] );
+        }
+        
 //        public function dataType ( ) : String
 //        {
 //            return "TEXT";

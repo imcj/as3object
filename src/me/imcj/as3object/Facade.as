@@ -2,7 +2,9 @@ package me.imcj.as3object
 {
     import avmplus.getQualifiedClassName;
     
+    import flash.filesystem.File;
     import flash.utils.Dictionary;
+    import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.sqlite.SQLiteTable;
 
@@ -13,6 +15,7 @@ package me.imcj.as3object
         protected var _types : Dictionary;
         protected var metadataProcessor : MetadataProcessor;
         protected var _tableCache : Dict = new Dict ( );
+        protected var _asyncRepositories : Dict = new Dict ( );
         
         public function Facade ( )
         {
@@ -54,6 +57,17 @@ package me.imcj.as3object
             }
 //			table.data = object;
             return table;
+        }
+        
+        public function getRepository ( type : Class ) : AsyncRepository
+        {
+            // TODO 通过配置实例化对象
+            var asyncRepository : AsyncRepository = AsyncRepository ( _asyncRepositories.get ( flash.utils.getQualifiedClassName ( type ) ) );
+            if ( ! asyncRepository ) {
+                asyncRepository = new SQLiteAsyncRepository ( File.applicationStorageDirectory.resolvePath ( "db.sqlite3" ), type );
+                _asyncRepositories.add ( flash.utils.getQualifiedClassName ( type ), asyncRepository );
+            }
+            return asyncRepository;
         }
     }
 }
