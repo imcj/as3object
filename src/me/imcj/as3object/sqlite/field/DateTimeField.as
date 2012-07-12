@@ -1,10 +1,11 @@
 package me.imcj.as3object.sqlite.field
 {
 	import me.imcj.as3object.field.Field;
+	import me.imcj.as3object.sqlite.SQLiteField;
 	
 	import mx.formatters.DateFormatter;
 
-    public class DateTimeField extends TextField
+    public class DateTimeField extends SQLiteField
     {
         public function DateTimeField ( name : String )
         {

@@ -1,8 +1,7 @@
 package me.imcj.as3object.field
 {
-    import avmplus.getQualifiedClassName;
-    
     import me.imcj.as3object.Order;
+    import flash.utils.ByteArray;
 
     public class Field extends Object
     {
@@ -12,6 +11,7 @@ package me.imcj.as3object.field
         protected var _autoIncrement : Boolean = false;
         protected var _disableDefaultPrimary : Boolean = false;
         protected var _disableDefaultAutoIncrement : Boolean = false;
+        
         public function Field ( name : String )
         {
             _name = name;
@@ -45,11 +45,6 @@ package me.imcj.as3object.field
             _order = value;
         }
 
-        public function get dataType ( ) : String
-        {
-            throw new Error ( "No implement" );
-        }
-        
         public function get autoIncrement ( ) : Boolean
         {
             if ( ! _disableDefaultAutoIncrement && primaryKey )
@@ -58,7 +53,32 @@ package me.imcj.as3object.field
             return _autoIncrement;
         }
         
-        public function fill ( instance : Object, data : Object ) : void
+        public function get type ( ) : String
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        public function assignValue ( instance : Object, data : Object ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        public function buildCreateTableColumnDefine ( buffer : ByteArray ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        public function buildInsertColumn ( buffer : ByteArray ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        public function buildInsertValue ( buffer : ByteArray ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        public function buildUpdateAssign ( buffer : ByteArray ) : void
         {
             throw new Error ( "Not implement the method." );
         }

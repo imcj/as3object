@@ -2,6 +2,7 @@ package flexUnitTests
 {
 	import flexunit.framework.Assert;
 	
+	import me.imcj.as3object.SQL;
 	import me.imcj.as3object.Table;
 	import me.imcj.as3object.expression.and;
 	import me.imcj.as3object.expression.eq;
@@ -12,7 +13,7 @@ package flexUnitTests
 
 	public class TestSQLite
 	{
-		public var table  : Table;
+		public var table  : SQL;
 		public var cat : Cat;
 		
 		[Before]
@@ -22,7 +23,7 @@ package flexUnitTests
 			
 			cat = new Cat ( );
 			cat.name = "2B";
-			cat.age = 2;
+			cat.setAge ( 2 );
 		}
 		
 		[After]
@@ -49,7 +50,7 @@ package flexUnitTests
 		{
 			var cat2 : Cat = new Cat ( );
 			cat2.name = "Xiao Hua";
-			cat2.age  = 1;
+			cat2.setAge ( 2 );
 			var sql : String = table.insert ( [ cat, cat2 ] );
 			Assert.assertTrue ( 0 < sql.length );
 		}

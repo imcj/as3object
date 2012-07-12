@@ -10,7 +10,12 @@ package me.imcj.as3object.sqlite.field
             super ( name );
         }
         
-        override public function fill ( instance : Object, data : Object ) : void
+        override public function get type ( ) : String
+        {
+            return "REAL";
+        }
+        
+        override public function assignValue ( instance : Object, data : Object ) : void
         {
             instance[name] = new Number ( data[name] );
         }

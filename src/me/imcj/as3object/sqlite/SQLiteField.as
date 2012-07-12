@@ -11,6 +11,9 @@ package me.imcj.as3object.sqlite
     
     import mx.utils.StringUtil;
     
+    import org.as3commons.reflect.Field;
+    import flash.utils.ByteArray;
+    
     public class SQLiteField extends Field
     {
         static protected var mapping : Object = {
@@ -25,42 +28,76 @@ package me.imcj.as3object.sqlite
         
         public function SQLiteField(name:String)
         {
-            
             super(name);
         }
         
-        override public function get dataType ( ) : String
+        /**
+         * 构造CREATE TABLE 的字段定义部分
+         * 
+         * @example 
+         * <listing version="3.0">
+         * var buffer : ByteArray = new ByteArray ( );
+         * buffer.writeUTFString ( "CREATE TABLE pet ( " );
+         * 
+         * var field : IntegerField = new IntegerField ( "id" );
+         * field.primaryKey = true;
+         * field.autoIncrement = true;
+         * field.order = Order.ASC;
+         * field.buildCreateTableColumnDefine ( buffer );
+         * // CREATE TABLE pet ( id INTEGER PRIMARY KEY ASC AUTOINCREMENT )
+         * </listing>
+         */
+        override public function buildCreateTableColumnDefine ( buffer : ByteArray ) : void
         {
-            var qname : String = getQualifiedClassName ( this );
-            var fullName : Array = qname.split ( "::" );
-            var name : String = fullName[1];
-            name = name.substring ( 0, name.lastIndexOf ( "Field" ) );
-            return String ( name ).toUpperCase ( );
+            buffer.writeUTFBytes ( name );
+            buffer.writeUTFBytes ( " " );
+            buffer.writeUTFBytes ( type );
+            
+            if ( primaryKey ) {
+                buffer.writeUTFBytes ( " " );
+                buffer.writeUTFBytes ( "PRIMARY KEY" );
+                buffer.writeUTFBytes ( " " );
+                buffer.writeUTFBytes ( order );
+                
+                if ( autoIncrement )
+                    buffer.writeUTFBytes ( " AUTOINCREMENT" );
+            }
         }
         
-        static public function create ( variable : XML ) : SQLiteField
+        // TODO 清理TODO 完成这些部分
+        override public function buildInsertColumn ( buffer : ByteArray ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        override public function buildInsertValue ( buffer : ByteArray ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        override public function buildUpdateAssign ( buffer : ByteArray ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        static public function create ( field : org.as3commons.reflect.Field ) : SQLiteField
         {
             TextField;
             RealField;
             IntegerField;
             ArrayCollectionField;
             
-            var name : String = variable.@name, type : String = variable.@type;
             var qname : String;
-//            type = String ( mapping[type] ).substr ( 0, 1 ).toUpperCase ( ) + String ( mapping[type] ).substr ( 1 ).toLowerCase ( );
+            var type : String;
+            var name : String;
             type = mapping[type];
             
-            if ( hasMetadata ( "Ignore", variable.metadata ) )
-                return null;
-            
-            // TODO as3-commons-reflection
-//            var isDomain : XML = variable.metadata.( @name == "Domain" )[0];
             if ( "ArrayCollection" == type )
                 return null;
             
             qname = StringUtil.substitute ( "me.imcj.as3object.sqlite.field.{0}Field", type );
 			var fieldClass : Class = Class ( getDefinitionByName ( qname ) );
-			var instance : Field;
+			var instance : SQLiteField;
 			switch ( type ) {
 				case "ArrayCollection":
 //					return new fieldClass ( name, 

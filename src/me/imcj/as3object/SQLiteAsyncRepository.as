@@ -67,7 +67,7 @@ package me.imcj.as3object
                 statement.addEventListener ( SQLEvent.RESULT, handlerInsertResult );
             
             statement.sqlConnection = _connection;
-            statement.text = _facade.getTable ( object ).insert ( object );
+            statement.text = SQL ( _facade.getTable ( object ) ).insert ( object );
             statement.execute ( -1, new InsertResponder ( object, responder ) );
             
             return object;
@@ -135,7 +135,7 @@ package me.imcj.as3object
 			var statement : SQLStatement = new SQLStatement ( );
 			statement.addEventListener ( SQLEvent.RESULT, handlerCreationStatementResult );
 			statement.sqlConnection = _connection;
-			statement.text = _facade.getTable ( object ).creationStatement ( ifNotExists );
+			statement.text = SQL ( _facade.getTable ( object ) ).creationStatement ( ifNotExists );
             
             if ( responder )
 			    statement.execute ( -1, new CreationStatementResponder ( responder ) );
@@ -265,7 +265,7 @@ class SelectResponder extends Responder
     protected function create ( object : Object ) : Object
     {
         var field : String;
-        var instance : Object = new _table.type ( ) ;
+        var instance : Object = new _table.type.clazz ();
         
         for ( field in object )
             _table.fields.get ( field ).fill ( instance, object );

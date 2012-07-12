@@ -55,7 +55,6 @@ package me.imcj.as3object
                 table = new SQLiteTable ( object  );
                 _tableCache.add ( qname, table );
             }
-//			table.data = object;
             return table;
         }
         

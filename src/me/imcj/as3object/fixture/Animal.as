@@ -5,8 +5,8 @@ package me.imcj.as3object.fixture
 	public class Animal
 	{
         public var id   : int;
-		public var name : String;
-		public var age  : int;
+		protected var _name : String;
+		protected var _age  : int;
 		
 		public function Animal()
 		{
@@ -16,5 +16,25 @@ package me.imcj.as3object.fixture
 		{
 			return "<" + getQualifiedClassName ( this ).split ( "::" )[1] + ": " + name + ">";
 		}
+        
+        public function getAge ( ) : int
+        {
+            return _age;
+        }
+        
+        public function setAge ( value : int ) : void
+        {
+            _age = value;
+        }
+        
+        public function get name ( ) : String
+        {
+            return _name;
+        }
+        
+        public function set name ( value : String ) : void
+        {
+            _name = value;
+        }
 	}
 }
