@@ -4,7 +4,6 @@ package me.imcj.as3object
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.expression.Expression;
-    import me.imcj.as3object.field.Field;
     import me.imcj.as3object.sqlite.field.*;
     
     import org.as3commons.reflect.Type;
@@ -18,12 +17,12 @@ package me.imcj.as3object
         protected var _shortName  : String;
 		protected var _sql        : SQL;
 		protected var _type       : Type;
-		protected var _primaryKey : Field;
+		protected var _primaryKey : AS3ObjectField;
 		
         public function Table ( type : Object = null )
         {
 			var fullName : Array;
-			var field    : Field;
+			var field    : AS3ObjectField;
 			
             _fields    = new Dict ( );
 			_type      = type is Class ? Type.forClass ( Class ( type ) ) : Type.forClass ( Class ( getDefinitionByName ( getQualifiedClassName ( type ) ) ) );
@@ -34,7 +33,7 @@ package me.imcj.as3object
         }
         
         
-        public function addField ( field : Field ) : Field
+        public function addField ( field : AS3ObjectField ) : AS3ObjectField
         {
             if ( field.primaryKey )
                 _primaryKey = field;
@@ -43,9 +42,9 @@ package me.imcj.as3object
             return field;
         }
         
-        public function getField ( fieldName : String ) : Field
+        public function getField ( fieldName : String ) : AS3ObjectField
         {
-            return Field ( _fields[fieldName] );
+            return AS3ObjectField ( _fields[fieldName] );
         }
         
         public function get fields ( ) : Dict
@@ -68,7 +67,7 @@ package me.imcj.as3object
             return _type;
         }
 
-        public function get primaryKey():Field
+        public function get primaryKey():AS3ObjectField
         {
             return _primaryKey;
         }

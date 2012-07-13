@@ -1,9 +1,8 @@
-package me.imcj.as3object.field
+package me.imcj.as3object
 {
-    import me.imcj.as3object.Order;
     import flash.utils.ByteArray;
 
-    public class Field extends Object
+    public class AS3ObjectField extends Object
     {
         protected var _name : String;
         protected var _primaryKey : Boolean;
@@ -12,7 +11,9 @@ package me.imcj.as3object.field
         protected var _disableDefaultPrimary : Boolean = false;
         protected var _disableDefaultAutoIncrement : Boolean = false;
         
-        public function Field ( name : String )
+        public var isMethod : Boolean = false;
+        
+        public function AS3ObjectField ( name : String )
         {
             _name = name;
             super();
@@ -59,6 +60,30 @@ package me.imcj.as3object.field
         }
         
         public function assignValue ( instance : Object, data : Object ) : void
+        {
+            throw new Error ( "Not implement the method." );
+        }
+        
+        public function getValue ( instance : Object ) : Object
+        {
+            if ( isMethod )
+                return instance [ getMethodName ( ) ] ( );
+            else
+                return instance [ name ];
+        }
+        
+        protected function setMethodName ( ) : String
+        {
+            return "set" + name.substr ( 0, 1 ).toUpperCase ( ) + name.substring ( 1 );
+        }
+        
+        protected function getMethodName ( ) : String
+        {
+            trace ( "get" + name.substr ( 0, 1 ).toUpperCase ( ) + name.substring ( 1 ) );
+            return "get" + name.substr ( 0, 1 ).toUpperCase ( ) + name.substring ( 1 );
+        }
+        
+        public function adapt ( instance : Object, queryResult : Object ) : void
         {
             throw new Error ( "Not implement the method." );
         }

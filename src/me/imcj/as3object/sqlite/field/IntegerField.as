@@ -2,7 +2,7 @@ package me.imcj.as3object.sqlite.field
 {
 	import flash.utils.ByteArray;
 	
-	import me.imcj.as3object.field.Field;
+	import me.imcj.as3object.AS3ObjectField;
 	import me.imcj.as3object.sqlite.SQLiteField;
 
     public class IntegerField extends SQLiteField
@@ -12,6 +12,10 @@ package me.imcj.as3object.sqlite.field
             super(name);
         }
         
+        override public function get type ( ) : String
+        {
+            return "Integer";
+        }
         
         override public function adapt ( instance : Object, queryResult : Object ) : void
         {

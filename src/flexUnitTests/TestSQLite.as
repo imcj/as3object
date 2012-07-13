@@ -35,6 +35,7 @@ package flexUnitTests
         public function testCreateStatement ( ) : void
         {
             var createStatement : String = table.creationStatement ( );
+            trace ( createStatement );
             assertEquals ( "CREATE TABLE Cat ( id INTEGER PRIMARY KEY asc AUTOINCREMENT, name TEXT, age INTEGER );", createStatement );
         }
 		

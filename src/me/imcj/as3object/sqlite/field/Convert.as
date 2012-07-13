@@ -26,7 +26,7 @@ package me.imcj.as3object.sqlite.field
 			RealField;
 		}
 		
-		static public function to ( type : String, name : String ) : Field
+		static public function to ( type : String, name : String ) : Column
 		{
 
 		}
