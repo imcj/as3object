@@ -7,11 +7,16 @@ package me.imcj.as3object
     import flash.events.EventDispatcher;
     import flash.events.SQLEvent;
     import flash.filesystem.File;
-    import flash.net.Responder;
     
     import me.imcj.as3object.expression.Expression;
     import me.imcj.as3object.expression.eq;
+    import me.imcj.as3object.sqlite.SQLiteHierarchicalTable;
     import me.imcj.as3object.sqlite.SQLiteTable;
+    import me.imcj.as3object.sqlite.responder.CreationStatementResponder;
+    import me.imcj.as3object.sqlite.responder.HierarchicalSelectResponder;
+    import me.imcj.as3object.sqlite.responder.InsertResponder;
+    import me.imcj.as3object.sqlite.responder.SelectResponder;
+    import me.imcj.as3object.sqlite.responder.UpdateResponder;
     
     import mx.rpc.IResponder;
 
@@ -109,6 +114,13 @@ package me.imcj.as3object
             statement.sqlConnection = _connection;
             statement.text = _table.select ( expression );
             
+            if ( _table is SQLiteHierarchicalTable ) {
+                if ( null == responder )
+                    statement.execute ( );
+                else
+                    statement.execute ( -1, new HierarchicalSelectResponder ( _table, responder ) );
+            }
+            
             if ( null == responder )
                 statement.execute ( );
             else
@@ -150,138 +162,4 @@ package me.imcj.as3object
             statement.removeEventListener ( SQLEvent.RESULT, handlerCreationStatementResult );
         }
 	}
-}
-import flash.data.SQLResult;
-import flash.errors.SQLError;
-import flash.net.Responder;
-
-import me.imcj.as3object.Facade;
-import me.imcj.as3object.sqlite.SQLiteTable;
-
-import mx.rpc.IResponder;
-
-class CreationStatementResponder extends Responder
-{
-    static public const SUCCESS : String = "success";
-    static public const FAILURE : String = "failure";
-    
-    private var _responder:IResponder;
-    
-    public function CreationStatementResponder ( responder : IResponder )
-    {
-        _responder = responder;
-        
-        super ( result, fault );
-    }
-    
-    public function result ( data : SQLResult ) : void
-    {
-        _responder.result ( SUCCESS );
-    }
-    
-    public function fault ( error : SQLError ) : void
-    {
-        _responder.fault ( FAILURE );
-    }
-}
-
-class InsertResponder extends Responder
-{
-    protected var _object    : Object;
-    protected var _responder : IResponder;
-    
-    public function InsertResponder ( object : Object, responder : IResponder )
-    {
-        _object = object;
-        _responder = responder;
-        
-        super ( result, fault );
-    }
-    
-    public function fault ( info : SQLError ) : void
-    {
-    }
-    
-    public function result ( result : SQLResult ) : void
-    {
-        if ( _object.hasOwnProperty ( "id" ) )
-            _object["id"] = result.lastInsertRowID;
-        
-        _responder.result ( _object );
-    }
-}
-
-class UpdateResponder extends Responder
-{
-    protected var _object    : Object;
-    protected var _responder : IResponder;
-    
-    public function UpdateResponder ( object : Object, responder : IResponder )
-    {
-        _object = object;
-        _responder = responder;
-        
-        super ( result, fault );
-    }
-    
-    public function fault ( info : SQLError ) : void
-    {
-        // TODO Update fault
-    }
-    
-    public function result ( result : SQLResult ) : void
-    {
-        _responder.result ( _object );
-    }
-}
-
-class SelectResponder extends Responder
-{
-//    static protected var _facade : Facade = Facade.instance;
-    
-    private var _responder : IResponder;
-    private var _table:SQLiteTable;
-    
-    public function SelectResponder ( table : SQLiteTable, responder : IResponder )
-    {
-        _table = table;
-        _responder = responder;
-        
-        super ( result, fault );
-    }
-    
-    public function result ( result : SQLResult ) : void
-    {
-        var objects : Array = new Array ( );
-        var object  : Object;
-        
-        for each ( object in result.data ) {
-            objects[objects.length] = create ( object );
-        }
-        
-        _responder.result ( objects );
-    }
-    
-    protected function create ( object : Object ) : Object
-    {
-        var field : String;
-        var instance : Object = new _table.type.clazz ();
-        
-        for ( field in object )
-            _table.fields.get ( field ).fill ( instance, object );
-                
-        return instance;
-    }
-    
-    public function fault ( info : SQLError ) : void
-    {
-        if ( null != _responder.fault ) {
-            try {
-            _responder.fault ( info );
-            } catch ( error : Error ) {
-                _responder.result ( null );
-            }
-        } else
-            _responder.result ( null );
-    }
 }

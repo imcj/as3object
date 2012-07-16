@@ -66,9 +66,12 @@ package me.imcj.as3object
         
         public function getValue ( instance : Object ) : Object
         {
-            if ( isMethod )
-                return instance [ getMethodName ( ) ] ( );
-            else
+            var methodName : String;
+            if ( isMethod ) {
+                methodName = getMethodName ( );
+                trace ( instance [ methodName ] ( ) );
+                return instance [ methodName ] ( );
+            } else
                 return instance [ name ];
         }
         
@@ -79,7 +82,6 @@ package me.imcj.as3object
         
         protected function getMethodName ( ) : String
         {
-            trace ( "get" + name.substr ( 0, 1 ).toUpperCase ( ) + name.substring ( 1 ) );
             return "get" + name.substr ( 0, 1 ).toUpperCase ( ) + name.substring ( 1 );
         }
         

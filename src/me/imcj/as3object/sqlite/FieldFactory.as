@@ -5,6 +5,7 @@ package me.imcj.as3object.sqlite
     import me.imcj.as3object.sqlite.field.ArrayCollectionField;
     import me.imcj.as3object.sqlite.field.IntegerField;
     import me.imcj.as3object.sqlite.field.RealField;
+    import me.imcj.as3object.sqlite.field.RelationField;
     import me.imcj.as3object.sqlite.field.TextField;
     
     import mx.utils.StringUtil;
@@ -80,6 +81,23 @@ package me.imcj.as3object.sqlite
             type2 = mapping[type.fullName];
             if ( "ArrayCollection" == type2 )
                 return null;
+            
+            if ( null == type2 ) {
+//                if ( hasInterface ( type.interfaces, "mx.controls.treeClasses.ITreeDataDescriptor" ) ) {
+//                    
+//                }
+                var relationClass : Class;
+                var field : RelationField;
+                try {
+                    relationClass = getDefinitionByName ( type.fullName ) as Class;
+                    field = new RelationField ( name );
+                    field.relationClass = relationClass;
+                    
+                    return field;
+                } catch ( error : ReferenceError ) {
+                    return null;
+                }
+            }
             
             qname = StringUtil.substitute ( "me.imcj.as3object.sqlite.field.{0}Field", type2 );
             fieldClass = Class ( getDefinitionByName ( qname ) );

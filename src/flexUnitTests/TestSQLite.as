@@ -36,13 +36,14 @@ package flexUnitTests
         {
             var createStatement : String = table.creationStatement ( );
             trace ( createStatement );
-            assertEquals ( "CREATE TABLE Cat ( id INTEGER PRIMARY KEY asc AUTOINCREMENT, name TEXT, age INTEGER );", createStatement );
+            assertEquals ( "CREATE TABLE Cat ( id Integer PRIMARY KEY asc AUTOINCREMENT, name TEXT, age Integer );", createStatement );
         }
 		
 		[Test]
 		public function testInsert ( ) : void
 		{
 			var sql : String = table.insert ( cat );
+            trace ( sql );
             Assert.assertTrue ( 0 < sql.length );
 		}
 		

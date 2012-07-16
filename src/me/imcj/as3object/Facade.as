@@ -13,14 +13,12 @@ package me.imcj.as3object
         static protected var _instance : Facade;
         
         protected var _types : Dictionary;
-        protected var metadataProcessor : MetadataProcessor;
         protected var _tableCache : Dict = new Dict ( );
         protected var _asyncRepositories : Dict = new Dict ( );
         
         public function Facade ( )
         {
             _types = new Dictionary ( );
-            metadataProcessor = new MetadataProcessor ( );
         }
         
         public function forClass ( type : Class ) : *
@@ -35,6 +33,11 @@ package me.imcj.as3object
         public function forName ( name : String ) : *
         {
             return new ( _types [ name ] );
+        }
+        
+        public function createCriteria ( type : Class ) : Criteria
+        {
+//            return 
         }
         
         static public function get instance ( ) : Facade

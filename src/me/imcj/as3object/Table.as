@@ -18,6 +18,8 @@ package me.imcj.as3object
 		protected var _sql        : SQL;
 		protected var _type       : Type;
 		protected var _primaryKey : AS3ObjectField;
+        
+        protected var hierarchical : Boolean;
 		
         public function Table ( type : Object = null )
         {
@@ -30,8 +32,22 @@ package me.imcj.as3object
             fullName   = _name.split ( "::" );
             _shortName = fullName[1];
             _package   = fullName[0];
+            
+            if ( hasInterface ( _type.interfaces, "mx.controls.treeClasses.ITreeDataDescriptor" ) ||
+                 hasInterface ( _type.interfaces, "mx.controls.menuClasses.IMenuDataDescriptor" ) ) {
+                
+            }
+            // "mx.controls.treeClasses.ITreeDataDescriptor"
         }
         
+        protected function hasInterface ( interfaces : Array, type : String ) : Boolean
+        {
+            var i : int = 0, size : int = interfaces.length;
+            for ( ; i < size; i++ )
+                if ( interfaces[i] == type )
+                    return true;
+            return false;
+        }
         
         public function addField ( field : AS3ObjectField ) : AS3ObjectField
         {

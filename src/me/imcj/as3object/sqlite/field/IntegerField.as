@@ -21,5 +21,10 @@ package me.imcj.as3object.sqlite.field
         {
             instance[name] = int ( queryResult[name] );
         }
+        
+        override public function assignValue(instance:Object, data:Object):void
+        {
+            instance[name] = data[name];
+        }
     }
 }

@@ -129,13 +129,16 @@ package me.imcj.as3object.sqlite
                     key = String ( keys.next ( ) );
                     field = AS3ObjectField (  fields.get ( key ) );
                     
-                    
                     if ( field is TextField )
                         buffer.writeUTFBytes ( "'" + field.getValue ( object ) + "'" );
                     else if ( field.primaryKey && field.name == "id" )
                         buffer.writeUTFBytes ( "NULL" );
-                    else
-                        buffer.writeUTFBytes (  field.getValue ( object ) as String );
+                    else {
+                        try {
+                            buffer.writeUTFBytes ( String ( field.getValue ( object ) ) );
+                        } catch ( error : TypeError ) {
+                        }
+                    }
                     
                     if ( keys.hasNext )
                         buffer.writeUTFBytes ( ", " );

@@ -17,7 +17,7 @@ package flexUnitTests
         override public function result ( data : Object ) : void
         {
             var cat : Cat = Cat ( data );
-            assertEquals ( 2, cat.age );
+            assertEquals ( 2, cat.getAge ( ) );
 //            assertEquals ( 1, cat.id  );
         }
         
