@@ -1,7 +1,7 @@
 as3object
 ===
 
-as3object是一个提供一组操作对象的API，特性包括：ORM和AOP。
+as3object提供一组API提供对POAO ( Plain Old ActionScript Objects )的持久化操作。  
 
 
 ## How to use
@@ -15,34 +15,7 @@ class Animal
 class Cat extends Animal
 {
 }
-```
-### 传说中不贫血的模型
-```
-var mycat : Cat = new Cat ( );
-mycat.name = "2B";
-mycat.age = 2;
-mycat.save ( );
 
-Cat.findOne ( eq ( "name", "2B" ) )
-<Cat "2B">
-
-Cat.findOne ( eq ( mycat ) )
-<Cat "2B">
-
-Cat.find ( )
-[ <Cat "2B">, <Cat "Xiao Hua"> ]
-
-Cat.find ( ge ( "age", 1 ) )
-[ <Cat "2B"> ]
-
-Cat.find ( and ( ge ( "age", 1 ), eq ( "name" , "2B" ) ) )
-[ <Cat "2B"> ]
-
-Cat.find ( ).limit ( 0, 100 ).order ( "name", Order.ASC )
-```
-
-### 领域模型
-```
 var mycat : Cat = new Cat ( );
 mycat.name = "2B";
 mycat.age = 2;
