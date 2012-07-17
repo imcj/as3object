@@ -2,6 +2,7 @@ package flexUnitTests
 {
 	import flexunit.framework.Assert;
 	
+	import me.imcj.as3object.Order;
 	import me.imcj.as3object.SQL;
 	import me.imcj.as3object.Table;
 	import me.imcj.as3object.expression.and;
@@ -73,6 +74,14 @@ package flexUnitTests
         public function testSelect ( ) : void
         {
             var select : String = table.select ( and ( eq ( "id", 1 ), eq ( "id", 1 ) ) ); 
+            trace ( select );
+        }
+        
+        [Test]
+        public function testOrder ( ) : void
+        {
+            var select : String = table.select ( and ( eq ( "id", 1 ), eq ( "id", 1 ) ), [ Order.asc ( "id" ) ] );
+            trace ( "Order:" );
             trace ( select );
         }
 	}

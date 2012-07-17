@@ -1,35 +1,17 @@
 package me.imcj.as3object
 {
+    import flash.events.IEventDispatcher;
+    
     import me.imcj.as3object.expression.Expression;
-
-    public class Criteria
+    
+    import mx.collections.ArrayCollection;
+    
+    public interface Criteria extends IEventDispatcher
     {
-        protected var _expression:Array;
-        
-        public function Criteria ( )
-        {
-            _expression = new Array ( );
-        }
-        
-        public function add ( expression : Expression ) : Criteria
-        {
-            _expression.push ( expression );
-            return this;
-        }
-        
-        public function addOrder ( order : Order ) : Criteria
-        {
-            return this;
-        }
-        
-        public function setLimit ( min : int, max : int = -1 ) : Criteria
-        {
-            return this;
-        }
-        
-        public function list ( ) : Array
-        {
-            
-        }
+        function add ( expression : Expression ) : Criteria;
+        function addOrder ( order : Order ) : Criteria;
+        function list ( responder : Responder ) : ArrayCollection;
+        function setLimit ( min : int, max : int ) : Criteria;
+        function setMaxResults ( max : int ) : Criteria;
     }
 }

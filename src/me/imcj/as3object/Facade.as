@@ -12,6 +12,8 @@ package me.imcj.as3object
     {
         static protected var _instance : Facade;
         
+        public var config : Config;
+        
         protected var _types : Dictionary;
         protected var _tableCache : Dict = new Dict ( );
         protected var _asyncRepositories : Dict = new Dict ( );
@@ -37,7 +39,15 @@ package me.imcj.as3object
         
         public function createCriteria ( type : Class ) : Criteria
         {
-//            return 
+            if ( config ) {
+                switch ( config.DATABASE_ENGINE ) {
+                    case "sqlite":
+                        break;
+                }
+            } else {
+                // TODO 异常
+            }
+            return null;
         }
         
         static public function get instance ( ) : Facade

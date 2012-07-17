@@ -3,6 +3,7 @@ package me.imcj.as3object.sqlite
 	import flash.utils.ByteArray;
 	
 	import me.imcj.as3object.AS3ObjectField;
+	import me.imcj.as3object.Order;
 	import me.imcj.as3object.SQL;
 	import me.imcj.as3object.Table;
 	import me.imcj.as3object.core.ArrayIterator;
@@ -202,7 +203,7 @@ package me.imcj.as3object.sqlite
             return buffer.readUTFBytes ( buffer.length );
         }
         
-        public function select ( expression : Expression ) : String
+        public function select ( expression : Expression, orders : Array = null ) : String
         {
             var select : ByteArray = new ByteArray ( );
             select.writeUTFBytes ( "SELECT * FROM " );
@@ -211,6 +212,25 @@ package me.imcj.as3object.sqlite
             if ( expression ) {
                 select.writeUTFBytes ( " WHERE " );
                 dumpExpressionSQLCondition ( select, expression );
+            }
+            
+            var iter : Iterator;
+            var order : Order;
+            if ( orders ) {
+                select.writeUTFBytes ( " ORDER BY " );
+                
+                for ( iter = new ArrayIterator ( orders ); ; ) {
+                    order = Order ( iter.next ( ) );
+                    
+                    select.writeUTFBytes ( order.propertyName );
+                    select.writeUTFBytes ( " " );
+                    select.writeUTFBytes ( order.sort );
+                    
+                    if ( iter.hasNext )
+                        select.writeUTFBytes ( ", " );
+                    else
+                        break;
+                }
             }
             
             select.position = 0;
