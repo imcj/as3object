@@ -11,9 +11,13 @@ package me.imcj.as3object
     {
         protected var _expressions : Array = new Array ( );
         protected var _orders : Array = new Array ( );
+        protected var _pool:ConnectionPool;
+        protected var _type:Class;
         
-        public function CriteriaImplement ( target : IEventDispatcher = null )
+        public function CriteriaImplement ( type : Class, pool : ConnectionPool, target : IEventDispatcher = null )
         {
+            _type = type;
+            _pool = pool;
             super ( target );
         }
         

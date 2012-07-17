@@ -18,9 +18,12 @@ package me.imcj.as3object
         protected var _tableCache : Dict = new Dict ( );
         protected var _asyncRepositories : Dict = new Dict ( );
         
+        protected var pool : ConnectionPool;
+        
         public function Facade ( )
         {
             _types = new Dictionary ( );
+            pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( ) );
         }
         
         public function forClass ( type : Class ) : *
@@ -39,15 +42,8 @@ package me.imcj.as3object
         
         public function createCriteria ( type : Class ) : Criteria
         {
-            if ( config ) {
-                switch ( config.DATABASE_ENGINE ) {
-                    case "sqlite":
-                        break;
-                }
-            } else {
-                // TODO 异常
-            }
-            return null;
+            var criteria : Criteria = new CriteriaImplement ( type, pool );
+            return criteria;
         }
         
         static public function get instance ( ) : Facade
