@@ -7,6 +7,7 @@ package me.imcj.as3object
         {
             var connection : Connection;
             
+            // TODO Bug SQLite连接只能是一个
             switch ( config.DATABASE_ENGINE ) {
                 case "sqlite": {
                     connection = new ConnectionSQLite ( config );

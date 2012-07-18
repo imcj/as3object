@@ -4,20 +4,22 @@ package me.imcj.as3object
     import flash.events.IEventDispatcher;
     
     import me.imcj.as3object.expression.Expression;
+    import me.imcj.as3object.responder.SelectResponder;
     
-    import mx.collections.ArrayCollection;
+    import mx.rpc.IResponder;
     
     public class CriteriaImplement extends EventDispatcher implements Criteria
     {
         protected var _expressions : Array = new Array ( );
         protected var _orders : Array = new Array ( );
-        protected var _pool:ConnectionPool;
-        protected var _type:Class;
+        protected var _connection:Connection;
+        protected var _responder:IResponder;
+        protected var _table : Table;
         
-        public function CriteriaImplement ( type : Class, pool : ConnectionPool, target : IEventDispatcher = null )
+        public function CriteriaImplement ( table : Table, connection : Connection, target : IEventDispatcher = null )
         {
-            _type = type;
-            _pool = pool;
+            _table = table;
+            _connection = connection
             super ( target );
         }
         
@@ -33,9 +35,11 @@ package me.imcj.as3object
             return this;
         }
         
-        public function list ( responder : Responder ) : ArrayCollection
+        public function list ( responder : IResponder ) : void
         {
-            return null;
+            var statement : Statement = _connection.createStatement ( _table.select ( Expression.and ( _expressions ), _orders ) );
+            var selectResponder : SelectResponder = new SelectResponder ( _table, responder );
+            statement.execute ( selectResponder );
         }
         
         public function setLimit ( min : int, max : int ) : Criteria

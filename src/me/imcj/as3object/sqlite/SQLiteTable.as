@@ -15,7 +15,7 @@ package me.imcj.as3object.sqlite
 	import org.as3commons.reflect.Field;
 	import org.as3commons.reflect.Method;
     
-	public class SQLiteTable extends Table implements SQL
+	public class SQLiteTable extends Table
 	{
 		public function SQLiteTable ( type : Object = null )
 		{
@@ -69,7 +69,7 @@ package me.imcj.as3object.sqlite
             return field;
         }
         
-        public function creationStatement ( ifNotExists : Boolean = false ) : String
+        override public function creationStatement ( ifNotExists : Boolean = false ) : String
         {
             // TODO 表字段类型和数据类型的映射
             // TODO 查阅所有的SQLite的数据类型作映射
@@ -97,7 +97,7 @@ package me.imcj.as3object.sqlite
             return statementSQL;
         }
         
-        public function insert ( object : Object ) : String
+        override public function insert ( object : Object ) : String
         {
             var buffer    : ByteArray = new ByteArray ( );
             var object : Object;
@@ -156,7 +156,7 @@ package me.imcj.as3object.sqlite
             return buffer.readUTFBytes ( buffer.length );
         }
         
-        public function remove ( object : Object, expression : Expression ) : String
+        override public function remove ( object : Object, expression : Expression ) : String
         {
             var buffer : ByteArray = new ByteArray ( );
             buffer.writeUTFBytes ( "DELETE FROM " );
@@ -171,7 +171,7 @@ package me.imcj.as3object.sqlite
             return null;
         }
         
-        public function update ( object : Object, expression : Expression ) : String
+        override public function update ( object : Object, expression : Expression ) : String
         {
             var buffer : ByteArray = new ByteArray ( );
             buffer.writeUTFBytes ( "UPDATE " );
@@ -203,7 +203,7 @@ package me.imcj.as3object.sqlite
             return buffer.readUTFBytes ( buffer.length );
         }
         
-        public function select ( expression : Expression, orders : Array = null ) : String
+        override public function select ( expression : Expression, orders : Array = null ) : String
         {
             var select : ByteArray = new ByteArray ( );
             select.writeUTFBytes ( "SELECT * FROM " );

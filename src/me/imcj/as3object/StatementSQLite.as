@@ -1,9 +1,9 @@
 package me.imcj.as3object
 {
+    import flash.data.SQLResult;
     import flash.data.SQLStatement;
+    import flash.errors.SQLError;
     import flash.net.Responder;
-    
-    import mx.rpc.IResponder;
 
     public class StatementSQLite extends StatementImpl
     {
@@ -22,9 +22,26 @@ package me.imcj.as3object
             super.text = value;
         }
         
-        override public function execute ( responder : IResponder ) : void
+        override public function execute ( responder : me.imcj.as3object.Responder ) : void
         {
-            _statement.execute ( -1, new flash.net.Responder ( responder.result, responder.fault ) );
+            // TODO Error catch
+            _statement.execute (
+                -1,
+                new flash.net.Responder (
+                    function ( result : SQLResult ) : void
+                    {
+                        var r : Result = new Result ( result.data );
+                        r.lastInsertRowID = result.lastInsertRowID;
+                        r.rowsAffected = result.rowsAffected;
+                        
+                        responder.result ( r );
+                    },
+                    function ( error : SQLError ) : void
+                    {
+                        trace ( error.message );
+                    }
+                )
+            );
         }
     }
 }

@@ -1,9 +1,6 @@
 package me.imcj.as3object
 {
-    import flash.events.Event;
     import flash.events.EventDispatcher;
-    
-    import mx.rpc.IResponder;
     
     public class StatementImpl extends EventDispatcher implements Statement
     {
@@ -39,7 +36,7 @@ package me.imcj.as3object
             return null;
         }
         
-        public function execute ( responder : IResponder ) : void
+        public function execute ( responder : Responder ) : void
         {
         }
     }

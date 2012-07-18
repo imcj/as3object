@@ -8,7 +8,7 @@ package me.imcj.as3object
     
     import org.as3commons.reflect.Type;
 
-    public class Table
+    public class Table implements SQL
     {
         protected var _data       : Object;
         protected var _fields     : Dict;
@@ -86,6 +86,31 @@ package me.imcj.as3object
         public function get primaryKey():AS3ObjectField
         {
             return _primaryKey;
+        }
+        
+        public function creationStatement ( ifNotExists : Boolean = false ) : String
+        {
+            return null;
+        }
+        
+        public function insert ( object : Object ) : String
+        {
+            return null;
+        }
+        
+        public function update ( object : Object, expression : Expression ) : String
+        {
+            return null;
+        }
+        
+        public function remove ( object : Object, expression : Expression ) : String
+        {
+            return null;
+        }
+        
+        public function select ( expression : Expression, order : Array = null ) : String
+        {
+            return null;
         }
     }
 }

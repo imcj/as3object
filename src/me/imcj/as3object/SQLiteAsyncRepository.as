@@ -148,7 +148,6 @@ package me.imcj.as3object
 			statement.addEventListener ( SQLEvent.RESULT, handlerCreationStatementResult );
 			statement.sqlConnection = _connection;
 			statement.text = SQL ( _facade.getTable ( object ) ).creationStatement ( ifNotExists );
-            
             if ( responder )
 			    statement.execute ( -1, new CreationStatementResponder ( responder ) );
             else

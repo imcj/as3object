@@ -7,12 +7,14 @@ package me.imcj.as3object
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.sqlite.SQLiteTable;
+    
+    import mx.rpc.IResponder;
 
     public class Facade
     {
         static protected var _instance : Facade;
         
-        public var config : Config;
+        protected var _config : Config;
         
         protected var _types : Dictionary;
         protected var _tableCache : Dict = new Dict ( );
@@ -23,7 +25,7 @@ package me.imcj.as3object
         public function Facade ( )
         {
             _types = new Dictionary ( );
-            pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( ) );
+            pool = new ConnectionPoolImpl ( Config.createInMemory ( ), new ConnectionFactoryImpl ( ) );
         }
         
         public function forClass ( type : Class ) : *
@@ -40,10 +42,21 @@ package me.imcj.as3object
             return new ( _types [ name ] );
         }
         
-        public function createCriteria ( type : Class ) : Criteria
+        public function createCriteria ( type : Class, responder : IResponder ) : void
         {
-            var criteria : Criteria = new CriteriaImplement ( type, pool );
-            return criteria;
+            pool.getConnection (
+                new AS3ObjectResponder (
+                    function ( connection : Connection ) : void
+                    {
+                        responder.result ( new CriteriaImplement ( getTable ( type ), pool ) );
+                    }
+                )
+            );
+        }
+        
+        public function createRepository ( type : Class, responder : IResponder ) : void
+        {
+            return new Repository ( getTable ( type ), pool );
         }
         
         static public function get instance ( ) : Facade
@@ -69,7 +82,6 @@ package me.imcj.as3object
         
         public function getRepository ( type : Class ) : AsyncRepository
         {
-            // TODO 通过配置实例化对象
             var asyncRepository : AsyncRepository = AsyncRepository ( _asyncRepositories.get ( flash.utils.getQualifiedClassName ( type ) ) );
             if ( ! asyncRepository ) {
                 asyncRepository = new SQLiteAsyncRepository ( File.applicationStorageDirectory.resolvePath ( "db.sqlite3" ), type );
@@ -77,5 +89,17 @@ package me.imcj.as3object
             }
             return asyncRepository;
         }
+
+        public function get config():Config
+        {
+            return _config;
+        }
+
+        public function set config(value:Config):void
+        {
+            _config = value;
+            pool.config = value;
+        }
+
     }
 }
