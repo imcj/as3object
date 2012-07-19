@@ -7,13 +7,13 @@ package me.imcj.as3object.responder
     import mx.rpc.IResponder;
 
     
-    public class SelectResponder implements Responder
+    public class ResponderSelect implements Responder
     {
         
         protected var _responder : IResponder;
         protected var _table : Table;
         
-        public function SelectResponder ( table : Table, responder : IResponder )
+        public function ResponderSelect ( table : Table, responder : IResponder )
         {
             _table = table;
             _responder = responder;

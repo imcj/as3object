@@ -4,11 +4,14 @@ package me.imcj.as3object
     
     import flash.filesystem.File;
     import flash.utils.Dictionary;
+    import flash.utils.getDefinitionByName;
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.sqlite.SQLiteTable;
     
     import mx.rpc.IResponder;
+    
+    import org.as3commons.reflect.Type;
 
     public class Facade
     {
@@ -21,11 +24,13 @@ package me.imcj.as3object
         protected var _asyncRepositories : Dict = new Dict ( );
         
         protected var pool : ConnectionPool;
+        protected var tableFactory : TableFactory;
         
         public function Facade ( )
         {
             _types = new Dictionary ( );
             pool = new ConnectionPoolImpl ( Config.createInMemory ( ), new ConnectionFactoryImpl ( ) );
+            tableFactory = new TableFactory ( );
         }
         
         public function forClass ( type : Class ) : *
@@ -48,7 +53,7 @@ package me.imcj.as3object
                 new AS3ObjectResponder (
                     function ( connection : Connection ) : void
                     {
-                        responder.result ( new CriteriaImplement ( getTable ( type ), pool ) );
+                        responder.result ( new CriteriaImplement ( getTable ( type ), connection ) );
                     }
                 )
             );
@@ -56,7 +61,14 @@ package me.imcj.as3object
         
         public function createRepository ( type : Class, responder : IResponder ) : void
         {
-            return new Repository ( getTable ( type ), pool );
+            pool.getConnection (
+                new AS3ObjectResponder (
+                    function ( connection : Connection ) : void
+                    {
+                        responder.result ( new Repository ( getTable ( type ), connection ) );
+                    }
+                )
+            );
         }
         
         static public function get instance ( ) : Facade
@@ -70,11 +82,12 @@ package me.imcj.as3object
         public function getTable ( object : Object ) : Table
         {
             var qname : String = getQualifiedClassName ( object );
-            var table : SQLiteTable;
+            var table : Table;
             if ( _tableCache.has ( qname ) )
-                table = SQLiteTable ( _tableCache.get ( qname ) );
+                table = Table ( _tableCache.get ( qname ) );
             else {
-                table = new SQLiteTable ( object  );
+                
+                table = tableFactory.create ( object );
                 _tableCache.add ( qname, table );
             }
             return table;
@@ -99,6 +112,7 @@ package me.imcj.as3object
         {
             _config = value;
             pool.config = value;
+            tableFactory.config = value;
         }
 
     }

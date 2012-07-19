@@ -49,7 +49,7 @@ package flexUnitTests
         {
             var cat : Cat = new Cat ( );
             cat.name = "2B";
-            cat.age = 2;
+            cat.setAge ( 2 );
             
             var responder : AddResponder = new AddResponder ( );
             repository.add ( cat, Async.asyncResponder ( this, responder, 10 ) );

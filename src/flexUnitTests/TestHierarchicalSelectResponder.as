@@ -9,6 +9,7 @@ package flexUnitTests
     import me.imcj.as3object.sqlite.SQLiteTable;
     import me.imcj.as3object.sqlite.responder.HierarchicalSelectResponder;
     
+    import org.as3commons.reflect.Type;
     import org.flexunit.asserts.assertEquals;
 
     public class TestHierarchicalSelectResponder
@@ -18,7 +19,7 @@ package flexUnitTests
         [Before]
         public function setUp():void
         {
-            var table : SQLiteTable = new SQLiteHierarchicalTable ( Comment );
+            var table : SQLiteTable = new SQLiteHierarchicalTable ( Type.forClass ( Comment ) );
             responder = new HierarchicalSelectResponder ( table, new AS3ObjectResponder ( testResultCallback ) );
         }
         

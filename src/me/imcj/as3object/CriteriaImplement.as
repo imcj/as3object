@@ -4,7 +4,9 @@ package me.imcj.as3object
     import flash.events.IEventDispatcher;
     
     import me.imcj.as3object.expression.Expression;
-    import me.imcj.as3object.responder.SelectResponder;
+    import me.imcj.as3object.responder.ResponderHierarchical;
+    import me.imcj.as3object.responder.ResponderSelect;
+    import me.imcj.as3object.sqlite.responder.HierarchicalSelectResponder;
     
     import mx.rpc.IResponder;
     
@@ -37,9 +39,19 @@ package me.imcj.as3object
         
         public function list ( responder : IResponder ) : void
         {
-            var statement : Statement = _connection.createStatement ( _table.select ( Expression.and ( _expressions ), _orders ) );
-            var selectResponder : SelectResponder = new SelectResponder ( _table, responder );
-            statement.execute ( selectResponder );
+            var e : Expression = _expressions.length == 0 ? null : Expression.and ( _expressions );
+            var text : String = _table.select ( e, _orders );
+            var statement : Statement = _connection.createStatement ( text );
+            
+            var responderCriterial : Responder;
+            
+            if ( _table is Hierarchical ) {
+                responderCriterial = new ResponderHierarchical ( _table, responder );
+            } else {
+                responderCriterial = new ResponderSelect ( _table, responder );
+            }
+            
+            statement.execute ( responderCriterial );
         }
         
         public function setLimit ( min : int, max : int ) : Criteria

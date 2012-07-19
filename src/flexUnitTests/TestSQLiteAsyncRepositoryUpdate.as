@@ -48,7 +48,7 @@ package flexUnitTests
         {
             var cat : Cat = new Cat ( );
             cat.name = "2B";
-            cat.age = 2;
+            cat.setAge ( 2 );
             
             var responder : AddResponder = new AddResponder ( );
             repository.add ( cat, Async.asyncResponder ( this, responder, 10 ) );
@@ -60,7 +60,7 @@ package flexUnitTests
 		{
 			var cat : Cat = new Cat ( );
 			cat.name = "2B";
-			cat.age = 1;
+            cat.setAge ( 1 );
             cat.id = 1;
             
             repository.update (
@@ -70,7 +70,7 @@ package flexUnitTests
                     new AS3ObjectResponder (
                         function ( data : Object ) : void
                         {
-                            assertEquals ( 1, cat.age );
+                            assertEquals ( 1, cat.getAge ( ) );
                         }
                     ),
                     10

@@ -1,8 +1,11 @@
 package me.imcj.as3object.sqlite
 {
-    public class SQLiteHierarchicalTable extends SQLiteTable
+    import org.as3commons.reflect.Type;
+    import me.imcj.as3object.Hierarchical;
+
+    public class SQLiteHierarchicalTable extends SQLiteTable implements Hierarchical
     {
-        public function SQLiteHierarchicalTable ( type : Object = null )
+        public function SQLiteHierarchicalTable ( type : Type = null )
         {
             super ( type );
         }

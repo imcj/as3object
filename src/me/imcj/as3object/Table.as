@@ -21,13 +21,13 @@ package me.imcj.as3object
         
         protected var hierarchical : Boolean;
 		
-        public function Table ( type : Object = null )
+        public function Table ( type : Type )
         {
 			var fullName : Array;
 			var field    : AS3ObjectField;
 			
             _fields    = new Dict ( );
-			_type      = type is Class ? Type.forClass ( Class ( type ) ) : Type.forClass ( Class ( getDefinitionByName ( getQualifiedClassName ( type ) ) ) );
+			_type      = type
             _name      = getQualifiedClassName ( type );
             fullName   = _name.split ( "::" );
             _shortName = fullName[1];

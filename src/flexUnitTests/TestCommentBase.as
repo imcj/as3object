@@ -5,25 +5,24 @@ package flexUnitTests
     import me.imcj.as3object.Config;
     import me.imcj.as3object.Criteria;
     import me.imcj.as3object.Facade;
-    import me.imcj.as3object.Order;
     import me.imcj.as3object.Repository;
-    import me.imcj.as3object.expression.eq;
     import me.imcj.as3object.fixture.Cat;
+    import me.imcj.as3object.fixture.Comment;
     
-    import org.flexunit.asserts.assertEquals;
     import org.flexunit.async.Async;
-
-    public class TestCriterial
-    {
+    
+    public class TestCommentBase
+    {		
         public var criteria : Criteria;
         public var repository:AsyncRepository;
+        public var comment : Comment;
         
         [Before(async,order=1)]
         public function setUp():void
         {
             Facade.instance.config = Config.createInMemory ( );
             Facade.instance.createCriteria (
-                Cat,
+                Comment,
                 Async.asyncResponder (
                     this,
                     new AS3ObjectResponder (
@@ -41,7 +40,7 @@ package flexUnitTests
         public function setUp2 ( ) : void
         {
             Facade.instance.createRepository (
-                Cat,
+                Comment,
                 Async.asyncResponder (
                     this,
                     new AS3ObjectResponder (
@@ -59,7 +58,7 @@ package flexUnitTests
         public function setUp3 ( ) : void
         {
             repository.creationStatement (
-                Cat,
+                Comment,
                 Async.asyncResponder (
                     this,
                     new AS3ObjectResponder (
@@ -77,17 +76,17 @@ package flexUnitTests
         [Before(async,order=4)]
         public function setUp4 ( ) : void
         {
-            var cat : Cat = new Cat ( );
-            cat.name = "2B";
-            cat.setAge ( 2 );
+            comment = new Comment ( );
+            comment.message = "1";
+            
             repository.add (
-                cat,
+                comment,
                 Async.asyncResponder (
                     this,
                     new AS3ObjectResponder (
-                        function ( data : Cat ) : void
+                        function ( data : Comment ) : void
                         {
-                            trace ( data );
+                            trace ( "comment" );
                         }
                     ),
                     10
@@ -95,20 +94,28 @@ package flexUnitTests
             );
         }
         
-        [Test(async,order=5)]
-        public function testList ( ) : void
+        [Before(async,order=5)]
+        public function setUp5 ( ) : void
         {
-            criteria
-                .add ( eq ( "id", 1 ) )
-                .addOrder ( Order.asc ( "id" ) )
-                .list (
+            var comment2 : Comment = new Comment ( );
+            comment2.message = "2";
+            
+            comment.addChild ( comment2 );
+            
+            repository.add (
+                comment2,
+                Async.asyncResponder (
+                    this,
                     new AS3ObjectResponder (
-                        function ( data : Array ) : void
+                        function ( data : Comment ) : void
                         {
-                            assertEquals ( 1, data.length );
+                            trace ( "comment" );
                         }
-                    )
-                );
+                    ),
+                    10
+                )
+            );
         }
+        
     }
 }

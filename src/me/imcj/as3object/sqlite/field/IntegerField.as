@@ -24,7 +24,10 @@ package me.imcj.as3object.sqlite.field
         
         override public function assignValue(instance:Object, data:Object):void
         {
-            instance[name] = data[name];
+            if ( isMethod )
+                instance[setMethodName ( )] ( data[name] );
+            else
+                instance[name] = data[name];
         }
     }
 }

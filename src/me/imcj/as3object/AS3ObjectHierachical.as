@@ -65,6 +65,7 @@ package me.imcj.as3object
         
         public function addChild ( child : AS3ObjectHierachical ) : AS3ObjectHierachical
         {
+            child.parent = this;
             addChildAt ( this, child, _nodes.length );
             return child;
         }

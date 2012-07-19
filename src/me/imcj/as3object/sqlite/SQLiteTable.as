@@ -4,7 +4,6 @@ package me.imcj.as3object.sqlite
 	
 	import me.imcj.as3object.AS3ObjectField;
 	import me.imcj.as3object.Order;
-	import me.imcj.as3object.SQL;
 	import me.imcj.as3object.Table;
 	import me.imcj.as3object.core.ArrayIterator;
 	import me.imcj.as3object.core.Iterator;
@@ -14,10 +13,11 @@ package me.imcj.as3object.sqlite
 	import org.as3commons.reflect.Accessor;
 	import org.as3commons.reflect.Field;
 	import org.as3commons.reflect.Method;
+	import org.as3commons.reflect.Type;
     
 	public class SQLiteTable extends Table
 	{
-		public function SQLiteTable ( type : Object = null )
+		public function SQLiteTable ( type : Type = null )
 		{
 			super ( type );
             
@@ -216,12 +216,10 @@ package me.imcj.as3object.sqlite
             
             var iter : Iterator;
             var order : Order;
-            if ( orders ) {
+            if ( orders && orders.length > 0 ) {
                 select.writeUTFBytes ( " ORDER BY " );
                 
-                for ( iter = new ArrayIterator ( orders ); ; ) {
-                    order = Order ( iter.next ( ) );
-                    
+                for ( iter = new ArrayIterator ( orders ); order = Order ( iter.next ( ) ); ) {
                     select.writeUTFBytes ( order.propertyName );
                     select.writeUTFBytes ( " " );
                     select.writeUTFBytes ( order.sort );

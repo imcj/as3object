@@ -69,7 +69,6 @@ package me.imcj.as3object
             var methodName : String;
             if ( isMethod ) {
                 methodName = getMethodName ( );
-                trace ( instance [ methodName ] ( ) );
                 return instance [ methodName ] ( );
             } else
                 return instance [ name ];
