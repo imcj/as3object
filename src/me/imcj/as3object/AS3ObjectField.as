@@ -11,6 +11,7 @@ package me.imcj.as3object
         protected var _disableDefaultPrimary : Boolean = false;
         protected var _disableDefaultAutoIncrement : Boolean = false;
         
+        public var table : Table;
         public var isMethod : Boolean = false;
         
         public function AS3ObjectField ( name : String )
@@ -59,54 +60,32 @@ package me.imcj.as3object
             throw new Error ( "Not implement the method." );
         }
         
-        public function assignValue ( instance : Object, data : Object ) : void
+        public function setPOAOValue ( poao : Object, data : Object ) : void
         {
-            throw new Error ( "Not implement the method." );
+            if ( isMethod )
+                poao[setMethodName ( )] ( data[this.name] );
+            else
+                poao[_name] = data[this.name];
         }
         
-        public function getValue ( instance : Object ) : Object
+        public function getPOAOValue ( poao : Object ) : Object
         {
             var methodName : String;
             if ( isMethod ) {
                 methodName = getMethodName ( );
-                return instance [ methodName ] ( );
+                return poao [ methodName ] ( );
             } else
-                return instance [ name ];
+                return poao [ name ];
         }
         
         protected function setMethodName ( ) : String
         {
-            return "set" + name.substr ( 0, 1 ).toUpperCase ( ) + name.substring ( 1 );
+            return "set" + _name.substr ( 0, 1 ).toUpperCase ( ) + _name.substring ( 1 );
         }
         
         protected function getMethodName ( ) : String
         {
-            return "get" + name.substr ( 0, 1 ).toUpperCase ( ) + name.substring ( 1 );
-        }
-        
-        public function adapt ( instance : Object, queryResult : Object ) : void
-        {
-            throw new Error ( "Not implement the method." );
-        }
-        
-        public function buildCreateTableColumnDefine ( buffer : ByteArray ) : void
-        {
-            throw new Error ( "Not implement the method." );
-        }
-        
-        public function buildInsertColumn ( buffer : ByteArray ) : void
-        {
-            throw new Error ( "Not implement the method." );
-        }
-        
-        public function buildInsertValue ( buffer : ByteArray ) : void
-        {
-            throw new Error ( "Not implement the method." );
-        }
-        
-        public function buildUpdateAssign ( buffer : ByteArray ) : void
-        {
-            throw new Error ( "Not implement the method." );
+            return "get" + _name.substr ( 0, 1 ).toUpperCase ( ) + _name.substring ( 1 );
         }
     }
 }

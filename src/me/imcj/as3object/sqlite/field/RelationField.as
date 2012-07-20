@@ -12,12 +12,20 @@ package me.imcj.as3object.sqlite.field
             super(name);
         }
         
-        override public function assignValue(instance:Object, data:Object):void
+        override public function setPOAOValue(instance:Object, data:Object):void
         {
-//            instance[name] = data[name];
+            // TODO 重构
+            var len : int = name.length;
+            var relation_name : String = name.substring ( 0, len - 3 );
+            var relation : Object = data[this.name];
+            
+            if ( isMethod )
+                instance[setMethodName ( )] ( relation );
+            else
+                instance[_name] = relation;
         }
         
-        override public function getValue(instance:Object):Object
+        override public function getPOAOValue(instance:Object):Object
         {
             var len : int = name.length;
             var value : int;

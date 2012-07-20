@@ -2,6 +2,9 @@ package me.imcj.as3object.sqlite
 {
     import flash.utils.getDefinitionByName;
     
+    import me.imcj.as3object.AS3ObjectField;
+    import me.imcj.as3object.FieldFactory;
+    import me.imcj.as3object.Table;
     import me.imcj.as3object.sqlite.field.ArrayCollectionField;
     import me.imcj.as3object.sqlite.field.IntegerField;
     import me.imcj.as3object.sqlite.field.RealField;
@@ -17,10 +20,8 @@ package me.imcj.as3object.sqlite
     import org.as3commons.reflect.Method;
     import org.as3commons.reflect.Type;
 
-    public class FieldFactory
+    public class FieldFactorySQLite implements FieldFactory
     {
-        static protected var _instance : FieldFactory;
-        
         protected var mapping : Object = {
             "String"  : "Text",
             "int"     : "Integer",
@@ -31,16 +32,19 @@ package me.imcj.as3object.sqlite
             "mx.collections::ArrayCollection" : "ArrayCollection"
         };
         
-        public function FieldFactory()
+        protected var _table:Table;
+        
+        public function FieldFactorySQLite ( table : Table )
         {
+            _table = table;
         }
         
-        public function createByMethod ( method : Method ) : SQLiteField
+        public function createByMethod ( method : Method ) : AS3ObjectField
         {
             var metadata : Metadata;
             var argument : MetadataArgument;
             var name     : String;
-            var field    : SQLiteField;
+            var field    : AS3ObjectField;
             
             // TODO 成对出现 get and set
             if ( method.hasMetadata ( "Field" ) )
@@ -58,12 +62,12 @@ package me.imcj.as3object.sqlite
         }
         
         
-        public function createByField ( field : Field ) : SQLiteField
+        public function createByField ( field : Field ) : AS3ObjectField
         {
             return _create ( field.name, field.type, MetadataContainer ( field ) );
         }
         
-        protected function _create ( name : String, type : Type, metaContainer : MetadataContainer ) : SQLiteField
+        protected function _create ( name : String, type : Type, metaContainer : MetadataContainer ) : AS3ObjectField
         {
             TextField;
             RealField;
@@ -72,7 +76,7 @@ package me.imcj.as3object.sqlite
             
             var qname      : String;
             var fieldClass : Class
-            var instance   : SQLiteField;
+            var instance   : AS3ObjectField;
             var type2 : String;
             
             if ( "prototype" == name )
@@ -92,6 +96,7 @@ package me.imcj.as3object.sqlite
                     relationClass = getDefinitionByName ( type.fullName ) as Class;
                     field = new RelationField ( name );
                     field.relationClass = relationClass;
+                    field.table = _table;
                     
                     return field;
                 } catch ( error : ReferenceError ) {
@@ -111,10 +116,11 @@ package me.imcj.as3object.sqlite
                     break;
             }
             
+            instance.table = _table;
             return instance;
         }
         
-        public function create ( any : Object ) : SQLiteField
+        public function create ( any : Object ) : AS3ObjectField
         {
             if ( any is Method )
                 return createByMethod ( Method ( any ) );
@@ -122,14 +128,6 @@ package me.imcj.as3object.sqlite
                 return createByField ( Field ( any ) );
             else
                 return null;
-        }
-        
-        static public function get instance ( ) : FieldFactory
-        {
-            if ( ! _instance )
-                _instance = new FieldFactory ( );
-            
-            return _instance;
         }
     }
 }

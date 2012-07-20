@@ -17,12 +17,7 @@ package me.imcj.as3object.sqlite.field
             return "Integer";
         }
         
-        override public function adapt ( instance : Object, queryResult : Object ) : void
-        {
-            instance[name] = int ( queryResult[name] );
-        }
-        
-        override public function assignValue(instance:Object, data:Object):void
+        override public function setPOAOValue(instance:Object, data:Object):void
         {
             if ( isMethod )
                 instance[setMethodName ( )] ( data[name] );

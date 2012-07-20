@@ -28,7 +28,7 @@ package me.imcj.as3object
 			
             _fields    = new Dict ( );
 			_type      = type
-            _name      = getQualifiedClassName ( type );
+            _name      = _type.fullName;
             fullName   = _name.split ( "::" );
             _shortName = fullName[1];
             _package   = fullName[0];

@@ -10,6 +10,7 @@ package flexUnitTests
 	import me.imcj.as3object.fixture.Cat;
 	import me.imcj.as3object.sqlite.SQLiteTable;
 	
+	import org.as3commons.reflect.Type;
 	import org.flexunit.asserts.assertEquals;
 
 	public class TestSQLite
@@ -20,7 +21,7 @@ package flexUnitTests
 		[Before]
 		public function setUp():void
 		{
-			table = new SQLiteTable ( Cat );
+			table = new SQLiteTable ( Type.forClass ( Cat ) );
 			
 			cat = new Cat ( );
 			cat.name = "2B";
@@ -45,7 +46,7 @@ package flexUnitTests
 		{
 			var sql : String = table.insert ( cat );
             trace ( sql );
-            Assert.assertTrue ( 0 < sql.length );
+            Assert.assertTrue ( "INSERT INTO Cat ( id, name, age ) VALUES  ( NULL, '2B', 2 );", sql );
 		}
 		
 		[Test]

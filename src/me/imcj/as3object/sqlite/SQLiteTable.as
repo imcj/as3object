@@ -3,7 +3,9 @@ package me.imcj.as3object.sqlite
 	import flash.utils.ByteArray;
 	
 	import me.imcj.as3object.AS3ObjectField;
+	import me.imcj.as3object.FieldFactory;
 	import me.imcj.as3object.Order;
+	import me.imcj.as3object.SQLField;
 	import me.imcj.as3object.Table;
 	import me.imcj.as3object.core.ArrayIterator;
 	import me.imcj.as3object.core.Iterator;
@@ -17,10 +19,12 @@ package me.imcj.as3object.sqlite
     
 	public class SQLiteTable extends Table
 	{
+        protected var factory : FieldFactory;
+        
 		public function SQLiteTable ( type : Type = null )
 		{
 			super ( type );
-            
+            factory = new FieldFactorySQLite ( this );
             buildFields ( );
 		}
         
@@ -29,7 +33,6 @@ package me.imcj.as3object.sqlite
             var field : org.as3commons.reflect.Field;
             var sqliteField : me.imcj.as3object.AS3ObjectField;
             var method : Method;
-            var factory : FieldFactory = FieldFactory.instance;
             
             for each ( field in _type.fields ) {
                 if ( filterField ( field ) ) {
@@ -73,7 +76,7 @@ package me.imcj.as3object.sqlite
         {
             // TODO 表字段类型和数据类型的映射
             // TODO 查阅所有的SQLite的数据类型作映射
-            var field : AS3ObjectField;
+            var field : SQLField;
             var i : int = 0, size : int = fields.length;
             var keys : Array = fields.keys;
             var statement : ByteArray = new ByteArray ( );
@@ -83,7 +86,7 @@ package me.imcj.as3object.sqlite
             statement.writeUTFBytes ( shortName );
             statement.writeUTFBytes ( " ( " );
             for ( ; i < size; i++ ) {
-                field = AS3ObjectField ( fields.get ( keys[i] ) );
+                field = SQLField ( fields.get ( keys[i] ) );
                 field.buildCreateTableColumnDefine ( statement );
                 
                 if ( size - 1 > i )
@@ -100,13 +103,10 @@ package me.imcj.as3object.sqlite
         override public function insert ( object : Object ) : String
         {
             var buffer    : ByteArray = new ByteArray ( );
-            var object : Object;
-            var keys   : Iterator;
-            var key    : String;
-            var size   : int;
-            var values : Array;
-            var objects : Iterator;
-            var field   : AS3ObjectField;
+            var keys      : Iterator;
+            var key       : String;
+            var objects   : Iterator;
+            var field     : SQLField;
             
             if ( object is Array )
                 objects = new ArrayIterator ( object as Array );
@@ -116,7 +116,17 @@ package me.imcj.as3object.sqlite
             buffer.writeUTFBytes ( "INSERT INTO " );
             buffer.writeUTFBytes ( shortName );
             buffer.writeUTFBytes ( " ( " );
-            buffer.writeUTFBytes ( fields.keys.join ( ", " ) );
+            
+            for ( keys = new ArrayIterator ( fields.keys ); keys.hasNext;  ) {
+                key = String ( keys.next ( ) );
+                field = SQLField ( fields.get ( key ) );
+                
+                field.buildInsertColumn ( buffer );
+                
+                if ( keys.hasNext )
+                    buffer.writeUTFBytes ( ", " );
+            }
+            
             buffer.writeUTFBytes ( " ) " );
             
             buffer.writeUTFBytes ( "VALUES " );
@@ -125,21 +135,10 @@ package me.imcj.as3object.sqlite
                 object = objects.next ( );
                 buffer.writeUTFBytes ( " ( " );
                 keys = new ArrayIterator ( fields.keys );
-                values = new Array ( );
                 while ( keys.hasNext ) {
                     key = String ( keys.next ( ) );
-                    field = AS3ObjectField (  fields.get ( key ) );
-                    
-                    if ( field is TextField )
-                        buffer.writeUTFBytes ( "'" + field.getValue ( object ) + "'" );
-                    else if ( field.primaryKey && field.name == "id" )
-                        buffer.writeUTFBytes ( "NULL" );
-                    else {
-                        try {
-                            buffer.writeUTFBytes ( String ( field.getValue ( object ) ) );
-                        } catch ( error : TypeError ) {
-                        }
-                    }
+                    field = SQLField (  fields.get ( key ) );
+                    field.buildInsertValue ( buffer, object );
                     
                     if ( keys.hasNext )
                         buffer.writeUTFBytes ( ", " );
