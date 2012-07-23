@@ -1,9 +1,7 @@
 as3object
 ===
 
-1. 提供一组操作数据库的API
-2. 可以导出数据到XML
-
+as3object提供一组API提供对POAO ( Plain Old ActionScript Objects )的持久化操作。  
 
 ## 使用
 ```
@@ -12,11 +10,15 @@ class Animal
     public var name : String;
     public var age  : int;
 }
-
-class Cat extends Animal { }
+```
 
 ### 领域模型
-```
+=======
+class Cat extends Animal
+{
+}
+
+>>>>>>> 18f02186be10fa7c2e420a6e5babc86e9822081e
 var mycat : Cat = new Cat ( );
 mycat.name = "2B";
 mycat.age = 2;
