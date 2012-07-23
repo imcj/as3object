@@ -24,8 +24,6 @@ package me.imcj.as3object
         
         override public function execute ( responder : me.imcj.as3object.Responder ) : void
         {
-            // TODO Error catch
-            trace ( _text );
             _statement.execute (
                 -1,
                 new flash.net.Responder (
@@ -39,7 +37,11 @@ package me.imcj.as3object
                     },
                     function ( error : SQLError ) : void
                     {
-                        trace ( error.message );
+                        var as3objectError : AS3ObjectError = new AS3ObjectError ( error.details, error.detailID );
+                        if ( responder.fault != null )
+                            responder.fault ( as3objectError );
+                        else
+                            throw as3objectError;
                     }
                 )
             );

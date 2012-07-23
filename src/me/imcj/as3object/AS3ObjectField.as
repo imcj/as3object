@@ -87,5 +87,10 @@ package me.imcj.as3object
         {
             return "get" + _name.substr ( 0, 1 ).toUpperCase ( ) + _name.substring ( 1 );
         }
+        
+        public function get poaoName ( ) : String
+        {
+            return _name;
+        }
     }
 }

@@ -6,6 +6,7 @@ package me.imcj.as3object.sqlite
     import me.imcj.as3object.FieldFactory;
     import me.imcj.as3object.Table;
     import me.imcj.as3object.sqlite.field.ArrayCollectionField;
+    import me.imcj.as3object.sqlite.field.DateTimeField;
     import me.imcj.as3object.sqlite.field.IntegerField;
     import me.imcj.as3object.sqlite.field.RealField;
     import me.imcj.as3object.sqlite.field.RelationField;
@@ -73,6 +74,7 @@ package me.imcj.as3object.sqlite
             RealField;
             IntegerField;
             ArrayCollectionField;
+            DateTimeField;
             
             var qname      : String;
             var fieldClass : Class

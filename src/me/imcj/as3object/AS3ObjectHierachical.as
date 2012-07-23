@@ -16,7 +16,6 @@ package me.imcj.as3object
         
         private var _parent : AS3ObjectHierachical;
         private var _nodes : ArrayCollection = new ArrayCollection ();
-        private var _objects : ArrayCollection = new ArrayCollection ();
         
         public function AS3ObjectHierachical()
         {

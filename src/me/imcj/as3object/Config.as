@@ -34,6 +34,11 @@ package me.imcj.as3object
             return create ( database_engine, database_name, null, null, null, null );
         }
         
+        static public function createSQLite ( database_name : String ) : Config
+        {
+            return create2 ( "sqlite", database_name );
+        }
+        
         static public function createInMemory ( ) : Config
         {
             var config : Config = create2 ( "sqlite", null );

@@ -33,31 +33,19 @@ package me.imcj.as3object.responder
             var instance : Object;
             var key : String;
             var children : Object;
-            var top : Object;
+            var top : AS3ObjectHierachical;
             var parent : Object;
             var result : Object;
             
             for ( var i : int = 0, size : int = data.length; i < size; i++ ) {
                 result = data[i];
                 instance = create ( result );
-                if (  instance.hasOwnProperty ( "id" )  )
-                    key = "id";
-                else if ( instance.hasOwnProperty ( "uuid" ) )
-                    key = "uuid";
-                
-                
-                // TODO parent 替换成关系字段来判断
-                if ( data[i]['parent'] ) {
-                    if ( ! instance is ITreeDataDescriptor || ! instance is IMenuDataDescriptor )
-                        continue;
-                    
-                    // FIXME 不能乱顺序
-                    parent = tree[data[i]['parent']];
-                    parent.addChildAt ( parent, instance, 0 );
-                    
-                } else
-                    top = instance;
-                tree[instance.id] = instance;
+                if ( 0 == i )
+                    top = AS3ObjectHierachical ( instance );
+//                if (  instance.hasOwnProperty ( "id" )  )
+//                    key = "id";
+//                else if ( instance.hasOwnProperty ( "uuid" ) )
+//                    key = "uuid";
             }
             
             return top;
@@ -79,13 +67,14 @@ package me.imcj.as3object.responder
                     if ( ! relation.relationClass is AS3ObjectHierachical )
                         continue;
                     
-                    if ( result.hasOwnProperty ( field.name ) && result[field.name] > 0 ) {
-                        result['parent'] = tree[result[field.name]];
-                    } else
-                        result['parent'] = null;
+                    var value : String = String ( result[field.name] );
+                    if ( result.hasOwnProperty ( field.name ) && tree.hasOwnProperty ( value ) )
+                        AS3ObjectHierachical ( tree[value] ).addChild ( AS3ObjectHierachical ( instance ) );
                 }
                 field.setPOAOValue ( instance, result );
             }
+            tree[instance.id] = instance;
+            
             return instance;
         }
         

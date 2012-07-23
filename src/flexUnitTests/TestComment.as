@@ -2,6 +2,8 @@ package flexUnitTests
 {
     import me.imcj.as3object.AS3ObjectResponder;
     import me.imcj.as3object.fixture.Comment;
+    
+    import org.flexunit.asserts.assertEquals;
 
     public class TestComment extends TestCommentBase
     {
@@ -10,11 +12,17 @@ package flexUnitTests
         {
             criteria.list (
                 new AS3ObjectResponder (
-                    function ( data : Comment ) : void
+                    function ( comment : Comment ) : void
                     {
-                        trace ( data );
+                        assertEquals ( 1, comment.id );
+                        assertEquals ( 1, Comment ( comment.children[0] ).parent.id );
                     }
                 ) );
+        }
+        
+        [Test(async)]
+        public function testAddComment ( ) : void
+        {
         }
     }
 }

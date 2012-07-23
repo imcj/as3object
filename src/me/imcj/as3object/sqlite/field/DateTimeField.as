@@ -12,11 +12,16 @@ package me.imcj.as3object.sqlite.field
             super ( name );
         }
         
-        override public function fill ( instance : Object, data : Object ) : void
+        override public function setPOAOValue ( instance : Object, data : Object ) : void
         {
             var format : DateFormatter = new DateFormatter ( );
             format.formatString = "YY-MM-DD H:i";
             instance[name] = format.format ( data[name] );
+        }
+        
+        override public function get type():String
+        {
+            return "DateTime";
         }
     }
 }

@@ -14,10 +14,11 @@ package me.imcj.as3object.sqlite.field
         
         override public function setPOAOValue(instance:Object, data:Object):void
         {
-            // TODO 重构
+            return;
+            
             var len : int = name.length;
             var relation_name : String = name.substring ( 0, len - 3 );
-            var relation : Object = data[this.name];
+            var relation : Object = data[this.poaoName];
             
             if ( isMethod )
                 instance[setMethodName ( )] ( relation );
