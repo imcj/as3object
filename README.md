@@ -1,10 +1,11 @@
 as3object
 ===
 
-as3object是一个提供一组操作对象的API，特性包括：ORM和AOP。
+1. 提供一组操作数据库的API
+2. 可以导出数据到XML
 
 
-## How to use
+## 使用
 ```
 class Animal
 {
@@ -12,34 +13,7 @@ class Animal
     public var age  : int;
 }
 
-class Cat extends Animal
-{
-}
-```
-### 传说中不贫血的模型
-```
-var mycat : Cat = new Cat ( );
-mycat.name = "2B";
-mycat.age = 2;
-mycat.save ( );
-
-Cat.findOne ( eq ( "name", "2B" ) )
-<Cat "2B">
-
-Cat.findOne ( eq ( mycat ) )
-<Cat "2B">
-
-Cat.find ( )
-[ <Cat "2B">, <Cat "Xiao Hua"> ]
-
-Cat.find ( ge ( "age", 1 ) )
-[ <Cat "2B"> ]
-
-Cat.find ( and ( ge ( "age", 1 ), eq ( "name" , "2B" ) ) )
-[ <Cat "2B"> ]
-
-Cat.find ( ).limit ( 0, 100 ).order ( "name", Order.ASC )
-```
+class Cat extends Animal { }
 
 ### 领域模型
 ```
@@ -73,6 +47,6 @@ class CustomExpress extends Express
 }
 
 Repository.find ( new CustomExpress ( ) )
-[ <Cat "2B"> ]
+[ <Cat "2B"> ]0
 
 ```
