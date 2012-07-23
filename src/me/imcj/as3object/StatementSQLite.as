@@ -19,11 +19,12 @@ package me.imcj.as3object
         override public function set text(value:String):void
         {
             _statement.text = value;
-            super.text = value;
+            _text = value;
         }
         
         override public function execute ( responder : me.imcj.as3object.Responder ) : void
         {
+            trace ( text );
             _statement.execute (
                 -1,
                 new flash.net.Responder (

@@ -4,6 +4,7 @@ package me.imcj.as3object.sqlite.responder
     import flash.errors.SQLError;
     import flash.net.Responder;
     
+    import me.imcj.as3object.AS3ObjectField;
     import me.imcj.as3object.Facade;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
@@ -44,7 +45,7 @@ package me.imcj.as3object.sqlite.responder
             var instance : Object = new _table.type.clazz ();
             
             for ( field in object )
-                _table.fields.get ( field ).assignValue ( instance, object );
+                AS3ObjectField ( _table.fields.get ( field ) ).setPOAOValue ( instance, object );
             
             return instance;
         }

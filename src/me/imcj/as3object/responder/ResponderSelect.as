@@ -1,5 +1,6 @@
 package me.imcj.as3object.responder
 {
+    import me.imcj.as3object.AS3ObjectField;
     import me.imcj.as3object.Responder;
     import me.imcj.as3object.Result;
     import me.imcj.as3object.Table;
@@ -37,7 +38,7 @@ package me.imcj.as3object.responder
             var instance : Object = new _table.type.clazz ();
             
             for ( field in object )
-                _table.fields.get ( field ).assignValue ( instance, object );
+                AS3ObjectField ( _table.fields.get ( field ) ).setPOAOValue ( instance, object );
             
             return instance;
         }
@@ -48,7 +49,7 @@ package me.imcj.as3object.responder
                 try {
                     _responder.fault ( info );
                 } catch ( error : Error ) {
-                    _responder.result ( null );
+                    _responder.fault ( null );
                 }
             } else
                 _responder.result ( null );
