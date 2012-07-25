@@ -13,6 +13,8 @@ package me.imcj.as3object
 		function update ( object : Object, responder : IResponder ) : void;
 		function remove ( object : Object ) : void;
 		function find ( expression : Expression, responder : IResponder ) : void;
+        // TODO Add this method
+//        function findOne ( expression : Expression, responder : IResponder ) : void;
         function findAll ( responder : IResponder ) : void;
 		
 		function creationStatement ( object : Object, responder : IResponder, ifNotExists : Boolean = false ) : void;

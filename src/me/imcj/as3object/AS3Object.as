@@ -1,9 +1,10 @@
 package me.imcj.as3object
 {
-    public class AS3Object
+    import flash.events.EventDispatcher;
+
+    [Event(name="complete", type="flash.events.Event")]
+    public class AS3Object extends EventDispatcher
     {
-        static public var objects : Manager = new Manager ( );
-        
         public function AS3Object()
         {
         }

@@ -17,6 +17,7 @@ package me.imcj.as3object.fixture
 			return "<" + getQualifiedClassName ( this ).split ( "::" )[1] + ": " + name + ">";
 		}
         
+        [Field]
         public function getAge ( ) : int
         {
             return _age;

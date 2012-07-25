@@ -4,23 +4,33 @@ package me.imcj.as3object
     
     import flash.filesystem.File;
     import flash.utils.Dictionary;
+    import flash.utils.getDefinitionByName;
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.sqlite.SQLiteTable;
+    
+    import mx.rpc.IResponder;
+    
+    import org.as3commons.reflect.Type;
 
     public class Facade
     {
         static protected var _instance : Facade;
         
+        protected var _config : Config;
+        
         protected var _types : Dictionary;
-        protected var metadataProcessor : MetadataProcessor;
         protected var _tableCache : Dict = new Dict ( );
         protected var _asyncRepositories : Dict = new Dict ( );
+        
+        protected var pool : ConnectionPool;
+        protected var tableFactory : TableFactory;
         
         public function Facade ( )
         {
             _types = new Dictionary ( );
-            metadataProcessor = new MetadataProcessor ( );
+            pool = new ConnectionPoolImpl ( Config.createInMemory ( ), new ConnectionFactoryImpl ( ) );
+            tableFactory = new TableFactory ( );
         }
         
         public function forClass ( type : Class ) : *
@@ -37,6 +47,30 @@ package me.imcj.as3object
             return new ( _types [ name ] );
         }
         
+        public function createCriteria ( type : Class, responder : IResponder ) : void
+        {
+            pool.getConnection (
+                new AS3ObjectResponder (
+                    function ( connection : Connection ) : void
+                    {
+                        responder.result ( new CriteriaImplement ( getTable ( type ), connection ) );
+                    }
+                )
+            );
+        }
+        
+        public function createRepository ( type : Class, responder : IResponder ) : void
+        {
+            pool.getConnection (
+                new AS3ObjectResponder (
+                    function ( connection : Connection ) : void
+                    {
+                        responder.result ( new Repository ( getTable ( type ), connection ) );
+                    }
+                )
+            );
+        }
+        
         static public function get instance ( ) : Facade
         {
             if ( ! _instance )
@@ -48,11 +82,12 @@ package me.imcj.as3object
         public function getTable ( object : Object ) : Table
         {
             var qname : String = getQualifiedClassName ( object );
-            var table : SQLiteTable;
+            var table : Table;
             if ( _tableCache.has ( qname ) )
-                table = SQLiteTable ( _tableCache.get ( qname ) );
+                table = Table ( _tableCache.get ( qname ) );
             else {
-                table = new SQLiteTable ( object  );
+                
+                table = tableFactory.create ( object );
                 _tableCache.add ( qname, table );
             }
             return table;
@@ -60,7 +95,6 @@ package me.imcj.as3object
         
         public function getRepository ( type : Class ) : AsyncRepository
         {
-            // TODO 通过配置实例化对象
             var asyncRepository : AsyncRepository = AsyncRepository ( _asyncRepositories.get ( flash.utils.getQualifiedClassName ( type ) ) );
             if ( ! asyncRepository ) {
                 asyncRepository = new SQLiteAsyncRepository ( File.applicationStorageDirectory.resolvePath ( "db.sqlite3" ), type );
@@ -68,5 +102,18 @@ package me.imcj.as3object
             }
             return asyncRepository;
         }
+
+        public function get config():Config
+        {
+            return _config;
+        }
+
+        public function set config(value:Config):void
+        {
+            _config = value;
+            pool.config = value;
+            tableFactory.config = value;
+        }
+
     }
 }

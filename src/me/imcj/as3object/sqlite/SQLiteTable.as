@@ -2,41 +2,62 @@ package me.imcj.as3object.sqlite
 {
 	import flash.utils.ByteArray;
 	
-	import me.imcj.as3object.SQL;
+	import me.imcj.as3object.AS3ObjectField;
+	import me.imcj.as3object.FieldFactory;
+	import me.imcj.as3object.Order;
+	import me.imcj.as3object.SQLField;
 	import me.imcj.as3object.Table;
 	import me.imcj.as3object.core.ArrayIterator;
 	import me.imcj.as3object.core.Iterator;
 	import me.imcj.as3object.expression.Expression;
-	import me.imcj.as3object.field.Field;
 	import me.imcj.as3object.sqlite.field.TextField;
 	
 	import org.as3commons.reflect.Accessor;
 	import org.as3commons.reflect.Field;
+	import org.as3commons.reflect.Method;
+	import org.as3commons.reflect.Type;
     
-	public class SQLiteTable extends Table implements SQL
+	public class SQLiteTable extends Table
 	{
-		public function SQLiteTable ( type : Object = null )
+        protected var factory : FieldFactory;
+        
+		public function SQLiteTable ( type : Type = null )
 		{
 			super ( type );
-            
+            factory = new FieldFactorySQLite ( this );
             buildFields ( );
 		}
         
         protected function buildFields ( ) : void
         {
             var field : org.as3commons.reflect.Field;
-            var sqliteField : me.imcj.as3object.field.Field;
+            var sqliteField : me.imcj.as3object.AS3ObjectField;
+            var method : Method;
             
             for each ( field in _type.fields ) {
-                if ( field ) {
-                    sqliteField = SQLiteField.create ( field );
+                if ( filterField ( field ) ) {
+                    sqliteField = factory.createByField ( field );
                     if ( sqliteField )
-                        _fields.add ( sqliteField );
+                        _fields.add ( sqliteField.name, sqliteField );
                 }
+            }
+            
+            for each ( method in _type.methods ) {
+                if ( method.hasMetadata ( "Field" ) )
+                    if ( _type.getMethod ( getSetMethodName ( method.name ) ) )
+                        if ( ( sqliteField = factory.createByMethod ( method ) ) )
+                            _fields.add ( sqliteField.name, sqliteField );
             }
         }
         
-        protected function filterFields ( field : org.as3commons.reflect.Field ) : org.as3commons.reflect.Field
+        protected function getSetMethodName ( name : String ) : String
+        {
+            if ( "get" == name.substr ( 0, 3 ) )
+                return "set" + name.substr ( 3 );
+            return null;
+        }
+        
+        protected function filterField ( field : org.as3commons.reflect.Field ) : org.as3commons.reflect.Field
         {
             var accessor : Accessor;
             if ( field is Accessor ) {
@@ -51,11 +72,11 @@ package me.imcj.as3object.sqlite
             return field;
         }
         
-        public function creationStatement ( ifNotExists : Boolean = false ) : String
+        override public function creationStatement ( ifNotExists : Boolean = false ) : String
         {
             // TODO 表字段类型和数据类型的映射
             // TODO 查阅所有的SQLite的数据类型作映射
-            var field : Field;
+            var field : SQLField;
             var i : int = 0, size : int = fields.length;
             var keys : Array = fields.keys;
             var statement : ByteArray = new ByteArray ( );
@@ -65,18 +86,8 @@ package me.imcj.as3object.sqlite
             statement.writeUTFBytes ( shortName );
             statement.writeUTFBytes ( " ( " );
             for ( ; i < size; i++ ) {
-                field = Field ( fields.get ( keys[i] ) );
-                statement.writeUTFBytes ( field.name );
-                statement.writeUTFBytes ( " " );
-                statement.writeUTFBytes ( field.type );
-                if ( field.primaryKey ) {
-                    statement.writeUTFBytes ( " " );
-                    statement.writeUTFBytes ( "PRIMARY KEY" );
-                    statement.writeUTFBytes ( " " );
-                    statement.writeUTFBytes ( field.order );
-                    if ( field.autoIncrement )
-                        statement.writeUTFBytes ( " AUTOINCREMENT" );
-                }
+                field = SQLField ( fields.get ( keys[i] ) );
+                field.buildCreateTableColumnDefine ( statement );
                 
                 if ( size - 1 > i )
                     statement.writeUTFBytes ( ", " );
@@ -89,16 +100,13 @@ package me.imcj.as3object.sqlite
             return statementSQL;
         }
         
-        public function insert ( object : Object ) : String
+        override public function insert ( object : Object ) : String
         {
             var buffer    : ByteArray = new ByteArray ( );
-            var object : Object;
-            var keys   : Iterator;
-            var key    : String;
-            var size   : int;
-            var values : Array;
-            var objects : Iterator;
-            var field   : Field;
+            var keys      : Iterator;
+            var key       : String;
+            var objects   : Iterator;
+            var field     : SQLField;
             
             if ( object is Array )
                 objects = new ArrayIterator ( object as Array );
@@ -108,7 +116,17 @@ package me.imcj.as3object.sqlite
             buffer.writeUTFBytes ( "INSERT INTO " );
             buffer.writeUTFBytes ( shortName );
             buffer.writeUTFBytes ( " ( " );
-            buffer.writeUTFBytes ( fields.keys.join ( ", " ) );
+            
+            for ( keys = new ArrayIterator ( fields.keys ); keys.hasNext;  ) {
+                key = String ( keys.next ( ) );
+                field = SQLField ( fields.get ( key ) );
+                
+                field.buildInsertColumn ( buffer );
+                
+                if ( keys.hasNext )
+                    buffer.writeUTFBytes ( ", " );
+            }
+            
             buffer.writeUTFBytes ( " ) " );
             
             buffer.writeUTFBytes ( "VALUES " );
@@ -117,20 +135,10 @@ package me.imcj.as3object.sqlite
                 object = objects.next ( );
                 buffer.writeUTFBytes ( " ( " );
                 keys = new ArrayIterator ( fields.keys );
-                values = new Array ( );
                 while ( keys.hasNext ) {
                     key = String ( keys.next ( ) );
-                    field = Field (  fields.get ( key ) );
-                    
-                    //					if ( field.primaryKey && field.name == "id" )
-                    //						continue;
-                    
-                    if ( fields.get ( key ) is TextField )
-                        buffer.writeUTFBytes ( "'" + object[key] + "'" );
-                    else if ( field.primaryKey && field.name == "id" )
-                        buffer.writeUTFBytes ( "NULL" );
-                    else
-                        buffer.writeUTFBytes (  object[key] );
+                    field = SQLField (  fields.get ( key ) );
+                    field.buildInsertValue ( buffer, object );
                     
                     if ( keys.hasNext )
                         buffer.writeUTFBytes ( ", " );
@@ -147,7 +155,7 @@ package me.imcj.as3object.sqlite
             return buffer.readUTFBytes ( buffer.length );
         }
         
-        public function remove ( object : Object, expression : Expression ) : String
+        override public function remove ( object : Object, expression : Expression ) : String
         {
             var buffer : ByteArray = new ByteArray ( );
             buffer.writeUTFBytes ( "DELETE FROM " );
@@ -162,7 +170,7 @@ package me.imcj.as3object.sqlite
             return null;
         }
         
-        public function update ( object : Object, expression : Expression ) : String
+        override public function update ( object : Object, expression : Expression ) : String
         {
             var buffer : ByteArray = new ByteArray ( );
             buffer.writeUTFBytes ( "UPDATE " );
@@ -194,7 +202,7 @@ package me.imcj.as3object.sqlite
             return buffer.readUTFBytes ( buffer.length );
         }
         
-        public function select ( expression : Expression ) : String
+        override public function select ( expression : Expression, orders : Array = null ) : String
         {
             var select : ByteArray = new ByteArray ( );
             select.writeUTFBytes ( "SELECT * FROM " );
@@ -203,6 +211,23 @@ package me.imcj.as3object.sqlite
             if ( expression ) {
                 select.writeUTFBytes ( " WHERE " );
                 dumpExpressionSQLCondition ( select, expression );
+            }
+            
+            var iter : Iterator;
+            var order : Order;
+            if ( orders && orders.length > 0 ) {
+                select.writeUTFBytes ( " ORDER BY " );
+                
+                for ( iter = new ArrayIterator ( orders ); order = Order ( iter.next ( ) ); ) {
+                    select.writeUTFBytes ( order.propertyName );
+                    select.writeUTFBytes ( " " );
+                    select.writeUTFBytes ( order.sort );
+                    
+                    if ( iter.hasNext )
+                        select.writeUTFBytes ( ", " );
+                    else
+                        break;
+                }
             }
             
             select.position = 0;

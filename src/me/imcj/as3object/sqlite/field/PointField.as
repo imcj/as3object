@@ -1,8 +1,8 @@
 package me.imcj.as3object.sqlite.field
 {
-	import me.imcj.as3object.field.Field;
+	import me.imcj.as3object.AS3ObjectField;
 
-    public class PointField extends Field
+    public class PointField extends AS3ObjectField
     {
         public function PointField ( name : String )
         {

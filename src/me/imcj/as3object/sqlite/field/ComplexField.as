@@ -1,8 +1,8 @@
 package me.imcj.as3object.sqlite.field
 {
-    import me.imcj.as3object.field.Field;
+    import me.imcj.as3object.AS3ObjectField;
 
-    public class ComplexField extends Field
+    public class ComplexField extends AS3ObjectField
     {
         protected var _fields : Array;
         

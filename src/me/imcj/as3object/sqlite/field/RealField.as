@@ -1,6 +1,5 @@
 package me.imcj.as3object.sqlite.field
 {
-	import me.imcj.as3object.field.Field;
 	import me.imcj.as3object.sqlite.SQLiteField;
 
     public class RealField extends SQLiteField
@@ -15,7 +14,7 @@ package me.imcj.as3object.sqlite.field
             return "REAL";
         }
         
-        override public function assignValue ( instance : Object, data : Object ) : void
+        override public function setPOAOValue ( instance : Object, data : Object ) : void
         {
             instance[name] = new Number ( data[name] );
         }
