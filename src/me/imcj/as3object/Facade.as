@@ -33,6 +33,12 @@ package me.imcj.as3object
             tableFactory = new TableFactory ( );
         }
         
+        public function create ( type : Class, attributes : Object = null ) : Object
+        {
+            var table : Table = getTable ( type );
+            return table.create ( attributes );
+        }
+        
         public function forClass ( type : Class ) : *
         {
             var name : String = getQualifiedClassName ( type );

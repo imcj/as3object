@@ -23,8 +23,10 @@ package me.imcj.as3object
         
         public function getConnection ( responder : IResponder ) : void
         {
-            if ( connection )
+            if ( connection ) {
                 responder.result ( connection );
+                return;
+            }
             
             connection = _connectionFactory.create ( _config );
             connection.openAsync (

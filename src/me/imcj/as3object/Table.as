@@ -6,6 +6,8 @@ package me.imcj.as3object
     import me.imcj.as3object.expression.Expression;
     import me.imcj.as3object.sqlite.field.*;
     
+    import mx.core.ClassFactory;
+    
     import org.as3commons.reflect.Type;
 
     public class Table implements SQL
@@ -86,6 +88,15 @@ package me.imcj.as3object
         public function get primaryKey():AS3ObjectField
         {
             return _primaryKey;
+        }
+        
+        public function create ( attribute : Object = null ) : Object
+        {
+            var factory : ClassFactory = new ClassFactory ( _type.clazz );
+            var instance : Object = factory.newInstance ( );
+            
+            // Hooks
+            return instance;
         }
         
         public function creationStatement ( ifNotExists : Boolean = false ) : String

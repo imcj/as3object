@@ -37,7 +37,7 @@ package me.imcj.as3object.responder
             var field : String;
             var instance : Object = new _table.type.clazz ();
             
-            for ( field in object )
+            for each ( field in _table.fields.keys )
                 AS3ObjectField ( _table.fields.get ( field ) ).setPOAOValue ( instance, object );
             
             return instance;

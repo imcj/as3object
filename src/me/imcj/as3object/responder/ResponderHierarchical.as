@@ -37,6 +37,9 @@ package me.imcj.as3object.responder
             var parent : Object;
             var result : Object;
             
+            if ( ! data )
+                return null;
+            
             for ( var i : int = 0, size : int = data.length; i < size; i++ ) {
                 result = data[i];
                 instance = create ( result );
