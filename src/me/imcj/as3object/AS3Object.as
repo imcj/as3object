@@ -1,7 +1,6 @@
 package me.imcj.as3object
 {
     import flash.events.EventDispatcher;
-    
     import me.imcj.as3object.persistence.ObjectManager;
     import me.imcj.as3object.persistence.ObjectManagerEvent;
     
@@ -12,7 +11,9 @@ package me.imcj.as3object
     public class AS3Object extends EventDispatcher
     {
         protected var _uid : String;
-        
+    [Event(name="complete", type="flash.events.Event")]
+    public class AS3Object extends EventDispatcher
+    {
         public function AS3Object()
         {
             _uid = UIDUtil.createUID ( );
