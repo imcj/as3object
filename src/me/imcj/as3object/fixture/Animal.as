@@ -1,8 +1,10 @@
 package me.imcj.as3object.fixture
 {
+	import flash.events.EventDispatcher;
 	import flash.utils.getQualifiedClassName;
 
-	public class Animal
+    [Bindable]
+	public class Animal extends EventDispatcher
 	{
         public var id   : int;
 		protected var _name : String;
@@ -12,7 +14,7 @@ package me.imcj.as3object.fixture
 		{
 		}
 		
-		public function toString ( ) : String
+		override public function toString ( ) : String
 		{
 			return "<" + getQualifiedClassName ( this ).split ( "::" )[1] + ": " + name + ">";
 		}

@@ -1,15 +1,19 @@
 package me.imcj.as3object.fixture
 {
+    import flash.events.EventDispatcher;
+    
     import me.imcj.as3object.AS3Object;
     import me.imcj.as3object.AS3ObjectCollection;
     
-    public class Blog
+    import mx.collections.ArrayCollection;
+    
+    [Bindable]
+    public class Blog extends EventDispatcher
     {
-        [Bindable]
+        public var id : int;
+        public var uid : String;
         public var subject : String;
-        
-        [Bindable]
-        public var comments : AS3ObjectCollection;
+        public var comments : ArrayCollection;
         
         public function Blog ( )
         {

@@ -17,7 +17,7 @@ package me.imcj.as3object.persistence
         
         public function ObjectManager ( )
         {
-            Facade.instance.createRepository ( null, new AS3ObjectResponder ( createRepository ) );
+            Facade.instance.createRepository ( new AS3ObjectResponder ( createRepository ) );
         }
         
         protected function createRepository ( repository : AsyncRepository ) : void

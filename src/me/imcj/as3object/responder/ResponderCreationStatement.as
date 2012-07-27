@@ -16,7 +16,8 @@ package me.imcj.as3object.responder
         
         public function result ( data : Result ) : void
         {
-            _responder.result ( "success" );
+            if ( _responder )
+                _responder.result ( "success" );
         }
         
         public function fault(info:Object):void

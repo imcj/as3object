@@ -40,7 +40,6 @@ package flexUnitTests
         public function setUp2 ( ) : void
         {
             Facade.instance.createRepository (
-                Comment,
                 Async.asyncResponder (
                     this,
                     new AS3ObjectResponder (

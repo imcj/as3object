@@ -1,4 +1,4 @@
-package me.imcj.as3object
+package me.imcj.as3object.core
 {
     
     

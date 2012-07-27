@@ -12,12 +12,10 @@ package me.imcj.as3object
     
     public class Repository extends EventDispatcher implements AsyncRepository
     {
-        private var _table : Table;
         private var _connection : Connection;
         
-        public function Repository ( table : Table, connection : Connection )
+        public function Repository ( connection : Connection )
         {
-            _table = table;
             _connection = connection;
         }
         

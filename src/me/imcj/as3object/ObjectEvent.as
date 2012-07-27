@@ -4,7 +4,6 @@ package me.imcj.as3object
 	
 	public class ObjectEvent extends Event
 	{
-		static public const SOURCE_OPEN : String = "open";
 		static public const RESULT : String = "result";
 		
 		private var _result:Object;

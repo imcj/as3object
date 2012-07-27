@@ -12,6 +12,7 @@ package me.imcj.as3object
     import mx.rpc.IResponder;
     
     import org.as3commons.reflect.Type;
+    import me.imcj.as3object.core.Dict;
 
     public class Facade
     {
@@ -65,13 +66,13 @@ package me.imcj.as3object
             );
         }
         
-        public function createRepository ( type : Class, responder : IResponder ) : void
+        public function createRepository ( responder : IResponder ) : void
         {
             pool.getConnection (
                 new AS3ObjectResponder (
                     function ( connection : Connection ) : void
                     {
-                        responder.result ( new Repository ( getTable ( type ), connection ) );
+                        responder.result ( new Repository ( connection ) );
                     }
                 )
             );

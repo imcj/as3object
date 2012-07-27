@@ -9,6 +9,7 @@ package me.imcj.as3object
     import mx.core.ClassFactory;
     
     import org.as3commons.reflect.Type;
+    import me.imcj.as3object.core.Dict;
 
     public class Table implements SQL
     {
