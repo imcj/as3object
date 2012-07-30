@@ -10,6 +10,7 @@ package me.imcj.as3object.hook
     import me.imcj.as3object.Hook;
     import me.imcj.as3object.Table;
     import me.imcj.as3object.core.DictIterator;
+    import me.imcj.as3object.sqlite.field.RelationField;
     
     import mx.collections.ArrayCollection;
     import mx.events.CollectionEvent;
@@ -42,16 +43,12 @@ package me.imcj.as3object.hook
             instance.addEventListener ( PropertyChangeEvent.PROPERTY_CHANGE, bind );
             instance.addEventListener ( "PERSISTENCE_ADD", add );
             
-            var property : Object;
+            var relationField : RelationField;
             
-            for ( var x : String in Object ( data['instance'] ) ) {
-                trace ( x );
-            }
-            var iter : DictIterator = new DictIterator ( table.fields );
+            var iter : DictIterator = new DictIterator ( table.collection );
             while ( iter.hasNext ) {
-                property = iter.next ( );
-                if ( property is ArrayCollection )
-                    collectionBind ( property as ArrayCollection );
+                relationField = RelationField ( iter.next ( ) );
+                collectionBind ( instance, relationField.poaoName );
             }
         }
         
@@ -80,12 +77,12 @@ package me.imcj.as3object.hook
         {
         }
         
-        protected function collectionBind ( collection : ArrayCollection ) : void
+        protected function collectionBind ( poao : Object, property : String ) : void
         {
-            if ( null == collection )
-                collection = new ArrayCollection ( );
+            if ( null == poao[property] )
+                poao[property] = new ArrayCollection ( );
             
-            collection.addEventListener ( CollectionEvent.COLLECTION_CHANGE, collectionChange );
+            ArrayCollection ( poao[property] ).addEventListener ( CollectionEvent.COLLECTION_CHANGE, collectionChange );
         }
         
         protected function collectionChange ( event : CollectionEvent ) : void
@@ -111,7 +108,7 @@ package me.imcj.as3object.hook
         
         protected function persistenceAddedFault ( info : Object ) : void
         {
-            
+            trace ( info );
         }
     }
 }

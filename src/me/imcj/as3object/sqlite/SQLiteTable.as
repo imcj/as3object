@@ -19,58 +19,13 @@ package me.imcj.as3object.sqlite
     
 	public class SQLiteTable extends Table
 	{
-        protected var factory : FieldFactory;
         
 		public function SQLiteTable ( type : Type = null )
 		{
 			super ( type );
             factory = new FieldFactorySQLite ( this );
-            buildFields ( );
+            factory.create ();
 		}
-        
-        protected function buildFields ( ) : void
-        {
-            var field : org.as3commons.reflect.Field;
-            var sqliteField : me.imcj.as3object.AS3ObjectField;
-            var method : Method;
-            
-            for each ( field in _type.fields ) {
-                if ( filterField ( field ) ) {
-                    sqliteField = factory.createByField ( field );
-                    if ( sqliteField )
-                        _fields.add ( sqliteField.name, sqliteField );
-                }
-            }
-            
-            for each ( method in _type.methods ) {
-                if ( method.hasMetadata ( "Field" ) )
-                    if ( _type.getMethod ( getSetMethodName ( method.name ) ) )
-                        if ( ( sqliteField = factory.createByMethod ( method ) ) )
-                            _fields.add ( sqliteField.name, sqliteField );
-            }
-        }
-        
-        protected function getSetMethodName ( name : String ) : String
-        {
-            if ( "get" == name.substr ( 0, 3 ) )
-                return "set" + name.substr ( 3 );
-            return null;
-        }
-        
-        protected function filterField ( field : org.as3commons.reflect.Field ) : org.as3commons.reflect.Field
-        {
-            var accessor : Accessor;
-            if ( field is Accessor ) {
-                accessor = Accessor ( field );
-                if ( ! accessor.readable )
-                    return null;
-            }
-            
-            if ( field.hasMetadata ( "Ignore" ) )
-                return null;
-            
-            return field;
-        }
         
         override public function creationStatement ( ifNotExists : Boolean = false ) : String
         {

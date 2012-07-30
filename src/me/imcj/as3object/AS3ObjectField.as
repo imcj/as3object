@@ -1,6 +1,6 @@
 package me.imcj.as3object
 {
-    import flash.utils.ByteArray;
+    import org.as3commons.reflect.MetadataContainer;
 
     public class AS3ObjectField extends Object
     {
@@ -13,6 +13,7 @@ package me.imcj.as3object
         
         public var table : Table;
         public var isMethod : Boolean = false;
+        public var metadataContainer : MetadataContainer;
         
         public function AS3ObjectField ( name : String )
         {

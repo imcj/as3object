@@ -1,10 +1,11 @@
 package me.imcj.as3object.core
 {
+    import flash.utils.Dictionary;
     
     
     public class Dict extends Object
     {
-        protected var _data : Object = new Object ( );
+        protected var _data : Dictionary = new Dictionary ( true );
         protected var _keys : Array;
         
         public function Dict ( )
@@ -50,6 +51,11 @@ package me.imcj.as3object.core
                 size += 1;
             
             return size;
+        }
+        
+        public function createIterator ( ) : DictIterator
+        {
+            return new DictIterator ( this );
         }
     }
 }

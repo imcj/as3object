@@ -3,13 +3,13 @@ package me.imcj.as3object
     import flash.utils.getDefinitionByName;
     import flash.utils.getQualifiedClassName;
     
+    import me.imcj.as3object.core.Dict;
     import me.imcj.as3object.expression.Expression;
     import me.imcj.as3object.sqlite.field.*;
     
     import mx.core.ClassFactory;
     
     import org.as3commons.reflect.Type;
-    import me.imcj.as3object.core.Dict;
 
     public class Table implements SQL
     {
@@ -21,8 +21,12 @@ package me.imcj.as3object
 		protected var _sql        : SQL;
 		protected var _type       : Type;
 		protected var _primaryKey : AS3ObjectField;
+        protected var factory     : FieldFactory;
         
         protected var hierarchical : Boolean;
+        
+        public var collection : Dict;
+        
 		
         public function Table ( type : Type )
         {
@@ -36,11 +40,7 @@ package me.imcj.as3object
             _shortName = fullName[1];
             _package   = fullName[0];
             
-            if ( hasInterface ( _type.interfaces, "mx.controls.treeClasses.ITreeDataDescriptor" ) ||
-                 hasInterface ( _type.interfaces, "mx.controls.menuClasses.IMenuDataDescriptor" ) ) {
-                
-            }
-            // "mx.controls.treeClasses.ITreeDataDescriptor"
+            collection = new Dict ( );
         }
         
         protected function hasInterface ( interfaces : Array, type : String ) : Boolean

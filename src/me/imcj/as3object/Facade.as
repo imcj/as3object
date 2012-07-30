@@ -7,12 +7,12 @@ package me.imcj.as3object
     import flash.utils.getDefinitionByName;
     import flash.utils.getQualifiedClassName;
     
+    import me.imcj.as3object.core.Dict;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
     import mx.rpc.IResponder;
     
     import org.as3commons.reflect.Type;
-    import me.imcj.as3object.core.Dict;
 
     public class Facade
     {
@@ -30,7 +30,9 @@ package me.imcj.as3object
         public function Facade ( )
         {
             _types = new Dictionary ( );
-            pool = new ConnectionPoolImpl ( Config.createInMemory ( ), new ConnectionFactoryImpl ( ) );
+            _config = Config.createInMemory ( );
+            pool = new ConnectionPoolImpl ( _config, new ConnectionFactoryImpl ( ) );
+            
             tableFactory = new TableFactory ( );
         }
         

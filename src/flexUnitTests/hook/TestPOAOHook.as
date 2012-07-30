@@ -13,6 +13,8 @@ package flexUnitTests.hook
     import me.imcj.as3object.hook.POAOHook;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
+    import mx.events.CollectionEvent;
+    
     import org.as3commons.reflect.Type;
     import org.flexunit.async.Async;
 
@@ -27,7 +29,7 @@ package flexUnitTests.hook
         public function setUp():void
         {
             Facade.instance.config = Config.createInMemory ( );
-            table = new SQLiteTable ( Type.forClass ( Cat ) );
+            table = new SQLiteTable ( Type.forClass ( Blog ) );
             poaoHook = new POAOHook ( );
             blog  = new Blog ( );
             comment = new Comment ( );
@@ -74,10 +76,11 @@ package flexUnitTests.hook
             comment.message = "#1 message";
             
             var asyncHandler : Function = Async.asyncHandler ( this, null, 10 );
-            blog.addEventListener ( "PERSISTENCE_ADD", asyncHandler );
+            comment.addEventListener ( "PERSISTENCE_ADDED", asyncHandler );
             
             poaoHook.execute ( { "table" : table, "instance" : blog } );
             
+            trace ( blog.comments.hasEventListener(CollectionEvent.COLLECTION_CHANGE));
             blog.comments.addItem ( comment );
         }
         
