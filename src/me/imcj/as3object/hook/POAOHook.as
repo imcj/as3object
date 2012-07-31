@@ -7,7 +7,6 @@ package me.imcj.as3object.hook
     import me.imcj.as3object.AS3ObjectResponder;
     import me.imcj.as3object.AsyncRepository;
     import me.imcj.as3object.Facade;
-    import me.imcj.as3object.Hook;
     import me.imcj.as3object.Table;
     import me.imcj.as3object.core.DictIterator;
     import me.imcj.as3object.sqlite.field.RelationField;

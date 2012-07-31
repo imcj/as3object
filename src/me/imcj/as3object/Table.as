@@ -10,6 +10,7 @@ package me.imcj.as3object
     import mx.core.ClassFactory;
     
     import org.as3commons.reflect.Type;
+    import me.imcj.as3object.hook.HookManager;
 
     public class Table implements SQL
     {
@@ -22,11 +23,10 @@ package me.imcj.as3object
 		protected var _type       : Type;
 		protected var _primaryKey : AS3ObjectField;
         protected var factory     : FieldFactory;
-        
         protected var hierarchical : Boolean;
         
-        public var collection : Dict;
-        
+        public var collection      : Dict;
+        public var hook            : HookManager;
 		
         public function Table ( type : Type )
         {
@@ -97,6 +97,7 @@ package me.imcj.as3object
             var instance : Object = factory.newInstance ( );
             
             // Hooks
+            hook.execute ( "create_instance", { "table" : this, "instance" : instance } );
             return instance;
         }
         

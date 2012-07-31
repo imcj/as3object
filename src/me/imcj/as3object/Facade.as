@@ -8,6 +8,7 @@ package me.imcj.as3object
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.core.Dict;
+    import me.imcj.as3object.hook.HookManager;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
     import mx.rpc.IResponder;
@@ -23,6 +24,7 @@ package me.imcj.as3object
         protected var _types : Dictionary;
         protected var _tableCache : Dict = new Dict ( );
         protected var _asyncRepositories : Dict = new Dict ( );
+        protected var hook : HookManager;
         
         protected var pool : ConnectionPool;
         protected var tableFactory : TableFactory;

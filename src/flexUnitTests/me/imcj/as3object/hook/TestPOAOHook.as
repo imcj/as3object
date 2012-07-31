@@ -1,4 +1,4 @@
-package flexUnitTests.hook
+package flexUnitTests.me.imcj.as3object.hook
 {
     import flash.events.Event;
     

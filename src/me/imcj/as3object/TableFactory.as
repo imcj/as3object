@@ -3,6 +3,7 @@ package me.imcj.as3object
     import flash.utils.getDefinitionByName;
     import flash.utils.getQualifiedClassName;
     
+    import me.imcj.as3object.hook.HookManager;
     import me.imcj.as3object.sqlite.SQLiteHierarchicalTable;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
@@ -11,6 +12,11 @@ package me.imcj.as3object
     public class TableFactory
     {
         public var config : Config;
+        public var hook : HookManager;
+        
+        public function TableFactory ( )
+        {
+        }
         
         public function create ( type : Object ) : Table
         {
@@ -29,6 +35,7 @@ package me.imcj.as3object
                 }
             }
             
+            instance.hook = hook;
             return instance;
         }
         

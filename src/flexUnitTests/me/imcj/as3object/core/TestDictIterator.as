@@ -1,4 +1,4 @@
-package flexUnitTests.core
+package flexUnitTests.me.imcj.as3object.core
 {
     import me.imcj.as3object.core.Dict;
     import me.imcj.as3object.core.DictIterator;
