@@ -91,16 +91,6 @@ package me.imcj.as3object
             return _primaryKey;
         }
         
-        public function create ( attribute : Object = null ) : Object
-        {
-            var factory : ClassFactory = new ClassFactory ( _type.clazz );
-            var instance : Object = factory.newInstance ( );
-            
-            // Hooks
-            hook.execute ( "create_instance", { "table" : this, "instance" : instance } );
-            return instance;
-        }
-        
         public function creationStatement ( ifNotExists : Boolean = false ) : String
         {
             return null;

@@ -7,6 +7,9 @@ package me.imcj.as3object.fixture
         [Bindable]
         public var message : String;
         
+        [Bindable]
+        public var blog : Blog;
+        
         public function Comment()
         {
             super();

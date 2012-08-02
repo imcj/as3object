@@ -8,10 +8,14 @@ package me.imcj.as3object
     import flash.utils.getQualifiedClassName;
     
     import me.imcj.as3object.core.Dict;
+    import me.imcj.as3object.core.newInstance;
     import me.imcj.as3object.hook.HookManager;
+    import me.imcj.as3object.hook.HookManagerDefault;
+    import me.imcj.as3object.hook.InstallDefaultHooks;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
     import mx.rpc.IResponder;
+    import mx.utils.UIDUtil;
     
     import org.as3commons.reflect.Type;
 
@@ -24,9 +28,9 @@ package me.imcj.as3object
         protected var _types : Dictionary;
         protected var _tableCache : Dict = new Dict ( );
         protected var _asyncRepositories : Dict = new Dict ( );
-        protected var hook : HookManager;
-        
         protected var pool : ConnectionPool;
+        
+        protected var _hook        : HookManager;
         protected var tableFactory : TableFactory;
         
         public function Facade ( )
@@ -35,13 +39,25 @@ package me.imcj.as3object
             _config = Config.createInMemory ( );
             pool = new ConnectionPoolImpl ( _config, new ConnectionFactoryImpl ( ) );
             
-            tableFactory = new TableFactory ( );
+            _hook = HookManagerDefault.create ( );
+            tableFactory = new TableFactory ( _config, _hook );
         }
         
         public function create ( type : Class, attributes : Object = null ) : Object
         {
             var table : Table = getTable ( type );
-            return table.create ( attributes );
+            
+            var instance : Object = newInstance ( type, attributes ) ;
+            if ( instance.hasOwnProperty ( "uid" ) )
+                instance['uid'] = UIDUtil.createUID ( );
+            
+            _hook.execute ( "create_instance", { "table" : table, "instance" : instance } );
+            return instance;
+        }
+        
+        public function useDefaultConfig ( ) : void
+        {
+            _config = Config.createInMemory ( );
         }
         
         public function forClass ( type : Class ) : *
@@ -76,6 +92,7 @@ package me.imcj.as3object
                 new AS3ObjectResponder (
                     function ( connection : Connection ) : void
                     {
+                        trace ( "Facade create repository." );
                         responder.result ( new Repository ( connection ) );
                     }
                 )

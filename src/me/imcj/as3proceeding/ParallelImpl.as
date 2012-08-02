@@ -1,4 +1,4 @@
-package me.imcj.as3object.core
+package me.imcj.as3proceeding
 {
     import flash.events.Event;
     import flash.events.EventDispatcher;

@@ -12,6 +12,10 @@ package flexUnitTests.me.imcj.as3object.hook
     import me.imcj.as3object.fixture.Comment;
     import me.imcj.as3object.hook.POAOHook;
     import me.imcj.as3object.sqlite.SQLiteTable;
+    import me.imcj.as3proceeding.AS3ProceedingResponder;
+    import me.imcj.as3proceeding.SequenceImpl;
+    import me.imcj.as3proceeding.call;
+    import me.imcj.as3proceeding.squence;
     
     import mx.events.CollectionEvent;
     
@@ -48,9 +52,18 @@ package flexUnitTests.me.imcj.as3object.hook
         
         protected function createRepository ( repository : AsyncRepository ) : void
         {
-            repository.creationStatement ( Blog, null, true );
-            repository.creationStatement ( Comment, null, true );
-            
+            var responder : AS3ProceedingResponder = new AS3ProceedingResponder ( );
+            var seq : SequenceImpl = squence (
+                [
+                    call ( repository.creationStatement, Blog, responder, true ),
+                    call ( repository.creationStatement, Comment, responder, true )
+                ]
+            );
+            seq.addEventListener ( Event.COMPLETE, createTableComplete );
+        }
+        
+        protected function createTableComplete(event:Event):void
+        {
             blog.dispatchEvent ( new Event ( Event.COMPLETE ) );
         }
         

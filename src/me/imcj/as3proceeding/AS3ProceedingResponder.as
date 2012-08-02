@@ -1,15 +1,15 @@
-package me.imcj.as3object.core
+package me.imcj.as3proceeding
 {
     import flash.net.Responder;
     
     import mx.rpc.IResponder;
 
-    public class ParallelResponder implements IResponder
+    public class AS3ProceedingResponder implements IResponder
     {
         private var _resultFunction : Array;
         private var _faultFunction  : Array;
         
-        public function ParallelResponder ( paramResult : Function = null, paramStatus : Function = null )
+        public function AS3ProceedingResponder ( paramResult : Function = null, paramStatus : Function = null )
         {
             _resultFunction = new Array ( );
             _faultFunction  = new Array ( );
@@ -21,13 +21,13 @@ package me.imcj.as3object.core
                 addFault  ( paramStatus );
         }
         
-        public function addResult ( func : Function ) : ParallelResponder
+        public function addResult ( func : Function ) : AS3ProceedingResponder
         {
             _resultFunction[_resultFunction.length] = func;
             return this;
         }
         
-        public function addFault ( func : Function ) : ParallelResponder
+        public function addFault ( func : Function ) : AS3ProceedingResponder
         {
             _faultFunction[_faultFunction.length] = func;
             return this;

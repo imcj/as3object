@@ -1,11 +1,11 @@
-package flexUnitTests.me.imcj.as3object
+package flexUnitTests.me.imcj.as3proceeding
 {
     import flash.events.Event;
     
     import me.imcj.as3object.AS3ObjectResponder;
-    import me.imcj.as3object.core.ParallelResponder;
-    import me.imcj.as3object.core.call;
-    import me.imcj.as3object.core.parallel;
+    import me.imcj.as3proceeding.AS3ProceedingResponder;
+    import me.imcj.as3proceeding.call;
+    import me.imcj.as3proceeding.parallel;
     
     import mx.rpc.IResponder;
     
@@ -30,7 +30,7 @@ package flexUnitTests.me.imcj.as3object
         [Test(async)]
         public function testParallel ( ) : void
         {
-            var responder : IResponder  = new ParallelResponder ( null, null );
+            var responder : IResponder  = new AS3ProceedingResponder ( null, null );
             var t1 : Timeout = new Timeout ( 10 );
             var t2 : Timeout = new Timeout ( 20 );
             
@@ -49,7 +49,7 @@ package flexUnitTests.me.imcj.as3object
         [Test(async)]
         public function testParallelWithEvent ( ) : void
         {
-            var responder : IResponder  = new ParallelResponder ( null, null );
+            var responder : IResponder  = new AS3ProceedingResponder ( null, null );
             var t1 : Timeout = new Timeout ( 10 );
             var t2 : Timeout = new Timeout ( 20 );
             

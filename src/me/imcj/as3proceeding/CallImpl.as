@@ -1,10 +1,10 @@
-package me.imcj.as3object.core
+package me.imcj.as3proceeding
 {
     public class CallImpl
     {
         protected var _func : Function;
         protected var _args : Array;
-        protected var _parallelResponder : ParallelResponder;
+        protected var _parallelResponder : AS3ProceedingResponder;
         
         public function CallImpl ( func : Function, args : Array )
         {
@@ -13,7 +13,7 @@ package me.imcj.as3object.core
             
             var i : int = 0, size : int = args.length;
             for ( ; i < size; i++ )
-                if ( args[i] is ParallelResponder )
+                if ( args[i] is AS3ProceedingResponder )
                     _parallelResponder = args[i];
         }
         
@@ -65,9 +65,19 @@ package me.imcj.as3object.core
             return _args;
         }
         
-        public function get parallelResponder ( ) : ParallelResponder
+        public function get parallelResponder ( ) : AS3ProceedingResponder
         {
             return _parallelResponder;
         }
+        
+        public function addIntoResponder ( result : Function, fault : Function ) : CallImpl
+        {
+            _parallelResponder
+                .addResult ( result )
+                .addFault ( fault );
+                
+            return this;
+        }
+        
     }
 }

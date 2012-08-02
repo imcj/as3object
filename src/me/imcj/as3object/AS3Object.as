@@ -10,16 +10,18 @@ package me.imcj.as3object
     [Event(name="persistenceAdd", type="me.imcj.as3object.persistence.ObjectManagerEvent")]
     public class AS3Object extends EventDispatcher
     {
+        static public const PERSISTENCE_ADD   : String = "PERSISTENCE_ADD";
+        static public const PERSISTENCE_ADDED : String = "PERSISTENCE_ADDED";
+        static public const SAVE              : String = "save";
+        
         protected var _uid : String;
-    [Event(name="complete", type="flash.events.Event")]
-    public class AS3Object extends EventDispatcher
-    {
+        
         public function AS3Object()
         {
             _uid = UIDUtil.createUID ( );
             
-            var manager : ObjectManager = ObjectManager.instance;
-            manager.addAS3Object ( this );
+//            var manager : ObjectManager = ObjectManager.instance;
+//            manager.addAS3Object ( this );
         }
         
         public function get uid ( ) : String

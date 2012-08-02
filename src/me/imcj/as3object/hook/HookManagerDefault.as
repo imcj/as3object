@@ -11,6 +11,14 @@ package me.imcj.as3object.hook
             hooks = new Dictionary ( );
         }
         
+        static public function create ( ) : HookManager
+        {
+            var hook : HookManager = new HookManagerDefault ( );
+            new InstallDefaultHooks ( hook );
+            
+            return hook;
+        }
+        
         public function execute ( name : String, data : Object ) : void
         {
             var h : Array;

@@ -4,6 +4,7 @@ package me.imcj.as3object.hook
     import flash.events.EventDispatcher;
     import flash.events.IEventDispatcher;
     
+    import me.imcj.as3object.AS3Object;
     import me.imcj.as3object.AS3ObjectResponder;
     import me.imcj.as3object.AsyncRepository;
     import me.imcj.as3object.Facade;
@@ -41,6 +42,7 @@ package me.imcj.as3object.hook
             instance =  data['instance'] as EventDispatcher;
             instance.addEventListener ( PropertyChangeEvent.PROPERTY_CHANGE, bind );
             instance.addEventListener ( "PERSISTENCE_ADD", add );
+            instance.addEventListener ( AS3Object.SAVE, add );
             
             var relationField : RelationField;
             
@@ -90,10 +92,16 @@ package me.imcj.as3object.hook
             switch ( event.kind ) {
                 case CollectionEventKind.ADD: {
                     for each ( object in event.items )
-                        repository.add ( object, new AS3ObjectResponder ( persistenceAdded, persistenceAddedFault ) );
+                        addObject ( object );
                     break;
                 }
             }
+        }
+        
+        protected function addObject ( object : Object ) : void
+        {
+            if ( object.hasOwnProperty ( "id" ) )
+                repository.add ( object, new AS3ObjectResponder ( persistenceAdded, persistenceAddedFault ) );
         }
         
         protected function persistenceAdded ( object : Object ) : void
