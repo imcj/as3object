@@ -1,6 +1,7 @@
 package flexUnitTests.me.imcj.as3object
 {
     import flash.events.Event;
+    import flash.system.Capabilities;
     
     import me.imcj.as3object.AS3Object;
     import me.imcj.as3object.AsyncRepository;
@@ -25,7 +26,6 @@ package flexUnitTests.me.imcj.as3object
         public function setUp():void
         {
             var repository : AsyncRepository;
-            
             facade = Facade.instance;
             facade.useDefaultConfig ( );
             

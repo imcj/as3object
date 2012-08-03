@@ -9,6 +9,7 @@ package me.imcj.as3object
         public var DATABASE_HOST     : String;
         public var DATABASE_PORT     : int;
         public var IN_MEMORY         : Boolean;
+        public var BLOB_SAVE_IN_DB   : Boolean = false;
         
         public function Config()
         {
