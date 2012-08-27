@@ -2,7 +2,7 @@
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
     <classEntry path="test.me.imcj.as3object.responder.ResponderSelectTest"/>
-    <classEntry path="me.imcj.as3object.hook.IgnoreSpriteHook"/>
+    <classEntry path="me.imcj.as3object.hook.DefaultExcludeHook"/>
     <classEntry path="test.me.imcj.as3object.hook.IgnoreSpriteHookTest"/>
     <classEntry path="me.imcj.as3object.PropertyChangedCache"/>
     <classEntry path="test.me.imcj.as3object.PropertyChangedCacheTest"/>
@@ -11,6 +11,10 @@
     <classEntry path="me.imcj.as3object.AS3ObjectErrorEvent"/>
     <classEntry path="me.imcj.as3object.TableCache"/>
     <classEntry path="me.imcj.as3object.hook.POAOUpdateResponder"/>
+    <classEntry path="me.imcj.as3object.NotFoundPrimaryError"/>
+    <classEntry path="me.imcj.as3object.FieldMetadata"/>
+    <classEntry path="test.me.imcj.as3object.FieldMetadataTest"/>
+    <classEntry path="test.me.imcj.as3object.core.DictTest"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

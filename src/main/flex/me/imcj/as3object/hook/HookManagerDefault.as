@@ -3,11 +3,13 @@ package me.imcj.as3object.hook
     
 import flash.utils.Dictionary;
 
+import me.imcj.as3object.Connection;
+
 public class HookManagerDefault implements HookManager
 {
     protected var hooks : Dictionary;
     
-    public function HookManagerDefault()
+    public function HookManagerDefault ( )
     {
         hooks = new Dictionary ( );
     }

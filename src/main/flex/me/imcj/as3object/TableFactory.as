@@ -13,7 +13,7 @@ package me.imcj.as3object
     public class TableFactory
     {
         public var config : Config;
-        public var hook : HookManager;
+        public var hook   : HookManager;
         
         public function TableFactory ( config : Config, hook : HookManager )
         {
@@ -23,8 +23,16 @@ package me.imcj.as3object
         
         public function create ( type : Object ) : Table
         {
-            var n : Type = type is Class ? Type.forClass ( Class ( type ) ) : Type.forClass ( Class ( getDefinitionByName ( getQualifiedClassName( ( type ) ) ) ) );
+            
+            var n : Type;
             var instance : Table;
+            
+            if ( type is String )
+                n = Type.forName ( type as String );
+            else if ( type is Class )
+                n = Type.forClass ( type as Class );
+            else if ( type is Object )
+                n = Type.forInstance ( type );
             
             switch ( config.DATABASE_ENGINE )
             {

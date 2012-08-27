@@ -119,6 +119,8 @@ package me.imcj.as3object
         
         public function getPrimaryValue ( object : Object ) : String
         {
+            if ( null == primaryKey )
+                throw new NotFoundPrimaryError ( );
             return object[primaryKey.name];
         }
     }

@@ -35,6 +35,16 @@ package me.imcj.as3object.core
         {
             return _data.hasOwnProperty ( key );
         }
+        
+        public function hasArray ( keys : Array ) : Boolean
+        {
+            var key : String;
+            for each ( key in keys )
+                if ( ! _data.hasOwnProperty ( key ) )
+                    return false;
+                
+            return true;
+        }
             
         
         public function add ( key : String, value : Object ) : void

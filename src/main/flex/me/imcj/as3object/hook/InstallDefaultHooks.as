@@ -1,17 +1,22 @@
 package me.imcj.as3object.hook
 {
+    import mx.core.ClassFactory;
+
     public class InstallDefaultHooks
     {
         public function InstallDefaultHooks ( hook : HookManager )
         {
-            hook.add ( "create_instance",  _ ( POAOHook ) );
-            hook.add ( "rebuild_instance", _ ( POAOHook ) );
-            hook.add ( "build_field",      _ ( IgnoreSpriteHook ) );
+            var hookPOAO : Hook = newInstance ( POAOHook );
+            
+            hook.add ( "create_instance",  hookPOAO );
+            hook.add ( "rebuild_instance", hookPOAO );
+            hook.add ( "build_field",      newInstance ( DefaultExcludeHook ) );
         }
         
-        protected function _ ( type : Class ) : Hook
+        protected function newInstance ( type : Class ) : Hook
         {
-            return new type ( );
+            var factory : ClassFactory = new ClassFactory ( type );
+            return factory.newInstance ( );
         }
     }
 }

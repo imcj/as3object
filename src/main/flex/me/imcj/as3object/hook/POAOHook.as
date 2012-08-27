@@ -21,17 +21,16 @@ package me.imcj.as3object.hook
     
     public class POAOHook implements Hook
     {
-        protected var repository : AsyncRepository;
         protected var delay : ArrayCollection = new ArrayCollection ( );
         
         protected var propertyChanged : PropertyChangedCache;
-        protected var tableCache      : TableCache;
+        
+        public var tableCache : TableCache;
+        public var repository : AsyncRepository;
         
         public function POAOHook ( )
         {
             propertyChanged = new PropertyChangedCache ( );
-            tableCache = new TableCache ( );
-            Facade.instance.createRepository ( new AS3ObjectResponder ( createRespository ) );
         }
         
         public function execute ( data : Object ) : void
@@ -47,6 +46,9 @@ package me.imcj.as3object.hook
             
             if ( ! ( data['instance'] is IEventDispatcher ) )
                 return;
+            
+            if ( null == tableCache )
+                tableCache = Facade.instance.cache;
             
             instance =  data['instance'] as EventDispatcher;
             instance.addEventListener ( AS3Object.SAVE,    handlerSave );

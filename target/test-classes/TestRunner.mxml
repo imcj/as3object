@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--can't use velocity, got:
+java.io.InvalidClassException: org.apache.velocity.runtime.parser.node.ASTprocess; class invalid for deserialization-->
+<unitestingsupport:TestAirApplication 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:unitestingsupport="org.sonatype.flexmojos.unitestingsupport.*"
+	layout="absolute"
+	initialize="init()" 
+	port="55921" 
+	controlPort="55920" 
+	>
+
+
+
+	<mx:Script>
+		<![CDATA[
+
+import test.me.imcj.as3object.hook.TestPOAOHook; TestPOAOHook;
+
+
+			private function init():void {
+addTest( TestPOAOHook);
+
+			}
+		]]>
+	</mx:Script>
+
+</unitestingsupport:TestAirApplication>

@@ -15,7 +15,7 @@ public class POAOUpdateResponder extends AS3ObjectResponder
     public function POAOUpdateResponder ( object : Object )
     {
         if ( object is EventDispatcher )
-            this.object = object;
+            this.object = object as EventDispatcher;
         
         super ( result, fault );
     }

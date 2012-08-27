@@ -22,9 +22,9 @@ package test.me.imcj.as3object
         }
         
         [Test]
-        public function testGetTable
+        public function testGetTable ( ) : void
         {
-            var table : Table = facade.getTable ( new Cat ( ) );
+            var table : Table = facade.cache.getWithType ( Cat );
             trace ( table );
         }
         

@@ -12,21 +12,22 @@ package me.imcj.as3object
         static protected var _instance : Facade;
         
         protected var _config : Config;
-        
         protected var pool : ConnectionPool;
-        
-        protected var _hook        : HookManager;
+        protected var hook : HookManager;
         protected var tableFactory : TableFactory;
         
         public var cache : TableCache;
+        public var connection : Connection;
         
-        public function Facade ( )
+        public function Facade ( config : Config )
         {
-            _config = Config.createInMemory ( );
-            pool = new ConnectionPoolImpl ( _config, new ConnectionFactoryImpl ( ) );
+            _config = config;
+            pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( ) );
             
-            _hook = HookManagerDefault.create ( );
-            tableFactory = new TableFactory ( _config, _hook );
+            
+            hook = HookManagerDefault.create ( );
+            
+            tableFactory = new TableFactory ( config, hook );
             
             cache = new TableCache ( );
             cache.factory = tableFactory;
@@ -40,7 +41,7 @@ package me.imcj.as3object
             if ( instance.hasOwnProperty ( "uid" ) )
                 instance['uid'] = UIDUtil.createUID ( );
             
-            _hook.execute ( "create_instance", { "table" : table, "instance" : instance } );
+            hook.execute ( "create_instance", { "table" : table, "instance" : instance } );
             return instance;
         }
         
@@ -76,7 +77,7 @@ package me.imcj.as3object
         static public function get instance ( ) : Facade
         {
             if ( ! _instance )
-                _instance = new Facade ( );
+                _instance = new Facade ( Config.createInMemory ( ) );
             
             return _instance;
         }

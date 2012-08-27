@@ -2,7 +2,7 @@ package test.me.imcj.as3object.hook
 {
     import me.imcj.as3object.Table;
     import me.imcj.as3object.hook.Hook;
-    import me.imcj.as3object.hook.IgnoreSpriteHook;
+    import me.imcj.as3object.hook.DefaultExcludeHook;
     import me.imcj.as3object.sqlite.SQLiteTable;
     
     import org.as3commons.reflect.Type;
@@ -22,7 +22,7 @@ public class IgnoreSpriteHookTest
         data = {
             "table": table
         };
-        hook  = new IgnoreSpriteHook ( );
+        hook  = new DefaultExcludeHook ( );
     }
     
     [After]

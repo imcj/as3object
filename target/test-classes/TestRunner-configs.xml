@@ -56,67 +56,7 @@
       </extensions>
       <!-- compiler.external-library-path: list of SWC files or directories to compile against but to omit from linking-->
       <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\advancedgrids\4.5.1.21328\advancedgrids-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\authoringsupport\4.5.1.21328\authoringsupport-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\charts\4.5.1.21328\charts-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\core\4.5.1.21328\core-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\flash-integration\4.5.1.21328\flash-integration-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\mx\4.5.1.21328\mx-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\osmf\4.5.1.21328\osmf-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\rpc\4.5.1.21328\rpc-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\sparkskins\4.5.1.21328\sparkskins-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark_dmv\4.5.1.21328\spark_dmv-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\textLayout\4.5.1.21328\textLayout-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\aircore\4.5.1.21328\aircore-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airspark\4.5.1.21328\airspark-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\applicationupdater\4.5.1.21328\applicationupdater-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\applicationupdater_ui\4.5.1.21328\applicationupdater_ui-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\servicemonitor\4.5.1.21328\servicemonitor-4.5.1.21328.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc</path-element>
-      </external-library-path>
-      <external-library-path>
-         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airglobal\4.5.1.21328\null\airglobal.swc</path-element>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airglobal\4.5.1.21328\null\null\airglobal.swc</path-element>
       </external-library-path>
       <fonts>
          <!-- compiler.fonts.advanced-anti-aliasing: enables advanced anti-aliasing for embedded fonts, which provides greater clarity for small fonts.-->
@@ -156,12 +96,15 @@
       <!-- compiler.headless-server: a flag to set when Flex is running on a server without a display-->
       <headless-server>false</headless-server>
       <!-- compiler.include-libraries: a list of libraries (SWCs) to completely include in the SWF-->
-      <!-- compiler.include-libraries usage:
       <include-libraries>
-         <library>string</library>
-         <library>string</library>
+         <library>C:\Users\Administrator\.m2\repository\org\sonatype\flexmojos\flexmojos-unittest-support\4.0-RC2\flexmojos-unittest-support-4.0-RC2-air.swc</library>
       </include-libraries>
-      -->
+      <include-libraries>
+         <library>C:\Users\Administrator\.m2\repository\org\sonatype\flexmojos\flexmojos-unittest-flexunit4\4.0-RC2\flexmojos-unittest-flexunit4-4.0-RC2.swc</library>
+      </include-libraries>
+      <include-libraries>
+         <library>C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc</library>
+      </include-libraries>
       <!-- compiler.incremental: enables incremental compilation-->
       <!-- compiler.incremental usage:
       <incremental>boolean</incremental>
@@ -185,15 +128,105 @@
       <keep-generated-actionscript>false</keep-generated-actionscript>
       <!-- compiler.library-path: list of SWC files or directories that contain SWC files-->
       <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\advancedgrids\4.5.1.21328\advancedgrids-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\authoringsupport\4.5.1.21328\authoringsupport-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\charts\4.5.1.21328\charts-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\core\4.5.1.21328\core-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\flash-integration\4.5.1.21328\flash-integration-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\mx\4.5.1.21328\mx-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\osmf\4.5.1.21328\osmf-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\rpc\4.5.1.21328\rpc-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\sparkskins\4.5.1.21328\sparkskins-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark_dmv\4.5.1.21328\spark_dmv-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\textLayout\4.5.1.21328\textLayout-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\aircore\4.5.1.21328\aircore-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airspark\4.5.1.21328\airspark-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\applicationupdater\4.5.1.21328\applicationupdater-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\applicationupdater_ui\4.5.1.21328\applicationupdater_ui-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\servicemonitor\4.5.1.21328\servicemonitor-4.5.1.21328.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc</path-element>
+      </library-path>
+      <library-path>
          <path-element>C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-lang\0.3.5\as3commons-lang-0.3.5.swc</path-element>
       </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\advancedgrids\4.5.1.21328\advancedgrids-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\charts\4.5.1.21328\charts-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\mx\4.5.1.21328\mx-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\osmf\4.5.1.21328\osmf-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\rpc\4.5.1.21328\rpc-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\textLayout\4.5.1.21328\textLayout-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\flash-integration\4.5.1.21328\flash-integration-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
+      <library-path>
+         <path-element>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airspark\4.5.1.21328\airspark-4.5.1.21328-en_US.rb.swc</path-element>
+      </library-path>
       <!-- compiler.locale: specifies the locale for internationalization-->
-      <!-- compiler.locale usage:
       <locale>
-         <locale-element>string</locale-element>
-         <locale-element>string</locale-element>
+         <locale-element>en_US</locale-element>
       </locale>
-      -->
       <!-- compiler.minimum-supported-version usage:
       <minimum-supported-version>string</minimum-supported-version>
       -->
@@ -233,7 +266,7 @@
       <!-- compiler.omit-trace-statements: toggle whether trace statements are omitted-->
       <omit-trace-statements>true</omit-trace-statements>
       <!-- compiler.optimize: Enable post-link SWF optimization-->
-      <optimize>true</optimize>
+      <optimize>false</optimize>
       <!-- compiler.preloader: Specifies the default value for the Application's preloader attribute. If not specified, the default preloader value is mx.preloaders.SparkDownloadProgressBar when -compatibility-version >= 4.0 and mx.preloaders.DownloadProgressBar when -compatibility-version < 4.0.-->
       <!-- compiler.preloader usage:
       <preloader>string</preloader>
@@ -266,6 +299,9 @@
       -->
       <!-- compiler.source-path: list of path elements that form the roots of ActionScript class hierarchies-->
       <source-path>
+         <path-element>F:\C1801\as3object\src\test\flex</path-element>
+      </source-path>
+      <source-path>
          <path-element>F:\C1801\as3object\src\main\flex</path-element>
       </source-path>
       <!-- compiler.strict: runs the AS3 compiler in strict error checking mode.-->
@@ -275,7 +311,7 @@
          <filename>C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328-theme.css</filename>
       </theme>
       <!-- compiler.use-resource-bundle-metadata: determines whether resources bundles are included in the application.-->
-      <use-resource-bundle-metadata>false</use-resource-bundle-metadata>
+      <use-resource-bundle-metadata>true</use-resource-bundle-metadata>
       <!-- compiler.verbose-stacktraces: save callstack information to the SWF for debugging-->
       <verbose-stacktraces>false</verbose-stacktraces>
       <!-- compiler.warn-array-tostring-changes: Array.toString() format has changed.-->
@@ -423,10 +459,6 @@
       <warn-xml-class-has-changed>boolean</warn-xml-class-has-changed>
       -->
    </compiler>
-   <!-- compute-digest: writes a digest to the catalog.xml of a library. This is required when the library will be used in the -runtime-shared-libraries-path option.-->
-   <!-- compute-digest usage:
-   <compute-digest>boolean</compute-digest>
-   -->
    <!-- debug-password: the password to include in debuggable SWFs-->
    <debug-password></debug-password>
    <!-- default-background-color: default background color (may be overridden by the application code)-->
@@ -443,8 +475,6 @@
       <width>500</width>
       <height>375</height>
    </default-size>
-   <!-- directory: output the library as an open directory instead of a SWC file-->
-   <directory>false</directory>
    <!-- externs: a list of symbols to omit from linking when building a SWF-->
    <!-- externs usage:
    <externs>
@@ -462,35 +492,9 @@
       -->
    </frames>
    <framework>halo</framework>
-   <!-- include-classes: a list of classes to include in the output SWC-->
-   <!-- include-classes usage:
-   <include-classes>
-      <class>string</class>
-      <class>string</class>
-   </include-classes>
-   -->
-   <!-- include-file: a list of named files to include in the output SWC-->
-   <!-- include-file usage:
-   <include-file>
-      <name>string</name>
-      <path>string</path>
-      <path>string</path>
-   </include-file>
-   -->
    <!-- include-inheritance-dependencies-only: only include inheritance dependencies of classes specified with include-classes -->
    <!-- include-inheritance-dependencies-only usage:
    <include-inheritance-dependencies-only>boolean</include-inheritance-dependencies-only>
-   -->
-   <!-- include-lookup-only: if true, manifest entries with lookupOnly=true are included in SWC catalog. Default is false.-->
-   <!-- include-lookup-only usage:
-   <include-lookup-only>boolean</include-lookup-only>
-   -->
-   <!-- include-namespaces: all classes in the listed namespaces are included in the output SWC-->
-   <!-- include-namespaces usage:
-   <include-namespaces>
-      <uri>string</uri>
-      <uri>string</uri>
-   </include-namespaces>
    -->
    <!-- include-resource-bundles: a list of resource bundles to include in the output SWC-->
    <!-- include-resource-bundles usage:
@@ -498,18 +502,6 @@
       <bundle>string</bundle>
       <bundle>string</bundle>
    </include-resource-bundles>
-   -->
-   <!-- include-sources: a list of directories and source files to include in the output SWC-->
-   <include-sources>
-      <path-element>F:\C1801\as3object\src\main\flex</path-element>
-   </include-sources>
-   <!-- include-stylesheet: a list of named stylesheet resources to include in the output SWC-->
-   <!-- include-stylesheet usage:
-   <include-stylesheet>
-      <name>string</name>
-      <path>string</path>
-      <path>string</path>
-   </include-stylesheet>
    -->
    <!-- includes: a list of symbols to always link in when building a SWF-->
    <!-- includes usage:
@@ -519,7 +511,7 @@
    </includes>
    -->
    <!-- link-report: Output a XML-formatted report of all definitions linked into the application.-->
-   <link-report>F:\C1801\as3object\target\as3object-0.1-link-report.xml</link-report>
+   <link-report>F:\C1801\as3object\target\test-classes\TestRunner-link-report.xml</link-report>
    <!-- load-config: load a file containing configuration options-->
    <!-- load-config usage:
    <load-config>filename</load-config>
@@ -544,9 +536,7 @@
       <description>text</description>
       -->
       <!-- metadata.language: The language to store in the SWF metadata (i.e. EN, FR)-->
-      <!-- metadata.language usage:
-      <language>code</language>
-      -->
+      <language>en_US</language>
       <!-- metadata.localized-description: A localized RDF/XMP description to store in the SWF metadata-->
       <!-- metadata.localized-description usage:
       <localized-description>
@@ -571,7 +561,7 @@
       <title>C1801 AS3Object</title>
    </metadata>
    <!-- output: the filename of the SWF movie to create-->
-   <output>F:\C1801\as3object\target\as3object-0.1.swc</output>
+   <output>F:\C1801\as3object\target\test-classes\TestRunner.swf</output>
    <!-- raw-metadata: XML text to store in the SWF metadata (overrides metadata.* configuration)-->
    <!-- raw-metadata usage:
    <raw-metadata>text</raw-metadata>
@@ -616,7 +606,7 @@
       -->
    </runtime-shared-library-settings>
    <!-- size-report: Output an XML-formatted report detailing the size of all code and data linked into the application.-->
-   <size-report>F:\C1801\as3object\target\as3object-0.1-size-report.xml</size-report>
+   <size-report>F:\C1801\as3object\target\test-classes\TestRunner-size-report.xml</size-report>
    <!-- static-link-runtime-shared-libraries: statically link the libraries specified by the -runtime-shared-libraries-path option.-->
    <!-- static-link-runtime-shared-libraries usage:
    <static-link-runtime-shared-libraries>boolean</static-link-runtime-shared-libraries>

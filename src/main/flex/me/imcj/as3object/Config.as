@@ -32,7 +32,7 @@ package me.imcj.as3object
         
         static public function create2 ( database_engine : String, database_name : String ) : Config
         {
-            return create ( database_engine, database_name, 0, 0, 0, 0 );
+            return create ( database_engine, database_name, null, null, null, 0 );
         }
         
         static public function createSQLite ( database_name : String ) : Config
@@ -42,7 +42,7 @@ package me.imcj.as3object
         
         static public function createInMemory ( ) : Config
         {
-            var config : Config = create2 ( "sqlite", 0 );
+            var config : Config = create2 ( "sqlite", null );
             config.IN_MEMORY = true;
             
             return config;
