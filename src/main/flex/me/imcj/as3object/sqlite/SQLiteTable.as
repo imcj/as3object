@@ -29,7 +29,7 @@ package me.imcj.as3object.sqlite
             hook.execute ( "build_field", { "table": this } );
 		}
         
-        override public function creationStatement ( ifNotExists : Boolean = false ) : String
+        override public function createTable ( ifNotExists : Boolean = false ) : String
         {
             // TODO 表字段类型和数据类型的映射
             // TODO 查阅所有的SQLite的数据类型作映射

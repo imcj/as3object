@@ -33,7 +33,7 @@ public class FieldMetadataTest
     [Test]
     public function testExcludeProperty ( ) : void
     {
-        
+        fieldMetadata.excludeProperty ( );
     }
     
     [Test]

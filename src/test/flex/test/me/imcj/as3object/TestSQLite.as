@@ -36,7 +36,7 @@ package test.me.imcj.as3object
         [Test]
         public function testCreateStatement ( ) : void
         {
-            var createStatement : String = table.creationStatement ( );
+            var createStatement : String = table.createTable ( );
             trace ( createStatement );
             assertEquals ( "CREATE TABLE Cat ( id Integer PRIMARY KEY asc AUTOINCREMENT, name TEXT, age Integer );", createStatement );
         }

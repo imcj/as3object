@@ -9,15 +9,20 @@ package me.imcj.as3object
         private var fields:Dict;
         private var type:Type;
         
-        public function FieldMetadata ( type : Type, fields : Dict )
+        protected var exclude : Array;
+        protected var maps : Dict;
+        
+        public function FieldMetadata ( type : Type, fields : Dict, maps : Dict )
         {
             this.type = type;
             this.fields = fields;
+            
+            this.maps = maps;
+            exclude = new Array ( );
         }
         
         public function excludeType ( type : Class ) : void
         {
-            
         }
         
         public function excludeProperty ( property : String ) : void

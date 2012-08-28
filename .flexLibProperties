@@ -3,7 +3,7 @@
   <includeClasses>
     <classEntry path="test.me.imcj.as3object.responder.ResponderSelectTest"/>
     <classEntry path="me.imcj.as3object.hook.DefaultExcludeHook"/>
-    <classEntry path="test.me.imcj.as3object.hook.IgnoreSpriteHookTest"/>
+    <classEntry path="test.me.imcj.as3object.hook.DefaultExcludeHookTest"/>
     <classEntry path="me.imcj.as3object.PropertyChangedCache"/>
     <classEntry path="test.me.imcj.as3object.PropertyChangedCacheTest"/>
     <classEntry path="me.imcj.as3object.PropertyChangeQueue"/>
@@ -15,6 +15,12 @@
     <classEntry path="me.imcj.as3object.FieldMetadata"/>
     <classEntry path="test.me.imcj.as3object.FieldMetadataTest"/>
     <classEntry path="test.me.imcj.as3object.core.DictTest"/>
+    <classEntry path="me.imcj.as3object.Field"/>
+    <classEntry path="me.imcj.as3object.factory.FieldFactoryImpl"/>
+    <classEntry path="me.imcj.as3object.factory.FieldFactory"/>
+    <classEntry path="test.me.imcj.as3object.factory.FieldFactoryImplTest"/>
+    <classEntry path="me.imcj.as3object.DDS"/>
+    <classEntry path="me.imcj.DMS"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

@@ -92,7 +92,7 @@ package me.imcj.as3object
             return _primaryKey;
         }
         
-        public function creationStatement ( ifNotExists : Boolean = false ) : String
+        public function createTable ( ifNotExists : Boolean = false ) : String
         {
             return null;
         }

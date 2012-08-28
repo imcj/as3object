@@ -6,8 +6,8 @@ java.io.InvalidClassException: org.apache.velocity.runtime.parser.node.ASTproces
 	xmlns:unitestingsupport="org.sonatype.flexmojos.unitestingsupport.*"
 	layout="absolute"
 	initialize="init()" 
-	port="55921" 
-	controlPort="55920" 
+	port="56230" 
+	controlPort="56229" 
 	>
 
 
@@ -15,11 +15,11 @@ java.io.InvalidClassException: org.apache.velocity.runtime.parser.node.ASTproces
 	<mx:Script>
 		<![CDATA[
 
-import test.me.imcj.as3object.hook.TestPOAOHook; TestPOAOHook;
+import test.me.imcj.as3object.factory.FieldFactoryImplTest; FieldFactoryImplTest;
 
 
 			private function init():void {
-addTest( TestPOAOHook);
+addTest( FieldFactoryImplTest);
 
 			}
 		]]>

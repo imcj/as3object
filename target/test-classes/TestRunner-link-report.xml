@@ -17,14 +17,6 @@
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\responder\ResponderCreationStatement.as" mod="1345619607778" size="1055" optimizedsize="459">
-      <def id="me.imcj.as3object.responder:ResponderCreationStatement" />
-      <pre id="Object" />
-      <pre id="me.imcj.as3object:Responder" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="AS3" />
-      <dep id="mx.rpc:IResponder" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328-en_US.rb.swc$locale/en_US/components.properties" mod="1306828670000" size="4153" optimizedsize="4083">
       <def id="en_US$components_properties" />
       <pre id="mx.resources:ResourceBundle" />
@@ -92,16 +84,6 @@
       <dep id="mx.core:IFlexModuleFactory" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\POAOUpdateResponder.as" mod="1345706609728" size="1081" optimizedsize="558">
-      <def id="me.imcj.as3object.hook:POAOUpdateResponder" />
-      <pre id="me.imcj.as3object:AS3ObjectResponder" />
-      <dep id="flash.events:Event" />
-      <dep id="flash.events:EventDispatcher" />
-      <dep id="me.imcj.as3object:AS3ObjectErrorEvent" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:AS3Object" />
-      <dep id="me.imcj.as3object:AS3ObjectError" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.runners.watcher:FrameWatcher)" mod="1293152844318" size="2529" optimizedsize="1255">
       <def id="org.flexunit.internals.runners.watcher:FrameWatcher" />
       <pre id="Object" />
@@ -124,11 +106,6 @@
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.skins.halo:WindowMinimizeButtonSkin_winMinDisabledSkin)" mod="1306872004468" size="578" optimizedsize="368">
       <def id="mx.skins.halo:WindowMinimizeButtonSkin_winMinDisabledSkin" />
       <pre id="mx.core:BitmapAsset" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\AS3ObjectError.as" mod="1344407878710" size="522" optimizedsize="205">
-      <def id="me.imcj.as3object:AS3ObjectError" />
-      <pre id="Error" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.skins.halo:WindowMinimizeButtonSkin_winMinOverSkin)" mod="1306872004921" size="562" optimizedsize="360">
@@ -263,15 +240,6 @@
       <dep id="mx.core:Singleton" />
       <dep id="flash.text.engine:TextElement" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\TableCache.as" mod="1345704522378" size="1248" optimizedsize="650">
-      <def id="me.imcj.as3object:TableCache" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="org.as3commons.reflect:Type" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="me.imcj.as3object:TableFactory" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.managers.layoutClasses:PriorityQueue)" mod="1306872043843" size="4061" optimizedsize="2420">
       <def id="mx.managers.layoutClasses:PriorityQueue" />
       <pre id="Object" />
@@ -315,11 +283,6 @@
       <dep id="flash.geom:Rectangle" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\ConnectionEvent.as" mod="1344407878741" size="632" optimizedsize="275">
-      <def id="me.imcj.as3object:ConnectionEvent" />
-      <pre id="flash.events:Event" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\org\sonatype\flexmojos\flexmojos-unittest-support\4.0-RC2\flexmojos-unittest-support-4.0-RC2-air.swc(org.sonatype.flexmojos.unitestingsupport:CloseController)" mod="1316388696000" size="1151" optimizedsize="478">
       <def id="org.sonatype.flexmojos.unitestingsupport:CloseController" />
       <pre id="Object" />
@@ -329,6 +292,11 @@
     <script name="_class_embed_css_win_close_down_png__537236486_2134599007.as" mod="1306828804000" size="597" optimizedsize="303">
       <def id="_class_embed_css_win_close_down_png__537236486_2134599007" />
       <pre id="mx.core:BitmapAsset" />
+      <dep id="AS3" />
+    </script>
+    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\core\4.5.1.21328\core-4.5.1.21328.swc(mx.modules:ModuleManagerGlobals)" mod="1306872055374" size="417" optimizedsize="211">
+      <def id="mx.modules:ModuleManagerGlobals" />
+      <pre id="Object" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.managers:PopUpManagerImpl)" mod="1306872044452" size="16393" optimizedsize="10424">
@@ -381,30 +349,12 @@
       <dep id="mx.managers:PopUpManagerChildList" />
       <dep id="mx.managers:PopUpData" />
     </script>
-    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\core\4.5.1.21328\core-4.5.1.21328.swc(mx.modules:ModuleManagerGlobals)" mod="1306872055374" size="417" optimizedsize="211">
-      <def id="mx.modules:ModuleManagerGlobals" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\LessThanEqualExpression.as" mod="1344407878788" size="669" optimizedsize="280">
-      <def id="me.imcj.as3object.expression:LessThanEqualExpression" />
-      <pre id="me.imcj.as3object.expression:EquationExpression" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit:assumeThat)" mod="1293152842694" size="430" optimizedsize="150">
       <def id="org.flexunit:assumeThat" />
       <dep id="org.flexunit:Assume" />
       <dep id="AS3" />
       <dep id="org.hamcrest:Matcher" />
       <dep id="Object" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3proceeding\SequenceImpl.as" mod="1344583644451" size="2241" optimizedsize="1115">
-      <def id="me.imcj.as3proceeding:SequenceImpl" />
-      <pre id="flash.events:EventDispatcher" />
-      <dep id="flash.events:Event" />
-      <dep id="me.imcj.as3proceeding:CallImpl" />
-      <dep id="AS3" />
-      <dep id="mx.rpc:IResponder" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.hamcrest.object:notNullValue)" mod="1268116530832" size="429" optimizedsize="166">
       <def id="org.hamcrest.object:notNullValue" />
@@ -526,13 +476,6 @@
       <dep id="AS3" />
       <dep id="Math" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\core\newInstance.as" mod="1344407878772" size="560" optimizedsize="244">
-      <def id="me.imcj.as3object.core:newInstance" />
-      <dep id="String" />
-      <dep id="AS3" />
-      <dep id="Class" />
-      <dep id="Object" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.runners.statements:IAsyncStatement)" mod="1293152844318" size="781" optimizedsize="268">
       <def id="org.flexunit.internals.runners.statements:IAsyncStatement" />
       <pre id="Object" />
@@ -573,13 +516,6 @@
       <def id="spark.core:IViewport" />
       <pre id="mx.core:IVisualElement" />
       <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\DateTimeField.as" mod="1344407878881" size="1575" optimizedsize="887">
-      <def id="me.imcj.as3object.sqlite.field:DateTimeField" />
-      <pre id="me.imcj.as3object.sqlite:SQLiteField" />
-      <dep id="ReferenceError" />
-      <dep id="flash.utils:ByteArray" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.async:Async)" mod="1299287903045" size="2822" optimizedsize="1495">
@@ -695,31 +631,11 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\FieldFactorySQLite.as" mod="1344826907050" size="3123" optimizedsize="1970">
-      <def id="me.imcj.as3object.sqlite:FieldFactorySQLite" />
-      <pre id="me.imcj.as3object:FieldFactory" />
-      <pre id="Object" />
-      <dep id="org.as3commons.reflect:MetadataContainer" />
-      <dep id="ReferenceError" />
-      <dep id="org.as3commons.reflect:MetadataArgument" />
-      <dep id="org.as3commons.reflect:Type" />
-      <dep id="me.imcj.as3object:AS3ObjectField" />
-      <dep id="me.imcj.as3object.sqlite.field:NumberField" />
-      <dep id="org.as3commons.reflect:Field" />
-      <dep id="mx.utils:StringUtil" />
-      <dep id="org.as3commons.reflect:Accessor" />
-      <dep id="me.imcj.as3object.sqlite.field:RelationField" />
-      <dep id="me.imcj.as3object.sqlite.field:DateTimeField" />
-      <dep id="me.imcj.as3object.sqlite.field:TextField" />
-      <dep id="org.as3commons.reflect:Method" />
-      <dep id="me.imcj.as3object:Table" />
+    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.asserts:fail)" mod="1299287903045" size="419" optimizedsize="142">
+      <def id="org.flexunit.asserts:fail" />
+      <dep id="org.flexunit:Assert" />
+      <dep id="String" />
       <dep id="AS3" />
-      <dep id="me.imcj.as3object.sqlite.field:IntegerField" />
-      <dep id="org.as3commons.reflect:Metadata" />
-      <dep id="me.imcj.as3object.sqlite.field:StringField" />
-      <dep id="me.imcj.as3object.sqlite.field:intField" />
-      <dep id="me.imcj.as3object.sqlite.field:RealField" />
-      <dep id="flash.utils:getDefinitionByName" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.effects:Move)" mod="1306872030515" size="1519" optimizedsize="845">
       <def id="mx.effects:Move" />
@@ -729,32 +645,12 @@
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
     </script>
-    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.asserts:fail)" mod="1299287903045" size="419" optimizedsize="142">
-      <def id="org.flexunit.asserts:fail" />
-      <dep id="org.flexunit:Assert" />
-      <dep id="String" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(flex.lang.reflect.metadata:MetaDataArgument)" mod="1293152842678" size="1522" optimizedsize="701">
       <def id="flex.lang.reflect.metadata:MetaDataArgument" />
       <pre id="Object" />
       <dep id="ArgumentError" />
       <dep id="AS3" />
       <dep id="XML" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\responder\ResponderSelect.as" mod="1344582262051" size="1827" optimizedsize="1079">
-      <def id="me.imcj.as3object.responder:ResponderSelect" />
-      <pre id="Object" />
-      <pre id="me.imcj.as3object:Responder" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="me.imcj.as3object:AS3ObjectField" />
-      <dep id="me.imcj.as3object.hook:HookManager" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="Error" />
-      <dep id="me.imcj.as3object.hook:HookManagerDefault" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.skins:Border)" mod="1306872034046" size="724" optimizedsize="455">
       <def id="mx.skins:Border" />
@@ -855,17 +751,6 @@
       <dep id="org.flexunit.token:AsyncTestToken" />
       <dep id="Error" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Responder.as" mod="1344407878866" size="581" optimizedsize="205">
-      <def id="me.imcj.as3object:Responder" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.utils:IXMLNotifiable)" mod="1306872046937" size="467" optimizedsize="192">
-      <def id="mx.utils:IXMLNotifiable" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.styles:StyleManager)" mod="1306872031968" size="7798" optimizedsize="2663">
       <def id="mx.styles:StyleManager" />
       <pre id="Object" />
@@ -881,6 +766,11 @@
       <dep id="mx.styles:IStyleManager2" />
       <dep id="flash.system:ApplicationDomain" />
       <dep id="flash.utils:Dictionary" />
+    </script>
+    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.utils:IXMLNotifiable)" mod="1306872046937" size="467" optimizedsize="192">
+      <def id="mx.utils:IXMLNotifiable" />
+      <pre id="Object" />
+      <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.hamcrest:assertThat)" mod="1268116530769" size="744" optimizedsize="450">
       <def id="org.hamcrest:assertThat" />
@@ -1034,11 +924,6 @@
     <script name="_class_embed_css_win_min_dis_png__781734682_1167366105.as" mod="1306828804000" size="585" optimizedsize="300">
       <def id="_class_embed_css_win_min_dis_png__781734682_1167366105" />
       <pre id="mx.core:BitmapAsset" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\InExpression.as" mod="1344407878788" size="848" optimizedsize="338">
-      <def id="me.imcj.as3object.expression:InExpression" />
-      <pre id="me.imcj.as3object.expression:Expression" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.managers:ISystemManagerChildManager)" mod="1306872045140" size="1092" optimizedsize="349">
@@ -1282,16 +1167,6 @@
       <dep id="org.as3commons.reflect:Metadata" />
       <dep id="org.as3commons.reflect:as3commons_reflect" />
       <dep id="org.as3commons.reflect:TypeProviderKind" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\InstallDefaultHooks.as" mod="1345709707416" size="944" optimizedsize="468">
-      <def id="me.imcj.as3object.hook:InstallDefaultHooks" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.hook:POAOHook" />
-      <dep id="me.imcj.as3object.hook:HookManager" />
-      <dep id="mx.core:ClassFactory" />
-      <dep id="me.imcj.as3object.hook:Hook" />
-      <dep id="me.imcj.as3object.hook:IgnoreSpriteHook" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc(org.as3commons.reflect:INamespaceOwner)" mod="1295360062580" size="510" optimizedsize="196">
       <def id="org.as3commons.reflect:INamespaceOwner" />
@@ -1538,12 +1413,6 @@
       <dep id="org.as3commons.reflect:as3commons_reflect" />
       <dep id="org.as3commons.lang:HashArray" />
       <dep id="flash.system:ApplicationDomain" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\core\ArrayIterator.as" mod="1344407878756" size="1088" optimizedsize="488">
-      <def id="me.imcj.as3object.core:ArrayIterator" />
-      <pre id="me.imcj.as3object.core:Iterator" />
-      <pre id="Object" />
-      <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runner.manipulation:IFilter)" mod="1293152844334" size="934" optimizedsize="304">
       <def id="org.flexunit.runner.manipulation:IFilter" />
@@ -1834,11 +1703,6 @@
       <dep id="flash.display:DisplayObject" />
       <dep id="flash.text:TextLineMetrics" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\intField.as" mod="1344407878881" size="635" optimizedsize="311">
-      <def id="me.imcj.as3object.sqlite.field:intField" />
-      <pre id="me.imcj.as3object.sqlite.field:IntegerField" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.fluint.uiImpersonation:VisualTestEnvironment)" mod="1299287903061" size="3442" optimizedsize="1256">
       <def id="org.fluint.uiImpersonation:VisualTestEnvironment" />
       <pre id="Object" />
@@ -1878,15 +1742,6 @@
       <dep id="mx.logging:Log" />
       <dep id="org.flexunit.runner:IDescription" />
       <dep id="org.flexunit.reporting:FailureFormatter" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\ConnectionFactoryImpl.as" mod="1344407878741" size="767" optimizedsize="388">
-      <def id="me.imcj.as3object:ConnectionFactoryImpl" />
-      <pre id="me.imcj.as3object:ConnectionFactory" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:ConnectionSQLite" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object:Config" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runner:Request)" mod="1293152844334" size="3309" optimizedsize="1697">
       <def id="org.flexunit.runner:Request" />
@@ -1949,27 +1804,6 @@
       <pre id="mx.core:SpriteAsset" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\ConnectionSQLite.as" mod="1344407878756" size="1664" optimizedsize="950">
-      <def id="me.imcj.as3object:ConnectionSQLite" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object:AS3ObjectResponder" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:StatementSQLite" />
-      <dep id="flash.data:SQLStatement" />
-      <dep id="flash.data:SQLMode" />
-      <dep id="me.imcj.as3object:ConnectionEvent" />
-      <dep id="flash.data:SQLConnection" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="flash.filesystem:File" />
-      <dep id="me.imcj.as3object:Config" />
-      <dep id="me.imcj.as3object:Statement" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\NotExpression.as" mod="1344407878788" size="609" optimizedsize="260">
-      <def id="me.imcj.as3object.expression:NotExpression" />
-      <pre id="me.imcj.as3object.expression:EquationExpression" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.effects:IEffect)" mod="1306872030483" size="3794" optimizedsize="1046">
       <def id="mx.effects:IEffect" />
       <pre id="mx.effects:IAbstractEffect" />
@@ -1984,27 +1818,6 @@
       <def id="_class_embed_css_Assets_swf_1957375318_mx_skins_cursor_DragMove_1275692241" />
       <pre id="mx.core:SpriteAsset" />
       <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\SQLiteDumpExpression.as" mod="1344407878912" size="3834" optimizedsize="1954">
-      <def id="me.imcj.as3object.sqlite:SQLiteDumpExpression" />
-      <pre id="me.imcj.as3object:DumpExpression" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object.expression:Expression" />
-      <dep id="flash.utils:ByteArray" />
-      <dep id="me.imcj.as3object.core:ArrayIterator" />
-      <dep id="me.imcj.as3object.expression:OrExpression" />
-      <dep id="me.imcj.as3object.expression:EqualExpression" />
-      <dep id="me.imcj.as3object.expression:LikeExpression" />
-      <dep id="me.imcj.as3object.expression:LessThanEqualExpression" />
-      <dep id="me.imcj.as3object.expression:InExpression" />
-      <dep id="me.imcj.as3object.expression:NotExpression" />
-      <dep id="me.imcj.as3object.expression:GreaterThanEqualExpression" />
-      <dep id="me.imcj.as3object.core:Iterator" />
-      <dep id="flash.utils:getQualifiedClassName" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.expression:AndExpression" />
-      <dep id="me.imcj.as3object.expression:LessThanExpression" />
-      <dep id="me.imcj.as3object.expression:GreaterThanExpression" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.hamcrest.collection:EveryMatcher)" mod="1270040746655" size="1159" optimizedsize="615">
       <def id="org.hamcrest.collection:EveryMatcher" />
@@ -2123,6 +1936,11 @@
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
     </script>
+    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\fixture\Cat.as" mod="1344407878819" size="498" optimizedsize="223">
+      <def id="me.imcj.as3object.fixture:Cat" />
+      <pre id="me.imcj.as3object.fixture:Animal" />
+      <dep id="AS3" />
+    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.matchers:Each)" mod="1293152844271" size="1398" optimizedsize="732">
       <def id="org.flexunit.internals.matchers:Each" />
       <pre id="org.hamcrest:BaseMatcher" />
@@ -2162,22 +1980,6 @@
       <dep id="mx.core:mx_internal" />
       <dep id="mx.resources:ResourceManager" />
       <dep id="Error" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\Expression.as" mod="1344407878772" size="1836" optimizedsize="782">
-      <def id="me.imcj.as3object.expression:Expression" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object.expression:LogicalExpression" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.expression:OrExpression" />
-      <dep id="me.imcj.as3object.expression:LessThanExpression" />
-      <dep id="me.imcj.as3object.expression:AndExpression" />
-      <dep id="me.imcj.as3object.expression:EqualExpression" />
-      <dep id="me.imcj.as3object.expression:LikeExpression" />
-      <dep id="me.imcj.as3object.expression:GreaterThanExpression" />
-      <dep id="me.imcj.as3object.expression:InExpression" />
-      <dep id="me.imcj.as3object.expression:LessThanEqualExpression" />
-      <dep id="me.imcj.as3object.expression:NotExpression" />
-      <dep id="me.imcj.as3object.expression:GreaterThanEqualExpression" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:IContainer)" mod="1306872040484" size="5425" optimizedsize="1476">
       <def id="mx.core:IContainer" />
@@ -2227,23 +2029,6 @@
       <pre id="flash.events:Event" />
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\CriteriaImplement.as" mod="1344580218295" size="2025" optimizedsize="1119">
-      <def id="me.imcj.as3object:CriteriaImplement" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="me.imcj.as3object:Criteria" />
-      <dep id="me.imcj.as3object:Order" />
-      <dep id="flash.events:IEventDispatcher" />
-      <dep id="me.imcj.as3object.expression:Expression" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object.responder:ResponderSelect" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="me.imcj.as3object.responder:ResponderHierarchical" />
-      <dep id="me.imcj.as3object:Statement" />
-      <dep id="me.imcj.as3object:Hierarchical" />
-      <dep id="me.imcj.as3object:Responder" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.managers:IFocusManagerContainer)" mod="1306872045140" size="1210" optimizedsize="424">
       <def id="mx.managers:IFocusManagerContainer" />
@@ -2441,11 +2226,6 @@
       <pre id="Error" />
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\StringField.as" mod="1344407878881" size="650" optimizedsize="314">
-      <def id="me.imcj.as3object.sqlite.field:StringField" />
-      <pre id="me.imcj.as3object.sqlite.field:TextField" />
-      <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.runners.statements:SequencerWithDecoration)" mod="1293152844318" size="2059" optimizedsize="1031">
       <def id="org.flexunit.internals.runners.statements:SequencerWithDecoration" />
@@ -2654,21 +2434,6 @@
       <dep id="org.flexunit:Assert" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\SQLiteTable.as" mod="1344589804155" size="3635" optimizedsize="2264">
-      <def id="me.imcj.as3object.sqlite:SQLiteTable" />
-      <pre id="me.imcj.as3object:Table" />
-      <dep id="me.imcj.as3object.sqlite:FieldFactorySQLite" />
-      <dep id="me.imcj.as3object.sqlite.field:TextField" />
-      <dep id="me.imcj.as3object.core:Iterator" />
-      <dep id="me.imcj.as3object:Order" />
-      <dep id="me.imcj.as3object.expression:Expression" />
-      <dep id="flash.utils:ByteArray" />
-      <dep id="org.as3commons.reflect:Type" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.core:ArrayIterator" />
-      <dep id="me.imcj.as3object:SQLField" />
-      <dep id="me.imcj.as3object.sqlite:SQLiteDumpExpression" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.graphics.shaderClasses:ColorBurnShader)" mod="1306872048952" size="571" optimizedsize="303">
       <def id="mx.graphics.shaderClasses:ColorBurnShader" />
       <pre id="flash.display:Shader" />
@@ -2710,15 +2475,6 @@
       <dep id="mx.core:IFlexModule" />
       <dep id="mx.events:FlexEvent" />
       <dep id="flash.display:Sprite" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\AS3ObjectField.as" mod="1344407878710" size="2498" optimizedsize="1183">
-      <def id="me.imcj.as3object:AS3ObjectField" />
-      <pre id="Object" />
-      <dep id="org.as3commons.reflect:MetadataContainer" />
-      <dep id="me.imcj.as3object:Order" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="Error" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runner.external:IExternalDependencyRunner)" mod="1293152844334" size="1055" optimizedsize="386">
       <def id="org.flexunit.runner.external:IExternalDependencyRunner" />
@@ -2836,14 +2592,6 @@
       <dep id="org.fluint.uiImpersonation:IVisualTestEnvironment" />
       <dep id="Error" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\SQLiteField.as" mod="1344407878912" size="1464" optimizedsize="742">
-      <def id="me.imcj.as3object.sqlite:SQLiteField" />
-      <pre id="me.imcj.as3object:AS3ObjectField" />
-      <pre id="me.imcj.as3object:SQLField" />
-      <dep id="flash.utils:ByteArray" />
-      <dep id="AS3" />
-      <dep id="Error" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328.swc(spark.events:DisplayLayerObjectExistenceEvent)" mod="1306871844498" size="1080" optimizedsize="594">
       <def id="spark.events:DisplayLayerObjectExistenceEvent" />
       <pre id="flash.events:Event" />
@@ -2922,14 +2670,6 @@
       <pre id="flash.utils:ByteArray" />
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\fixture\Blog.as" mod="1344407878819" size="1594" optimizedsize="840">
-      <def id="me.imcj.as3object.fixture:Blog" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="flash.events:IEventDispatcher" />
-      <dep id="mx.collections:ArrayCollection" />
-      <dep id="AS3" />
-      <dep id="mx.events:PropertyChangeEvent" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328-en_US.rb.swc$locale/en_US/logging.properties" mod="1306828900000" size="735" optimizedsize="704">
       <def id="en_US$logging_properties" />
@@ -3082,12 +2822,6 @@
       <dep id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
       <dep id="Error" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\AS3ObjectResponder.as" mod="1344407878710" size="877" optimizedsize="375">
-      <def id="me.imcj.as3object:AS3ObjectResponder" />
-      <pre id="flash.net:Responder" />
-      <pre id="mx.rpc:IResponder" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc(org.as3commons.reflect:MetadataArgument)" mod="1316531683714" size="1539" optimizedsize="677">
       <def id="org.as3commons.reflect:MetadataArgument" />
       <pre id="org.as3commons.lang:IEquals" />
@@ -3181,18 +2915,6 @@
       <dep id="org.as3commons.reflect:AccessorAccess" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\GreaterThanExpression.as" mod="1344407878772" size="657" optimizedsize="276">
-      <def id="me.imcj.as3object.expression:GreaterThanExpression" />
-      <pre id="me.imcj.as3object.expression:EquationExpression" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\HookManager.as" mod="1345710280676" size="929" optimizedsize="293">
-      <def id="me.imcj.as3object.hook:HookManager" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object.hook:Hook" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.hamcrest:AssertionError)" mod="1279717560155" size="1279" optimizedsize="554">
       <def id="org.hamcrest:AssertionError" />
       <pre id="Error" />
@@ -3202,11 +2924,6 @@
       <def id="spark.components.supportClasses:InvalidatingSprite" />
       <pre id="spark.core:ISharedDisplayObject" />
       <pre id="flash.display:Sprite" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Hierarchical.as" mod="1344407878819" size="339" optimizedsize="110">
-      <def id="me.imcj.as3object:Hierarchical" />
-      <pre id="Object" />
       <dep id="AS3" />
     </script>
     <script name="_class_embed_css_win_max_over_png_1365320384_1659484489.as" mod="1306828804000" size="589" optimizedsize="301">
@@ -3265,19 +2982,6 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\StatementSQLite.as" mod="1344407878912" size="1489" optimizedsize="882">
-      <def id="me.imcj.as3object:StatementSQLite" />
-      <pre id="me.imcj.as3object:StatementImpl" />
-      <dep id="flash.net:Responder" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="flash.errors:SQLError" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="flash.data:SQLStatement" />
-      <dep id="me.imcj.as3object:AS3ObjectError" />
-      <dep id="flash.data:SQLResult" />
-      <dep id="me.imcj.as3object:Responder" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328.swc(spark.primitives:Path)" mod="1306871841592" size="25441" optimizedsize="14255">
       <def id="spark.primitives:Path" />
       <pre id="spark.primitives.supportClasses:FilledElement" />
@@ -3326,18 +3030,11 @@
       <dep id="mx.managers:SystemManagerGlobals" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\LogicalExpression.as" mod="1344407878788" size="749" optimizedsize="300">
-      <def id="me.imcj.as3object.expression:LogicalExpression" />
-      <pre id="me.imcj.as3object.expression:Expression" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\AsyncRepository.as" mod="1344407878725" size="1237" optimizedsize="416">
-      <def id="me.imcj.as3object:AsyncRepository" />
-      <pre id="flash.events:IEventDispatcher" />
+    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\factory\FieldFactory.as" mod="1346052913301" size="565" optimizedsize="210">
+      <def id="me.imcj.as3object.factory:FieldFactory" />
       <pre id="Object" />
-      <dep id="me.imcj.as3object.expression:Expression" />
       <dep id="AS3" />
-      <dep id="mx.rpc:IResponder" />
+      <dep id="me.imcj.as3object.core:Dict" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:UIComponent)" mod="1306872040843" size="105241" optimizedsize="55940">
       <def id="mx.core:UIComponent" />
@@ -3487,27 +3184,11 @@
       <dep id="mx.managers:CursorManager" />
       <dep id="uint" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\TextField.as" mod="1344407878881" size="1341" optimizedsize="717">
-      <def id="me.imcj.as3object.sqlite.field:TextField" />
-      <pre id="me.imcj.as3object.sqlite:SQLiteField" />
-      <dep id="flash.utils:ByteArray" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.controls:ButtonLabelPlacement)" mod="1306872051530" size="648" optimizedsize="376">
       <def id="mx.controls:ButtonLabelPlacement" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\PropertyChangedCache.as" mod="1345689100953" size="1263" optimizedsize="714">
-      <def id="me.imcj.as3object:PropertyChangedCache" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:TableCache" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="Error" />
-      <dep id="me.imcj.as3object:PropertyChangeQueue" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(flexunit.framework:AsyncTestHelper)" mod="1240181186159" size="2201" optimizedsize="1148">
       <def id="flexunit.framework:AsyncTestHelper" />
@@ -3520,12 +3201,6 @@
       <dep id="flexunit.framework:TestResult" />
       <dep id="flash.utils:Timer" />
       <dep id="flash.events:TimerEvent" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\SQL.as" mod="1344407878866" size="891" optimizedsize="328">
-      <def id="me.imcj.as3object:SQL" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object.expression:Expression" />
-      <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.utils:XMLNotifier)" mod="1306872047077" size="2313" optimizedsize="1326">
       <def id="mx.utils:XMLNotifier" />
@@ -3698,19 +3373,6 @@
       <dep id="flash.filters:BitmapFilter" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Table.as" mod="1345705961937" size="2801" optimizedsize="1400">
-      <def id="me.imcj.as3object:Table" />
-      <pre id="me.imcj.as3object:SQL" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object.expression:Expression" />
-      <dep id="org.as3commons.reflect:Type" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:AS3ObjectField" />
-      <dep id="me.imcj.as3object:FieldFactory" />
-      <dep id="me.imcj.as3object.hook:HookManager" />
-      <dep id="me.imcj.as3object.core:Dict" />
-      <dep id="me.imcj.as3object.hook:HookManagerDefault" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.skins.halo:WindowMaximizeButtonSkin_winMaxOverSkin)" mod="1306872004452" size="562" optimizedsize="360">
       <def id="mx.skins.halo:WindowMaximizeButtonSkin_winMaxOverSkin" />
       <pre id="mx.core:BitmapAsset" />
@@ -3786,6 +3448,17 @@
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
     </script>
+    <script name="F:\C1801\as3object\src\test\flex\test\me\imcj\as3object\factory\FieldFactoryImplTest.as" mod="1346055644223" size="1085" optimizedsize="573">
+      <def id="test.me.imcj.as3object.factory:FieldFactoryImplTest" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="trace" />
+      <dep id="org.as3commons.reflect:Type" />
+      <dep id="me.imcj.as3object.factory:FieldFactory" />
+      <dep id="me.imcj.as3object.fixture:Cat" />
+      <dep id="me.imcj.as3object.core:Dict" />
+      <dep id="me.imcj.as3object.factory:FieldFactoryImpl" />
+    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:TextFieldFactory)" mod="1306872041280" size="1642" optimizedsize="965">
       <def id="mx.core:TextFieldFactory" />
       <pre id="mx.core:ITextFieldFactory" />
@@ -3799,11 +3472,6 @@
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:IDataRenderer)" mod="1306872041187" size="459" optimizedsize="171">
       <def id="mx.core:IDataRenderer" />
       <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\NumberField.as" mod="1344407878881" size="650" optimizedsize="314">
-      <def id="me.imcj.as3object.sqlite.field:NumberField" />
-      <pre id="me.imcj.as3object.sqlite.field:RealField" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(flex.lang.reflect.cache:ClassDataCache)" mod="1299287903045" size="920" optimizedsize="413">
@@ -3866,18 +3534,6 @@
       <pre id="Object" />
       <dep id="mx.core:UIComponent" />
       <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\ConnectionPoolImpl.as" mod="1344407878756" size="1422" optimizedsize="744">
-      <def id="me.imcj.as3object:ConnectionPoolImpl" />
-      <pre id="me.imcj.as3object:ConnectionPool" />
-      <pre id="flash.events:EventDispatcher" />
-      <dep id="me.imcj.as3object:ConnectionFactory" />
-      <dep id="me.imcj.as3object:AS3ObjectResponder" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object:ConnectionEvent" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="me.imcj.as3object:Config" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:IVisualElement)" mod="1306872040327" size="2298" optimizedsize="609">
       <def id="mx.core:IVisualElement" />
@@ -3966,20 +3622,11 @@
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Repository.as" mod="1345705633524" size="1892" optimizedsize="1009">
-      <def id="me.imcj.as3object:Repository" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="me.imcj.as3object:AsyncRepository" />
-      <dep id="me.imcj.as3object.responder:ResponderCreationStatement" />
-      <dep id="me.imcj.as3object.expression:Expression" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="me.imcj.as3object.responder:ResponderInsert" />
+    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Field.as" mod="1346053551021" size="991" optimizedsize="470">
+      <def id="me.imcj.as3object:Field" />
+      <pre id="Object" />
+      <dep id="org.as3commons.reflect:Type" />
       <dep id="AS3" />
-      <dep id="me.imcj.as3object:Facade" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object:TableCache" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="me.imcj.as3object:Statement" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc(org.as3commons.reflect.util:CacheUtil)" mod="1317380242194" size="1192" optimizedsize="673">
       <def id="org.as3commons.reflect.util:CacheUtil" />
@@ -4081,23 +3728,12 @@
       <dep id="mx.managers:SystemManager" />
       <dep id="mx.managers:CursorManager" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\EquationExpression.as" mod="1344407878772" size="887" optimizedsize="341">
-      <def id="me.imcj.as3object.expression:EquationExpression" />
-      <pre id="me.imcj.as3object.expression:Expression" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:IDeferredContentOwner)" mod="1306872039359" size="979" optimizedsize="292">
       <def id="mx.core:IDeferredContentOwner" />
       <pre id="mx.core:IUIComponent" />
       <pre id="Object" />
       <dep id="AS3" />
       <dep id="mx.events:FlexEvent" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3proceeding\call.as" mod="1344407878928" size="347" optimizedsize="119">
-      <def id="me.imcj.as3proceeding:call" />
-      <dep id="me.imcj.as3proceeding:CallImpl" />
-      <dep id="AS3" />
-      <dep id="Function" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.events:ExecutionCompleteEvent)" mod="1293152844271" size="891" optimizedsize="359">
       <def id="org.flexunit.internals.events:ExecutionCompleteEvent" />
@@ -4145,14 +3781,6 @@
       <dep id="AS3" />
       <dep id="org.flexunit.runners.model:FrameworkMethod" />
       <dep id="org.flexunit.constants:AnnotationConstants" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\fixture\Comment.as" mod="1344407878819" size="1196" optimizedsize="636">
-      <def id="me.imcj.as3object.fixture:Comment" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="me.imcj.as3object:AS3ObjectHierachical" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.fixture:Blog" />
-      <dep id="mx.events:PropertyChangeEvent" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.controls:SWFLoader)" mod="1306872051530" size="24233" optimizedsize="14534">
       <def id="mx.controls:SWFLoader" />
@@ -4283,12 +3911,6 @@
       <dep id="flash.utils:Timer" />
       <dep id="flash.events:FocusEvent" />
       <dep id="mx.managers:ISystemManagerChildManager" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\IgnoreSpriteHook.as" mod="1345710413179" size="1095" optimizedsize="555">
-      <def id="me.imcj.as3object.hook:IgnoreSpriteHook" />
-      <pre id="me.imcj.as3object.hook:HookImpl" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.events:WindowExistenceEvent)" mod="1306872006468" size="1026" optimizedsize="601">
       <def id="mx.events:WindowExistenceEvent" />
@@ -4518,15 +4140,6 @@
       <dep id="org.flexunit.runner.external:ExternalDependencyToken" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Criteria.as" mod="1344407878772" size="995" optimizedsize="370">
-      <def id="me.imcj.as3object:Criteria" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object:Order" />
-      <dep id="me.imcj.as3object.expression:Expression" />
-      <dep id="AS3" />
-      <dep id="mx.rpc:IResponder" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\spark\4.5.1.21328\spark-4.5.1.21328.swc(spark.components.supportClasses:OverlayDepth)" mod="1306871830982" size="631" optimizedsize="346">
       <def id="spark.components.supportClasses:OverlayDepth" />
       <pre id="Object" />
@@ -4647,11 +4260,6 @@
       <dep id="flash.geom:ColorTransform" />
       <dep id="flash.display:Shape" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\OrExpression.as" mod="1344407878788" size="580" optimizedsize="244">
-      <def id="me.imcj.as3object.expression:OrExpression" />
-      <pre id="me.imcj.as3object.expression:LogicalExpression" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\org\sonatype\flexmojos\flexmojos-unittest-flexunit4\4.0-RC2\flexmojos-unittest-flexunit4-4.0-RC2.swc(_65758199e7523f8e3a2ed9b7af1939f00b5fc628f59e0c653f24ea2f6c200e79_flash_display_Sprite)" mod="1316388971299" size="1095" optimizedsize="562">
       <def id="_65758199e7523f8e3a2ed9b7af1939f00b5fc628f59e0c653f24ea2f6c200e79_flash_display_Sprite" />
       <pre id="flash.display:Sprite" />
@@ -4770,11 +4378,6 @@
       <dep id="mx.core:mx_internal" />
       <dep id="mx.events:ScrollEvent" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\LikeExpression.as" mod="1344407878788" size="855" optimizedsize="333">
-      <def id="me.imcj.as3object.expression:LikeExpression" />
-      <pre id="me.imcj.as3object.expression:Expression" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runner.manipulation.filters:DynamicFilter)" mod="1293152844350" size="1243" optimizedsize="560">
       <def id="org.flexunit.runner.manipulation.filters:DynamicFilter" />
       <pre id="org.flexunit.runner.manipulation.filters:AbstractFilter" />
@@ -4865,11 +4468,6 @@
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:IStateClient)" mod="1306872040421" size="473" optimizedsize="177">
       <def id="mx.core:IStateClient" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Config.as" mod="1345706582588" size="1347" optimizedsize="594">
-      <def id="me.imcj.as3object:Config" />
       <pre id="Object" />
       <dep id="AS3" />
     </script>
@@ -5210,17 +4808,6 @@
       <dep id="org.sonatype.flexmojos.test.report:TestCoverageReport" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\TableFactory.as" mod="1345709855074" size="1396" optimizedsize="821">
-      <def id="me.imcj.as3object:TableFactory" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object.sqlite:SQLiteTable" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="org.as3commons.reflect:Type" />
-      <dep id="me.imcj.as3object.hook:HookManager" />
-      <dep id="me.imcj.as3object.sqlite:SQLiteHierarchicalTable" />
-      <dep id="me.imcj.as3object:Config" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\core\4.5.1.21328\core-4.5.1.21328.swc(mx.core:IFlexModuleFactory)" mod="1306872039405" size="1991" optimizedsize="627">
       <def id="mx.core:IFlexModuleFactory" />
       <pre id="Object" />
@@ -5230,7 +4817,7 @@
       <dep id="flash.display:LoaderInfo" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="_TestRunner_mx_managers_SystemManager.as" mod="1345710526783" size="3837" optimizedsize="2644">
+    <script name="_TestRunner_mx_managers_SystemManager.as" mod="1346056024906" size="3837" optimizedsize="2644">
       <def id="_TestRunner_mx_managers_SystemManager" />
       <pre id="mx.core:IFlexModuleFactory" />
       <pre id="mx.managers:SystemManager" />
@@ -5305,15 +4892,6 @@
       <pre id="org.hamcrest:TypeSafeMatcher" />
       <dep id="org.hamcrest:Description" />
       <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\responder\ResponderInsert.as" mod="1344407878850" size="1148" optimizedsize="573">
-      <def id="me.imcj.as3object.responder:ResponderInsert" />
-      <pre id="Object" />
-      <pre id="me.imcj.as3object:Responder" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="AS3" />
-      <dep id="trace" />
-      <dep id="mx.rpc:IResponder" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.builders:OnlyRecognizedTestClassBuilder)" mod="1299287903061" size="1619" optimizedsize="843">
       <def id="org.flexunit.internals.builders:OnlyRecognizedTestClassBuilder" />
@@ -5664,6 +5242,11 @@
       <dep id="flash.utils:IDataInput" />
       <dep id="mx.events:PropertyChangeEvent" />
     </script>
+    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.skins.halo:WindowMinimizeButtonSkin_winMinUpSkin)" mod="1306872004499" size="554" optimizedsize="356">
+      <def id="mx.skins.halo:WindowMinimizeButtonSkin_winMinUpSkin" />
+      <pre id="mx.core:BitmapAsset" />
+      <dep id="AS3" />
+    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.collections:XMLListAdapter)" mod="1306872058577" size="6914" optimizedsize="3822">
       <def id="mx.collections:XMLListAdapter" />
       <pre id="flash.events:EventDispatcher" />
@@ -5685,16 +5268,6 @@
       <dep id="XML" />
       <dep id="mx.events:CollectionEvent" />
       <dep id="mx.events:PropertyChangeEvent" />
-    </script>
-    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.skins.halo:WindowMinimizeButtonSkin_winMinUpSkin)" mod="1306872004499" size="554" optimizedsize="356">
-      <def id="mx.skins.halo:WindowMinimizeButtonSkin_winMinUpSkin" />
-      <pre id="mx.core:BitmapAsset" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\FieldFactory.as" mod="1344407878788" size="480" optimizedsize="172">
-      <def id="me.imcj.as3object:FieldFactory" />
-      <pre id="Object" />
-      <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.containers.utilityClasses:IConstraintLayout)" mod="1306872054702" size="985" optimizedsize="268">
       <def id="mx.containers.utilityClasses:IConstraintLayout" />
@@ -5825,6 +5398,14 @@
       <dep id="org.as3commons.reflect:Type" />
       <dep id="AS3" />
     </script>
+    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\fixture\Animal.as" mod="1344407878819" size="1739" optimizedsize="884">
+      <def id="me.imcj.as3object.fixture:Animal" />
+      <pre id="flash.events:EventDispatcher" />
+      <pre id="flash.events:IEventDispatcher" />
+      <dep id="flash.utils:getQualifiedClassName" />
+      <dep id="AS3" />
+      <dep id="mx.events:PropertyChangeEvent" />
+    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.events:ValidationResultEvent)" mod="1306872054077" size="1294" optimizedsize="730">
       <def id="mx.events:ValidationResultEvent" />
       <pre id="flash.events:Event" />
@@ -5835,11 +5416,6 @@
       <def id="org.hamcrest.object:IsEqualMatcher" />
       <pre id="org.hamcrest:BaseMatcher" />
       <dep id="org.hamcrest:Description" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\GreaterThanEqualExpression.as" mod="1344407878772" size="687" optimizedsize="286">
-      <def id="me.imcj.as3object.expression:GreaterThanEqualExpression" />
-      <pre id="me.imcj.as3object.expression:EquationExpression" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runner:Result)" mod="1293152844334" size="2735" optimizedsize="1352">
@@ -5924,20 +5500,6 @@
       <def id="mx.skins.halo:WindowCloseButtonSkin_winCloseOverSkin" />
       <pre id="mx.core:BitmapAsset" />
       <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\EqualExpression.as" mod="1344407878772" size="621" optimizedsize="264">
-      <def id="me.imcj.as3object.expression:EqualExpression" />
-      <pre id="me.imcj.as3object.expression:EquationExpression" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Connection.as" mod="1344407878741" size="963" optimizedsize="335">
-      <def id="me.imcj.as3object:Connection" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:ConnectionEvent" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="me.imcj.as3object:Statement" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.hamcrest.core:not)" mod="1268116530769" size="446" optimizedsize="197">
       <def id="org.hamcrest.core:not" />
@@ -6053,11 +5615,6 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\AndExpression.as" mod="1344407878772" size="596" optimizedsize="256">
-      <def id="me.imcj.as3object.expression:AndExpression" />
-      <pre id="me.imcj.as3object.expression:LogicalExpression" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runner.manipulation.sortingInheritance:ClassInheritanceOrderCache)" mod="1293152844365" size="2117" optimizedsize="1039">
       <def id="org.flexunit.runner.manipulation.sortingInheritance:ClassInheritanceOrderCache" />
       <pre id="Object" />
@@ -6069,16 +5626,6 @@
       <dep id="org.flexunit.utils:DescriptionUtil" />
       <dep id="org.flexunit.runner:IDescription" />
       <dep id="flash.utils:Dictionary" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\AS3ObjectHierachical.as" mod="1344586847201" size="2796" optimizedsize="1276">
-      <def id="me.imcj.as3object:AS3ObjectHierachical" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="mx.controls.treeClasses:ITreeDataDescriptor" />
-      <dep id="mx.collections:ICollectionView" />
-      <dep id="mx.collections:ArrayCollection" />
-      <dep id="AS3" />
-      <dep id="mx.events:PropertyChangeEvent" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.token:AsyncTestToken)" mod="1293152844396" size="1885" optimizedsize="814">
       <def id="org.flexunit.token:AsyncTestToken" />
@@ -6101,13 +5648,6 @@
       <dep id="mx.effects.effectClasses:PropertyChanges" />
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\ConnectionFactory.as" mod="1344407878741" size="543" optimizedsize="196">
-      <def id="me.imcj.as3object:ConnectionFactory" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object:Config" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals:AssumptionViolatedException)" mod="1293152842709" size="1299" optimizedsize="646">
       <def id="org.flexunit.internals:AssumptionViolatedException" />
@@ -6239,7 +5779,7 @@
       <dep id="flash.display:DisplayObject" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\core\Dict.as" mod="1344407878772" size="1408" optimizedsize="691">
+    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\core\Dict.as" mod="1345798584398" size="1562" optimizedsize="769">
       <def id="me.imcj.as3object.core:Dict" />
       <pre id="Object" />
       <dep id="me.imcj.as3object.core:DictIterator" />
@@ -6330,14 +5870,7 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\SQLiteHierarchicalTable.as" mod="1344407878912" size="688" optimizedsize="323">
-      <def id="me.imcj.as3object.sqlite:SQLiteHierarchicalTable" />
-      <pre id="me.imcj.as3object.sqlite:SQLiteTable" />
-      <pre id="me.imcj.as3object:Hierarchical" />
-      <dep id="org.as3commons.reflect:Type" />
-      <dep id="AS3" />
-    </script>
-    <script name="_TestRunner_FlexInit-generated.as" mod="1345710526781" size="4601" optimizedsize="4195">
+    <script name="_TestRunner_FlexInit-generated.as" mod="1346056024904" size="4601" optimizedsize="4195">
       <def id="_TestRunner_FlexInit" />
       <pre id="Object" />
       <dep id="mx.styles:StyleManagerImpl" />
@@ -6557,12 +6090,6 @@
       <dep id="mx.core:mx_internal" />
       <dep id="Error" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\SQLField.as" mod="1344407878866" size="893" optimizedsize="315">
-      <def id="me.imcj.as3object:SQLField" />
-      <pre id="Object" />
-      <dep id="flash.utils:ByteArray" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.utils:DescribeTypeCacheRecord)" mod="1306872046921" size="1153" optimizedsize="616">
       <def id="mx.utils:DescribeTypeCacheRecord" />
       <pre id="flash.utils:Proxy" />
@@ -6665,11 +6192,6 @@
       <pre id="Error" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\expression\LessThanExpression.as" mod="1344407878788" size="639" optimizedsize="270">
-      <def id="me.imcj.as3object.expression:LessThanExpression" />
-      <pre id="me.imcj.as3object.expression:EquationExpression" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runners.model:ParameterizedMethod)" mod="1293156153904" size="2345" optimizedsize="1236">
       <def id="org.flexunit.runners.model:ParameterizedMethod" />
       <pre id="org.flexunit.runners.model:FrameworkMethod" />
@@ -6710,11 +6232,6 @@
       <dep id="flash.geom:Matrix" />
       <dep id="flash.geom:Matrix3D" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\PropertyChangeQueue.as" mod="1345689018843" size="595" optimizedsize="244">
-      <def id="me.imcj.as3object:PropertyChangeQueue" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.events:DragEvent)" mod="1306872053780" size="1427" optimizedsize="873">
       <def id="mx.events:DragEvent" />
       <pre id="flash.events:MouseEvent" />
@@ -6749,27 +6266,6 @@
       <dep id="flash.geom:Matrix3D" />
       <dep id="flash.geom:ColorTransform" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Facade.as" mod="1345710483724" size="2574" optimizedsize="1541">
-      <def id="me.imcj.as3object:Facade" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object:ConnectionPool" />
-      <dep id="me.imcj.as3object:CriteriaImplement" />
-      <dep id="me.imcj.as3object:AS3ObjectResponder" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object:TableCache" />
-      <dep id="me.imcj.as3object.core:newInstance" />
-      <dep id="me.imcj.as3object:ConnectionPoolImpl" />
-      <dep id="me.imcj.as3object:Config" />
-      <dep id="mx.utils:UIDUtil" />
-      <dep id="me.imcj.as3object:ConnectionFactoryImpl" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Repository" />
-      <dep id="me.imcj.as3object.hook:HookManager" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="me.imcj.as3object:TableFactory" />
-      <dep id="me.imcj.as3object.hook:HookManagerDefault" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.async:AsyncHandler)" mod="1293152842694" size="1866" optimizedsize="952">
       <def id="org.flexunit.async:AsyncHandler" />
       <pre id="flash.events:EventDispatcher" />
@@ -6798,29 +6294,6 @@
       <dep id="AS3" />
       <dep id="flash.display:InteractiveObject" />
       <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="F:\C1801\as3object\src\test\flex\test\me\imcj\as3object\hook\TestPOAOHook.as" mod="1344825580929" size="3371" optimizedsize="1996">
-      <def id="test.me.imcj.as3object.hook:TestPOAOHook" />
-      <pre id="Object" />
-      <dep id="org.flexunit.async:Async" />
-      <dep id="me.imcj.as3proceeding:SequenceImpl" />
-      <dep id="flash.events:Event" />
-      <dep id="me.imcj.as3object.sqlite:SQLiteTable" />
-      <dep id="me.imcj.as3proceeding:squence" />
-      <dep id="me.imcj.as3object:AS3ObjectResponder" />
-      <dep id="me.imcj.as3proceeding:call" />
-      <dep id="org.as3commons.reflect:Type" />
-      <dep id="trace" />
-      <dep id="me.imcj.as3object:Facade" />
-      <dep id="me.imcj.as3object.hook:POAOHook" />
-      <dep id="me.imcj.as3object.fixture:Blog" />
-      <dep id="me.imcj.as3object:Config" />
-      <dep id="me.imcj.as3object:AsyncRepository" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.fixture:Comment" />
-      <dep id="mx.events:CollectionEvent" />
-      <dep id="me.imcj.as3proceeding:AS3ProceedingResponder" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.logging:LogLogger)" mod="1306872033358" size="2348" optimizedsize="1439">
       <def id="mx.logging:LogLogger" />
@@ -6883,22 +6356,6 @@
       <def id="mx.managers:IFocusManagerGroup" />
       <pre id="Object" />
       <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\DumpExpression.as" mod="1344407878772" size="2181" optimizedsize="773">
-      <def id="me.imcj.as3object:DumpExpression" />
-      <pre id="Object" />
-      <dep id="flash.utils:ByteArray" />
-      <dep id="me.imcj.as3object.expression:OrExpression" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.expression:LessThanExpression" />
-      <dep id="me.imcj.as3object.expression:AndExpression" />
-      <dep id="me.imcj.as3object.expression:EqualExpression" />
-      <dep id="me.imcj.as3object.expression:LikeExpression" />
-      <dep id="me.imcj.as3object.expression:GreaterThanExpression" />
-      <dep id="me.imcj.as3object.expression:InExpression" />
-      <dep id="me.imcj.as3object.expression:LessThanEqualExpression" />
-      <dep id="me.imcj.as3object.expression:NotExpression" />
-      <dep id="me.imcj.as3object.expression:GreaterThanEqualExpression" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\core\4.5.1.21328\core-4.5.1.21328.swc(mx.core:IFlexDisplayObject)" mod="1306872041312" size="5953" optimizedsize="1339">
       <def id="mx.core:IFlexDisplayObject" />
@@ -7014,25 +6471,10 @@
       <dep id="org.flexunit.runner:IRunner" />
       <dep id="org.flexunit.runner:Request" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\Hook.as" mod="1345709338764" size="681" optimizedsize="221">
-      <def id="me.imcj.as3object.hook:Hook" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.hook:HookManager" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.skins.halo:WindowMinimizeButtonSkin_macMinDownSkin)" mod="1306872004921" size="562" optimizedsize="360">
       <def id="mx.skins.halo:WindowMinimizeButtonSkin_macMinDownSkin" />
       <pre id="mx.core:BitmapAsset" />
       <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\StatementImpl.as" mod="1344407878912" size="1219" optimizedsize="501">
-      <def id="me.imcj.as3object:StatementImpl" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="me.imcj.as3object:Statement" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object:Responder" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\core\4.5.1.21328\core-4.5.1.21328.swc(mx.core:RSLData)" mod="1306872040468" size="1658" optimizedsize="839">
       <def id="mx.core:RSLData" />
@@ -7239,14 +6681,6 @@
       <dep id="mx.core:mx_internal" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\ConnectionPool.as" mod="1344407878741" size="807" optimizedsize="282">
-      <def id="me.imcj.as3object:ConnectionPool" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="me.imcj.as3object:Config" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher)" mod="1293152844271" size="1318" optimizedsize="402">
       <def id="org.flexunit.internals.dependency:IExternalRunnerDependencyWatcher" />
       <pre id="Object" />
@@ -7268,27 +6702,6 @@
       <dep id="AS3" />
       <dep id="flash.geom:Rectangle" />
       <dep id="flash.geom:Point" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\POAOHook.as" mod="1345709411051" size="2959" optimizedsize="1834">
-      <def id="me.imcj.as3object.hook:POAOHook" />
-      <pre id="me.imcj.as3object.hook:HookImpl" />
-      <dep id="flash.events:Event" />
-      <dep id="me.imcj.as3object.core:DictIterator" />
-      <dep id="flash.events:IEventDispatcher" />
-      <dep id="me.imcj.as3object:PropertyChangedCache" />
-      <dep id="me.imcj.as3object.hook:POAOUpdateResponder" />
-      <dep id="me.imcj.as3object:AS3Object" />
-      <dep id="me.imcj.as3object:TableCache" />
-      <dep id="me.imcj.as3object.sqlite.field:RelationField" />
-      <dep id="me.imcj.as3object.hook:POAOSaveResponder" />
-      <dep id="me.imcj.as3object:AsyncRepository" />
-      <dep id="mx.collections:ArrayCollection" />
-      <dep id="flash.events:EventDispatcher" />
-      <dep id="mx.events:CollectionEventKind" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="mx.events:CollectionEvent" />
-      <dep id="mx.events:PropertyChangeEvent" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.binding.utils:ChangeWatcher)" mod="1306872056421" size="3536" optimizedsize="1977">
       <def id="mx.binding.utils:ChangeWatcher" />
@@ -7327,20 +6740,20 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\target\test-classes\TestRunner.mxml" mod="1345710522972" size="2074" optimizedsize="1453">
+    <script name="F:\C1801\as3object\target\test-classes\TestRunner.mxml" mod="1346056021245" size="2085" optimizedsize="1464">
       <def id="TestRunner" />
       <pre id="org.sonatype.flexmojos.unitestingsupport:TestAirApplication" />
       <dep id="_TestRunner_FlexInit" />
       <dep id="mx.styles:CSSCondition" />
       <dep id="mx.styles:CSSSelector" />
       <dep id="mx.core:IFlexModuleFactory" />
-      <dep id="test.me.imcj.as3object.hook:TestPOAOHook" />
       <dep id="mx.styles:CSSStyleDeclaration" />
       <dep id="AS3" />
       <dep id="_TestRunner_Styles" />
       <dep id="mx.core:UIComponentDescriptor" />
       <dep id="mx.events:FlexEvent" />
       <dep id="mx.core:mx_internal" />
+      <dep id="test.me.imcj.as3object.factory:FieldFactoryImplTest" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.graphics.shaderClasses:SoftLightShader_ShaderClass)" mod="1306872049077" size="471" optimizedsize="287">
       <def id="mx.graphics.shaderClasses:SoftLightShader_ShaderClass" />
@@ -7488,12 +6901,6 @@
       <pre id="mx.core:BitmapAsset" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3proceeding\AS3ProceedingResponder.as" mod="1344407878928" size="1454" optimizedsize="641">
-      <def id="me.imcj.as3proceeding:AS3ProceedingResponder" />
-      <pre id="mx.rpc:IResponder" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\mx\4.5.1.21328\mx-4.5.1.21328.swc(mx.controls.dataGridClasses:DataGridListData)" mod="1306871948795" size="841" optimizedsize="453">
       <def id="mx.controls.dataGridClasses:DataGridListData" />
       <pre id="mx.controls.listClasses:BaseListData" />
@@ -7558,11 +6965,6 @@
       <dep id="org.flexunit.experimental.runners.statements:TheoryAnchor" />
       <dep id="org.flexunit.constants:AnnotationConstants" />
       <dep id="Error" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Order.as" mod="1344407878834" size="942" optimizedsize="394">
-      <def id="me.imcj.as3object:Order" />
-      <pre id="Object" />
-      <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.token:ChildResult)" mod="1293152844396" size="622" optimizedsize="246">
       <def id="org.flexunit.token:ChildResult" />
@@ -7735,16 +7137,6 @@
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Result.as" mod="1344407878866" size="1027" optimizedsize="404">
-      <def id="me.imcj.as3object:Result" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc(org.as3commons.lang:IEquals)" mod="1295360071347" size="434" optimizedsize="180">
-      <def id="org.as3commons.lang:IEquals" />
-      <pre id="Object" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\mx\4.5.1.21328\mx-4.5.1.21328.swc(mx.containers.utilityClasses:CanvasLayout)" mod="1306871958311" size="20295" optimizedsize="12139">
       <def id="mx.containers.utilityClasses:CanvasLayout" />
       <pre id="mx.containers.utilityClasses:Layout" />
@@ -7798,9 +7190,9 @@
       <dep id="mx.core:mx_internal" />
       <dep id="flash.geom:Point" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\RelationField.as" mod="1344407878881" size="1527" optimizedsize="740">
-      <def id="me.imcj.as3object.sqlite.field:RelationField" />
-      <pre id="me.imcj.as3object.sqlite:SQLiteField" />
+    <script name="C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc(org.as3commons.lang:IEquals)" mod="1295360071347" size="434" optimizedsize="180">
+      <def id="org.as3commons.lang:IEquals" />
+      <pre id="Object" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.managers:CursorManager)" mod="1306872044921" size="2862" optimizedsize="1224">
@@ -7891,11 +7283,6 @@
       <dep id="org.flexunit.runner:IDescription" />
       <dep id="org.flexunit.reporting:FailureFormatter" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\AS3Object.as" mod="1345690626895" size="919" optimizedsize="474">
-      <def id="me.imcj.as3object:AS3Object" />
-      <pre id="flash.events:EventDispatcher" />
-      <dep id="AS3" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.runner.notification:Failure)" mod="1293152844365" size="1519" optimizedsize="661">
       <def id="org.flexunit.runner.notification:Failure" />
       <pre id="Object" />
@@ -7944,16 +7331,6 @@
       <dep id="org.flexunit.async:AsyncTestResponder" />
       <dep id="org.fluint.uiImpersonation.flex:FlexEnvironmentBuilder" />
       <dep id="org.fluint.sequence:ISequenceAction" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\HookManagerDefault.as" mod="1345710314043" size="1667" optimizedsize="815">
-      <def id="me.imcj.as3object.hook:HookManagerDefault" />
-      <pre id="me.imcj.as3object.hook:HookManager" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object.hook:InstallDefaultHooks" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Connection" />
-      <dep id="me.imcj.as3object.hook:Hook" />
-      <dep id="flash.utils:Dictionary" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals.runners.statements:RunBeforesClass)" mod="1293152844318" size="1449" optimizedsize="717">
       <def id="org.flexunit.internals.runners.statements:RunBeforesClass" />
@@ -8200,13 +7577,6 @@
       <dep id="AS3" />
       <dep id="org.flexunit.runner:IDescription" />
       <dep id="Error" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\HookImpl.as" mod="1345709375035" size="818" optimizedsize="317">
-      <def id="me.imcj.as3object.hook:HookImpl" />
-      <pre id="me.imcj.as3object.hook:Hook" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object.hook:HookManager" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.events.rule:MultiMatcher)" mod="1302731845989" size="1747" optimizedsize="904">
       <def id="org.flexunit.events.rule:MultiMatcher" />
@@ -8461,12 +7831,6 @@
       <pre id="mx.resources:ResourceBundle" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3proceeding\CallImpl.as" mod="1344407878928" size="2227" optimizedsize="1469">
-      <def id="me.imcj.as3proceeding:CallImpl" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3proceeding:AS3ProceedingResponder" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.flexunit.internals:flexunit_internal)" mod="1293152844271" size="236" optimizedsize="130">
       <def id="org.flexunit.internals:flexunit_internal" />
       <dep id="AS3" />
@@ -8475,13 +7839,6 @@
       <def id="_class_embed_css_win_min_up_png_604498073_1845495740" />
       <pre id="mx.core:BitmapAsset" />
       <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3proceeding\squence.as" mod="1344407878928" size="443" optimizedsize="179">
-      <def id="me.imcj.as3proceeding:squence" />
-      <dep id="me.imcj.as3proceeding:SequenceImpl" />
-      <dep id="AS3" />
-      <dep id="Array" />
-      <dep id="mx.rpc:IResponder" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.utils:DescribeTypeCache)" mod="1306872047171" size="1699" optimizedsize="990">
       <def id="mx.utils:DescribeTypeCache" />
@@ -8529,19 +7886,6 @@
       <dep id="org.flexunit.token:IAsyncTestToken" />
       <dep id="org.flexunit.constants:AnnotationConstants" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\AS3ObjectErrorEvent.as" mod="1345691034757" size="693" optimizedsize="309">
-      <def id="me.imcj.as3object:AS3ObjectErrorEvent" />
-      <pre id="flash.events:Event" />
-      <dep id="AS3" />
-    </script>
-    <script name="C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc(org.as3commons.lang:HashArray)" mod="1315409046108" size="3699" optimizedsize="1867">
-      <def id="org.as3commons.lang:HashArray" />
-      <pre id="Object" />
-      <dep id="AS3" />
-      <dep id="Math" />
-      <dep id="org.as3commons.lang:ArrayUtils" />
-      <dep id="flash.utils:Dictionary" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.core:ContainerGlobals)" mod="1306872039562" size="1186" optimizedsize="757">
       <def id="mx.core:ContainerGlobals" />
       <pre id="Object" />
@@ -8551,6 +7895,14 @@
       <dep id="flash.display:InteractiveObject" />
       <dep id="mx.managers:IFocusManager" />
       <dep id="mx.core:IUIComponent" />
+    </script>
+    <script name="C:\Users\Administrator\.m2\repository\org\as3commons\as3commons-reflect\1.5.1-SNAPSHOT\as3commons-reflect-1.5.1-SNAPSHOT.swc(org.as3commons.lang:HashArray)" mod="1315409046108" size="3699" optimizedsize="1867">
+      <def id="org.as3commons.lang:HashArray" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="Math" />
+      <dep id="org.as3commons.lang:ArrayUtils" />
+      <dep id="flash.utils:Dictionary" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.styles:IAdvancedStyleClient)" mod="1306872031983" size="1052" optimizedsize="322">
       <def id="mx.styles:IAdvancedStyleClient" />
@@ -8699,16 +8051,6 @@
       <dep id="mx.events:PropertyChangeEvent" />
       <dep id="flash.utils:Dictionary" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\hook\POAOSaveResponder.as" mod="1345705878630" size="1065" optimizedsize="554">
-      <def id="me.imcj.as3object.hook:POAOSaveResponder" />
-      <pre id="me.imcj.as3object:AS3ObjectResponder" />
-      <dep id="flash.events:Event" />
-      <dep id="flash.events:EventDispatcher" />
-      <dep id="me.imcj.as3object:AS3ObjectErrorEvent" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:AS3Object" />
-      <dep id="me.imcj.as3object:AS3ObjectError" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flexunit\flexunit\4.1.0-8\flexunit-4.1.0-8.swc(org.hamcrest.object:hasPropertyWithValue)" mod="1270440346807" size="581" optimizedsize="227">
       <def id="org.hamcrest.object:hasPropertyWithValue" />
       <dep id="org.hamcrest.object:HasPropertyWithValueMatcher" />
@@ -8841,22 +8183,6 @@
       <pre id="Object" />
       <dep id="AS3" />
     </script>
-    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\mx\4.5.1.21328\mx-4.5.1.21328.swc(mx.controls.treeClasses:HierarchicalViewCursor)" mod="1306871950842" size="9295" optimizedsize="5382">
-      <def id="mx.controls.treeClasses:HierarchicalViewCursor" />
-      <pre id="flash.events:EventDispatcher" />
-      <pre id="mx.collections:IViewCursor" />
-      <dep id="mx.collections:CursorBookmark" />
-      <dep id="mx.collections:ICollectionView" />
-      <dep id="RangeError" />
-      <dep id="mx.events:CollectionEventKind" />
-      <dep id="mx.controls.treeClasses:ITreeDataDescriptor" />
-      <dep id="AS3" />
-      <dep id="Math" />
-      <dep id="mx.core:mx_internal" />
-      <dep id="mx.events:CollectionEvent" />
-      <dep id="flash.utils:Dictionary" />
-      <dep id="mx.controls.treeClasses:HierarchicalCollectionView" />
-    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.core:WindowedApplication)" mod="1306872007515" size="33414" optimizedsize="18242">
       <def id="mx.core:WindowedApplication" />
       <pre id="mx.core:Application" />
@@ -8917,6 +8243,22 @@
       <dep id="flash.display:NativeWindowSystemChrome" />
       <dep id="uint" />
     </script>
+    <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\mx\4.5.1.21328\mx-4.5.1.21328.swc(mx.controls.treeClasses:HierarchicalViewCursor)" mod="1306871950842" size="9295" optimizedsize="5382">
+      <def id="mx.controls.treeClasses:HierarchicalViewCursor" />
+      <pre id="flash.events:EventDispatcher" />
+      <pre id="mx.collections:IViewCursor" />
+      <dep id="mx.collections:CursorBookmark" />
+      <dep id="mx.collections:ICollectionView" />
+      <dep id="RangeError" />
+      <dep id="mx.events:CollectionEventKind" />
+      <dep id="mx.controls.treeClasses:ITreeDataDescriptor" />
+      <dep id="AS3" />
+      <dep id="Math" />
+      <dep id="mx.core:mx_internal" />
+      <dep id="mx.events:CollectionEvent" />
+      <dep id="flash.utils:Dictionary" />
+      <dep id="mx.controls.treeClasses:HierarchicalCollectionView" />
+    </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.events:SWFBridgeRequest)" mod="1306872054046" size="2853" optimizedsize="1978">
       <def id="mx.events:SWFBridgeRequest" />
       <pre id="flash.events:Event" />
@@ -8940,6 +8282,21 @@
       <dep id="org.flexunit.runner.external:IExternalDependencyData" />
       <dep id="org.flexunit.constants:AnnotationConstants" />
       <dep id="Error" />
+    </script>
+    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\factory\FieldFactoryImpl.as" mod="1346055889923" size="2450" optimizedsize="1419">
+      <def id="me.imcj.as3object.factory:FieldFactoryImpl" />
+      <pre id="me.imcj.as3object.factory:FieldFactory" />
+      <pre id="Object" />
+      <dep id="org.as3commons.reflect:MetadataContainer" />
+      <dep id="me.imcj.as3object:Field" />
+      <dep id="org.as3commons.reflect:MetadataArgument" />
+      <dep id="org.as3commons.reflect:Method" />
+      <dep id="org.as3commons.reflect:Type" />
+      <dep id="AS3" />
+      <dep id="org.as3commons.reflect:Field" />
+      <dep id="org.as3commons.reflect:Metadata" />
+      <dep id="org.as3commons.reflect:Accessor" />
+      <dep id="me.imcj.as3object.core:Dict" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\airframework\4.5.1.21328\airframework-4.5.1.21328.swc(mx.skins.halo:WindowCloseButtonSkin_winCloseDownSkin)" mod="1306872004515" size="558" optimizedsize="358">
       <def id="mx.skins.halo:WindowCloseButtonSkin_winCloseDownSkin" />
@@ -8974,17 +8331,6 @@
       <pre id="flash.events:Event" />
       <dep id="AS3" />
       <dep id="mx.core:mx_internal" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\responder\ResponderHierarchical.as" mod="1344583372333" size="2638" optimizedsize="1473">
-      <def id="me.imcj.as3object.responder:ResponderHierarchical" />
-      <pre id="me.imcj.as3object.responder:ResponderSelect" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="me.imcj.as3object:Table" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:AS3ObjectField" />
-      <dep id="me.imcj.as3object:AS3ObjectHierachical" />
-      <dep id="mx.rpc:IResponder" />
-      <dep id="me.imcj.as3object.sqlite.field:RelationField" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.controls:ToolTip)" mod="1306872051562" size="6051" optimizedsize="2711">
       <def id="mx.controls:ToolTip" />
@@ -9101,11 +8447,6 @@
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.graphics.shaderClasses:ExclusionShader_ShaderClass)" mod="1306872048843" size="471" optimizedsize="287">
       <def id="mx.graphics.shaderClasses:ExclusionShader_ShaderClass" />
       <pre id="mx.core:ByteArrayAsset" />
-      <dep id="AS3" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\RealField.as" mod="1344407878881" size="1050" optimizedsize="541">
-      <def id="me.imcj.as3object.sqlite.field:RealField" />
-      <pre id="me.imcj.as3object.sqlite:SQLiteField" />
       <dep id="AS3" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.collections:ListCollectionView)" mod="1306872058499" size="22971" optimizedsize="12483">
@@ -9252,20 +8593,7 @@
       <dep id="org.flexunit.experimental.theories:ParameterSignature" />
       <dep id="AS3" />
     </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\Statement.as" mod="1344407878912" size="828" optimizedsize="285">
-      <def id="me.imcj.as3object:Statement" />
-      <pre id="flash.events:IEventDispatcher" />
-      <pre id="Object" />
-      <dep id="me.imcj.as3object:Result" />
-      <dep id="AS3" />
-      <dep id="me.imcj.as3object:Responder" />
-    </script>
-    <script name="F:\C1801\as3object\src\main\flex\me\imcj\as3object\sqlite\field\IntegerField.as" mod="1344407878881" size="1135" optimizedsize="597">
-      <def id="me.imcj.as3object.sqlite.field:IntegerField" />
-      <pre id="me.imcj.as3object.sqlite:SQLiteField" />
-      <dep id="AS3" />
-    </script>
-    <script name="_TestRunner_Styles.as" mod="1345710526315" size="23257" optimizedsize="21751">
+    <script name="_TestRunner_Styles.as" mod="1346056024562" size="23257" optimizedsize="21751">
       <def id="_TestRunner_Styles" />
       <pre id="Object" />
       <dep id="_class_embed_css_Assets_swf_1957375318___brokenImage_188836363" />
@@ -9324,13 +8652,13 @@
       <dep id="mx.core:IFlexModuleFactory" />
       <dep id="_class_embed_css_gripper_up_png_1355642877_1220366608" />
       <dep id="_class_embed_css_Assets_swf_1957375318_mx_skins_cursor_DragLink_1275666666" />
-      <dep id="_class_embed_css_mac_max_down_png_869387515_1687854882" />
       <dep id="_class_embed_css_win_close_down_png__537236486_2134599007" />
+      <dep id="_class_embed_css_mac_max_down_png_869387515_1687854882" />
       <dep id="mx.skins.halo:ToolTipBorder" />
       <dep id="mx.skins.spark:ScrollBarThumbSkin" />
       <dep id="mx.styles:IStyleManager2" />
-      <dep id="_class_embed_css_mac_max_over_png__28607443_1556661408" />
       <dep id="_class_embed_css_mac_close_up_png_1638444576_1922187625" />
+      <dep id="_class_embed_css_mac_max_over_png__28607443_1556661408" />
       <dep id="_class_embed_css_win_restore_down_png_151677604_732913579" />
     </script>
     <script name="C:\Users\Administrator\.m2\repository\com\adobe\flex\framework\framework\4.5.1.21328\framework-4.5.1.21328.swc(mx.controls.listClasses:IListItemRenderer)" mod="1306872050859" size="505" optimizedsize="307">
@@ -9392,7 +8720,6 @@
     <ext id="flash.system:ApplicationDomain" />
     <ext id="flash.display:GraphicsPath" />
     <ext id="flash.geom:Matrix" />
-    <ext id="flash.data:SQLResult" />
     <ext id="flash.display:StageAlign" />
     <ext id="flash.display:NativeWindow" />
     <ext id="flash.errors:IllegalOperationError" />
@@ -9430,7 +8757,6 @@
     <ext id="flash.display:Shader" />
     <ext id="flash.display:NativeMenuItem" />
     <ext id="flash.display:NativeWindowType" />
-    <ext id="flash.data:SQLMode" />
     <ext id="flash.filters:BlurFilter" />
     <ext id="flash.geom:ColorTransform" />
     <ext id="flash.display:NativeWindowInitOptions" />
@@ -9487,7 +8813,6 @@
     <ext id="flash.display:JointStyle" />
     <ext id="flash.utils:describeType" />
     <ext id="flash.net:URLRequest" />
-    <ext id="Function" />
     <ext id="flash.desktop:Clipboard" />
     <ext id="flash.events:GestureEvent" />
     <ext id="flash.geom:Vector3D" />
@@ -9505,14 +8830,12 @@
     <ext id="flash.html:HTMLHistoryItem" />
     <ext id="flash.desktop:NativeDragManager" />
     <ext id="flash.text.engine:ElementFormat" />
-    <ext id="flash.data:SQLConnection" />
     <ext id="flash.utils:Dictionary" />
     <ext id="flash.events:ErrorEvent" />
     <ext id="flash.net:Socket" />
     <ext id="trace" />
     <ext id="flash.events:EventDispatcher" />
     <ext id="flash.external:ExternalInterface" />
-    <ext id="flash.data:SQLStatement" />
     <ext id="flash.media:SoundTransform" />
     <ext id="flash.text:TextSnapshot" />
     <ext id="flash.system:SecurityDomain" />
@@ -9552,7 +8875,6 @@
     <ext id="flash.text.engine:TextLine" />
     <ext id="flash.text:TextLineMetrics" />
     <ext id="flash.utils:getQualifiedSuperclassName" />
-    <ext id="flash.errors:SQLError" />
     <ext id="flash.events:HTTPStatusEvent" />
     <ext id="flash.geom:PerspectiveProjection" />
   </external-defs>

@@ -58,7 +58,7 @@ package me.imcj.as3object
         
         public function creationStatement(object:Object, responder:IResponder, ifNotExists:Boolean=false):void
         {
-            var text : String = cache.getWithObject ( object ).creationStatement ( ifNotExists );
+            var text : String = cache.getWithObject ( object ).createTable ( ifNotExists );
             var statement : Statement = _connection.createStatement ( text );
             statement.execute ( new ResponderCreationStatement ( responder ) );
         }

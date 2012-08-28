@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report>
-  <swf size="2643978" compressedSize="1184391">
+  <swf size="2540462" compressedSize="1145197">
 
     <!-- Header data (SWF attributes, product info, markers, etc.) -->
     <headerData totalSize="432">
@@ -16,13 +16,13 @@
     </headerData>
 
     <!-- Cumulative frame size summary. -->
-    <frames totalSize="2643546">
+    <frames totalSize="2540030">
       <frame name="_TestRunner_mx_managers_SystemManager" size="135451" frame="1"/>
-      <frame name="TestRunner" size="2508095" frame="2"/>
+      <frame name="TestRunner" size="2404579" frame="2"/>
     </frames>
 
     <!-- Actionscript code and constant data. -->
-    <actionScript totalSize="2617623">
+    <actionScript totalSize="2514107">
       <abc name="mx/core/UIComponent" size="105271" frame="2"/>
       <abc name="mx/core/Container" size="49873" frame="2"/>
       <abc name="spark/primitives/supportClasses/GraphicElement" size="45897" frame="2"/>
@@ -162,7 +162,6 @@
       <abc name="spark/components/supportClasses/Skin" size="3977" frame="2"/>
       <abc name="flex/lang/reflect/Constructor" size="3975" frame="2"/>
       <abc name="mx/effects/IEffectInstance" size="3937" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/SQLiteDumpExpression" size="3890" frame="2"/>
       <abc name="_TestRunner_mx_managers_SystemManager" size="3885" frame="1"/>
       <abc name="org/flexunit/runners/Suite" size="3877" frame="2"/>
       <abc name="mx/logging/Log" size="3847" frame="2"/>
@@ -180,7 +179,6 @@
       <abc name="org/as3commons/lang/HashArray" size="3739" frame="2"/>
       <abc name="mx/styles/StyleProxy" size="3735" frame="2"/>
       <abc name="mx/skins/spark/ScrollBarTrackSkin" size="3692" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/SQLiteTable" size="3682" frame="2"/>
       <abc name="mx/core/UITextFormat" size="3674" frame="2"/>
       <abc name="mx/managers/ToolTipManager" size="3636" frame="2"/>
       <abc name="org/fluint/uiImpersonation/IVisualTestEnvironment" size="3619" frame="2"/>
@@ -196,7 +194,6 @@
       <abc name="flex/lang/reflect/Field" size="3492" frame="2"/>
       <abc name="mx/geom/TransformOffsets" size="3482" frame="2"/>
       <abc name="spark/skins/SparkSkin" size="3473" frame="2"/>
-      <abc name="test/me/imcj/as3object/hook/TestPOAOHook" size="3422" frame="2"/>
       <abc name="org/flexunit/experimental/runners/statements/TheoryAnchor" size="3418" frame="2"/>
       <abc name="spark/skins/spark/HighlightBitmapCaptureSkin" size="3407" frame="2"/>
       <abc name="org/flexunit/Assert" size="3391" frame="2"/>
@@ -214,7 +211,6 @@
       <abc name="mx/core/windowClasses/StatusBar" size="3253" frame="2"/>
       <abc name="mx/core/DesignLayer" size="3242" frame="2"/>
       <abc name="mx/graphics/GradientStroke" size="3178" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/FieldFactorySQLite" size="3177" frame="2"/>
       <abc name="org/flexunit/experimental/runners/statements/AssignmentSequencer" size="3127" frame="2"/>
       <abc name="mx/managers/WindowedSystemChildrenList" size="3109" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/ExpectException" size="3096" frame="2"/>
@@ -226,7 +222,6 @@
       <abc name="org/flexunit/events/rule/IEventExpectation" size="3017" frame="2"/>
       <abc name="mx/managers/IToolTipManager2" size="3017" frame="2"/>
       <abc name="mx/formatters/Formatter" size="3005" frame="2"/>
-      <abc name="me/imcj/as3object/hook/POAOHook" size="3001" frame="2"/>
       <abc name="mx/automation/IAutomationObject" size="2994" frame="2"/>
       <abc name="mx/controls/Image" size="2990" frame="2"/>
       <abc name="org/flexunit/events/rule/EventRule" size="2978" frame="2"/>
@@ -241,9 +236,7 @@
       <abc name="mx/graphics/RadialGradient" size="2855" frame="2"/>
       <abc name="org/flexunit/experimental/runners/statements/MethodCompleteWithParamsStatement" size="2850" frame="2"/>
       <abc name="mx/graphics/LinearGradient" size="2849" frame="2"/>
-      <abc name="me/imcj/as3object/AS3ObjectHierachical" size="2845" frame="2"/>
       <abc name="org/flexunit/internals/TraceListener" size="2837" frame="2"/>
-      <abc name="me/imcj/as3object/Table" size="2835" frame="2"/>
       <abc name="mx/containers/Box" size="2833" frame="2"/>
       <abc name="org/as3commons/reflect/Metadata" size="2826" frame="2"/>
       <abc name="mx/skins/halo/ToolTipBorder" size="2813" frame="2"/>
@@ -254,7 +247,6 @@
       <abc name="org/flexunit/runner/Result" size="2772" frame="2"/>
       <abc name="mx/binding/Watcher" size="2757" frame="2"/>
       <abc name="mx/core/FlexVersion" size="2703" frame="2"/>
-      <abc name="me/imcj/as3object/responder/ResponderHierarchical" size="2698" frame="2"/>
       <abc name="mx/utils/StringUtil" size="2694" frame="2"/>
       <abc name="org/flexunit/runners/model/TestClass" size="2681" frame="2"/>
       <abc name="org/sonatype/flexmojos/unitestingsupport/TestAirApplication" size="2662" frame="2"/>
@@ -265,7 +257,6 @@
       <abc name="org/as3commons/reflect/MethodInvoker" size="2623" frame="2"/>
       <abc name="org/flexunit/experimental/runners/statements/TheoryBlockRunner" size="2617" frame="2"/>
       <abc name="mx/effects/effectClasses/FadeInstance" size="2614" frame="2"/>
-      <abc name="me/imcj/as3object/Facade" size="2609" frame="2"/>
       <abc name="mx/utils/TransformUtil" size="2593" frame="2"/>
       <abc name="mx/controls/HScrollBar" size="2593" frame="2"/>
       <abc name="org/flexunit/internals/runners/watcher/FrameWatcher" size="2591" frame="2"/>
@@ -273,10 +264,10 @@
       <abc name="mx/utils/GraphicsUtil" size="2588" frame="1"/>
       <abc name="org/flexunit/runners/model/RunnerBuilderBase" size="2570" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/FailOnTimeout" size="2562" frame="2"/>
-      <abc name="me/imcj/as3object/AS3ObjectField" size="2541" frame="2"/>
       <abc name="mx/states/OverrideBase" size="2527" frame="2"/>
       <abc name="flex/lang/reflect/builders/MethodBuilder" size="2517" frame="2"/>
       <abc name="mx/managers/WindowedSystemRawChildrenList" size="2516" frame="2"/>
+      <abc name="me/imcj/as3object/factory/FieldFactoryImpl" size="2503" frame="2"/>
       <abc name="org/as3commons/reflect/Accessor" size="2495" frame="2"/>
       <abc name="org/flexunit/internals/runners/ErrorReportingRunner" size="2464" frame="2"/>
       <abc name="org/flexunit/runner/notification/async/WaitingListener" size="2449" frame="2"/>
@@ -295,17 +286,14 @@
       <abc name="spark/primitives/supportClasses/FilledElement" size="2315" frame="2"/>
       <abc name="spark/utils/MaskUtil" size="2301" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/StackAndFrameManagement" size="2299" frame="2"/>
-      <abc name="me/imcj/as3proceeding/SequenceImpl" size="2286" frame="2"/>
       <abc name="mx/managers/DragManager" size="2282" frame="2"/>
       <abc name="org/flexunit/experimental/runners/statements/TheoryBlockRunnerStatement" size="2269" frame="2"/>
-      <abc name="me/imcj/as3proceeding/CallImpl" size="2268" frame="2"/>
       <abc name="mx/skins/halo/WindowRestoreButtonSkin" size="2261" frame="2"/>
       <abc name="spark/components/supportClasses/DisplayLayer" size="2255" frame="2"/>
       <abc name="mx/managers/IFocusManager" size="2251" frame="2"/>
       <abc name="mx/core/RSLListLoader" size="2247" frame="1"/>
       <abc name="flexunit/framework/AsyncTestHelper" size="2246" frame="2"/>
       <abc name="mx/styles/CSSSelector" size="2225" frame="2"/>
-      <abc name="me/imcj/as3object/DumpExpression" size="2224" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/sortingInheritance/ClassInheritanceOrderCache" size="2206" frame="2"/>
       <abc name="org/flexunit/async/AsyncNativeTestResponder" size="2203" frame="2"/>
       <abc name="mx/controls/menuClasses/IMenuDataDescriptor" size="2199" frame="2"/>
@@ -319,9 +307,8 @@
       <abc name="org/flexunit/internals/runners/statements/SequencerWithDecoration" size="2135" frame="2"/>
       <abc name="mx/skins/spark/SparkSkinForHalo" size="2134" frame="2"/>
       <abc name="spark/skins/spark/FocusSkin" size="2114" frame="2"/>
-      <abc name="TestRunner" size="2095" frame="2"/>
+      <abc name="TestRunner" size="2106" frame="2"/>
       <abc name="mx/managers/ICursorManager" size="2076" frame="2"/>
-      <abc name="me/imcj/as3object/CriteriaImplement" size="2071" frame="2"/>
       <abc name="mx/controls/VScrollBar" size="2061" frame="2"/>
       <abc name="mx/core/ResourceModuleRSLItem" size="2055" frame="1"/>
       <abc name="mx/preloaders/IPreloaderDisplay" size="2038" frame="1"/>
@@ -335,15 +322,12 @@
       <abc name="mx/logging/targets/LineFormattedTarget" size="1961" frame="2"/>
       <abc name="mx/core/IDeferredInstantiationUIComponent" size="1954" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/OrderArgumentSorter" size="1953" frame="2"/>
-      <abc name="me/imcj/as3object/Repository" size="1931" frame="2"/>
       <abc name="org/flexunit/token/AsyncTestToken" size="1929" frame="2"/>
       <abc name="org/flexunit/async/AsyncHandler" size="1908" frame="2"/>
       <abc name="org/as3commons/reflect/TypeCache" size="1901" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/OrderArgumentPlusAlphaSorter" size="1895" frame="2"/>
       <abc name="mx/styles/IStyleManager2" size="1895" frame="2"/>
       <abc name="mx/effects/EffectTargetFilter" size="1888" frame="2"/>
-      <abc name="me/imcj/as3object/expression/Expression" size="1886" frame="2"/>
-      <abc name="me/imcj/as3object/responder/ResponderSelect" size="1881" frame="2"/>
       <abc name="mx/styles/IStyleClient" size="1869" frame="2"/>
       <abc name="flexunit/utils/ArrayList" size="1859" frame="2"/>
       <abc name="org/flexunit/events/rule/TimeoutMonitor" size="1852" frame="2"/>
@@ -354,6 +338,7 @@
       <abc name="org/hamcrest/object/IsEqualMatcher" size="1798" frame="2"/>
       <abc name="org/flexunit/events/rule/MultiMatcher" size="1795" frame="2"/>
       <abc name="org/flexunit/runner/IDescription" size="1790" frame="2"/>
+      <abc name="me/imcj/as3object/fixture/Animal" size="1782" frame="2"/>
       <abc name="org/fluint/sequence/SequenceWaiter" size="1781" frame="2"/>
       <abc name="mx/managers/ILayoutManagerClient" size="1767" frame="2"/>
       <abc name="mx/collections/ICollectionView" size="1761" frame="2"/>
@@ -364,8 +349,6 @@
       <abc name="mx/utils/DescribeTypeCache" size="1736" frame="2"/>
       <abc name="org/as3commons/reflect/MetadataContainer" size="1723" frame="2"/>
       <abc name="org/sonatype/flexmojos/test/report/TestCaseReport" size="1721" frame="2"/>
-      <abc name="me/imcj/as3object/hook/HookManagerDefault" size="1719" frame="2"/>
-      <abc name="me/imcj/as3object/ConnectionSQLite" size="1709" frame="2"/>
       <abc name="flexunit/framework/AssertStringFormats" size="1703" frame="2"/>
       <abc name="mx/utils/NameUtil" size="1696" frame="1"/>
       <abc name="org/flexunit/internals/builders/OnlyRecognizedTestClassBuilder" size="1692" frame="2"/>
@@ -380,19 +363,17 @@
       <abc name="spark/skins/spark/ErrorSkin" size="1643" frame="2"/>
       <abc name="en_US$core_properties" size="1638" frame="2"/>
       <abc name="mx/states/State" size="1635" frame="2"/>
-      <abc name="me/imcj/as3object/fixture/Blog" size="1635" frame="2"/>
       <abc name="mx/events/SandboxMouseEvent" size="1634" frame="1"/>
-      <abc name="me/imcj/as3object/sqlite/field/DateTimeField" size="1630" frame="2"/>
       <abc name="mx/collections/ISortField" size="1621" frame="2"/>
       <abc name="avmplus/DescribeType" size="1620" frame="2"/>
       <abc name="mx/managers/PopUpManager" size="1616" frame="2"/>
       <abc name="mx/managers/IFocusManagerComponent" size="1615" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/filters/MethodNameFilter" size="1603" frame="2"/>
+      <abc name="me/imcj/as3object/core/Dict" size="1600" frame="2"/>
       <abc name="mx/effects/Zoom" size="1591" frame="2"/>
       <abc name="org/as3commons/reflect/MetadataArgument" size="1589" frame="2"/>
       <abc name="org/flexunit/runner/notification/RunListener" size="1585" frame="2"/>
       <abc name="mx/skins/halo/ApplicationTitleBarBackgroundSkin" size="1583" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/field/RelationField" size="1582" frame="2"/>
       <abc name="flex/lang/reflect/metadata/MetaDataArgument" size="1576" frame="2"/>
       <abc name="org/flexunit/runner/notification/Failure" size="1570" frame="2"/>
       <abc name="org/flexunit/internals/dependency/IExternalDependencyResolver" size="1557" frame="2"/>
@@ -401,18 +382,14 @@
       <abc name="org/flexunit/internals/builders/IgnoredClassRunner" size="1544" frame="2"/>
       <abc name="mx/collections/ArrayCollection" size="1541" frame="2"/>
       <abc name="mx/skins/halo/DefaultDragImage" size="1538" frame="2"/>
-      <abc name="me/imcj/as3object/StatementSQLite" size="1533" frame="2"/>
       <abc name="mx/binding/utils/BindingUtils" size="1526" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/RunBeforesClass" size="1517" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/SQLiteField" size="1511" frame="2"/>
-      <abc name="me/imcj/as3proceeding/AS3ProceedingResponder" size="1509" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/RunAftersClass" size="1505" frame="2"/>
       <abc name="mx/events/InterDragManagerEvent" size="1505" frame="2"/>
       <abc name="org/flexunit/experimental/theories/internals/ParameterizedAssertionError" size="1494" frame="2"/>
       <abc name="org/fluint/sequence/SequenceCaller" size="1492" frame="2"/>
       <abc name="org/flexunit/internals/runners/ChildRunnerSequencer" size="1487" frame="2"/>
       <abc name="org/fluint/uiImpersonation/VisualTestEnvironmentBuilder" size="1478" frame="2"/>
-      <abc name="me/imcj/as3object/ConnectionPoolImpl" size="1469" frame="2"/>
       <abc name="org/as3commons/reflect/TypeProviderKind" size="1466" frame="2"/>
       <abc name="mx/events/DragEvent" size="1457" frame="2"/>
       <abc name="spark/core/IViewport" size="1457" frame="2"/>
@@ -421,10 +398,8 @@
       <abc name="flexunit/utils/Collection" size="1450" frame="2"/>
       <abc name="mx/managers/PopUpData" size="1449" frame="2"/>
       <abc name="mx/core/IRepeater" size="1447" frame="2"/>
-      <abc name="me/imcj/as3object/core/Dict" size="1446" frame="2"/>
       <abc name="org/flexunit/internals/matchers/Each" size="1445" frame="2"/>
       <abc name="org/flexunit/IncludeFlexClasses" size="1438" frame="2"/>
-      <abc name="me/imcj/as3object/TableFactory" size="1437" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/RunAfters" size="1435" frame="2"/>
       <abc name="spark/layouts/supportClasses/LayoutElementHelper" size="1435" frame="2"/>
       <abc name="org/sonatype/flexmojos/unitestingsupport/ITestApplication" size="1428" frame="2"/>
@@ -440,11 +415,9 @@
       <abc name="mx/utils/OnDemandEventDispatcher" size="1397" frame="2"/>
       <abc name="org/flexunit/internals/dependency/IExternalRunnerDependencyWatcher" size="1395" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/AsyncStatementBase" size="1393" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/field/TextField" size="1392" frame="2"/>
       <abc name="org/as3commons/reflect/AccessorAccess" size="1387" frame="2"/>
       <abc name="mx/events/RSLEvent" size="1386" frame="1"/>
       <abc name="mx/core/DragSource" size="1383" frame="2"/>
-      <abc name="me/imcj/as3object/Config" size="1382" frame="2"/>
       <abc name="org/hamcrest/number/IsLessThanMatcher" size="1380" frame="2"/>
       <abc name="mx/utils/ColorUtil" size="1374" frame="2"/>
       <abc name="mx/collections/IList" size="1368" frame="2"/>
@@ -462,7 +435,6 @@
       <abc name="org/flexunit/runner/manipulation/filters/AbstractFilter" size="1324" frame="2"/>
       <abc name="org/hamcrest/AssertionError" size="1317" frame="2"/>
       <abc name="org/flexunit/constants/AnnotationConstants" size="1314" frame="2"/>
-      <abc name="me/imcj/as3object/PropertyChangedCache" size="1312" frame="2"/>
       <abc name="org/sonatype/flexmojos/test/report/TestMethodReport" size="1310" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/filters/DynamicFilter" size="1308" frame="2"/>
       <abc name="mx/core/UIComponentGlobals" size="1308" frame="2"/>
@@ -472,13 +444,10 @@
       <abc name="org/flexunit/internals/builders/FlexUnit1Builder" size="1293" frame="2"/>
       <abc name="flex/lang/reflect/builders/MetaDataAnnotationBuilder" size="1290" frame="2"/>
       <abc name="org/flexunit/internals/builders/SuiteMethodBuilder" size="1288" frame="2"/>
-      <abc name="me/imcj/as3object/TableCache" size="1287" frame="2"/>
-      <abc name="me/imcj/as3object/AsyncRepository" size="1281" frame="2"/>
       <abc name="mx/collections/ISort" size="1278" frame="2"/>
       <abc name="mx/events/ModuleEvent" size="1276" frame="2"/>
       <abc name="org/as3commons/reflect/Constructor" size="1269" frame="2"/>
       <abc name="org/hamcrest/TypeSafeDiagnosingMatcher" size="1266" frame="2"/>
-      <abc name="me/imcj/as3object/StatementImpl" size="1261" frame="2"/>
       <abc name="mx/managers/IFocusManagerContainer" size="1255" frame="2"/>
       <abc name="mx/events/FlexMouseEvent" size="1249" frame="2"/>
       <abc name="mx/effects/effectClasses/HideShowEffectTargetFilter" size="1247" frame="2"/>
@@ -486,7 +455,6 @@
       <abc name="mx/events/InterManagerRequest" size="1245" frame="2"/>
       <abc name="_8064be645a661367394a2e8d11e2811b9ff10745ac6a0937db06b2f16ec8a94e_flash_display_Sprite" size="1244" frame="2"/>
       <abc name="mx/core/EmbeddedFont" size="1243" frame="2"/>
-      <abc name="me/imcj/as3object/fixture/Comment" size="1240" frame="2"/>
       <abc name="org/as3commons/reflect/util/CacheUtil" size="1240" frame="2"/>
       <abc name="org/sonatype/flexmojos/coverage/CoverageDataCollector" size="1235" frame="2"/>
       <abc name="mx/effects/Fade" size="1234" frame="2"/>
@@ -502,7 +470,6 @@
       <abc name="org/hamcrest/collection/IsArrayContainingMatcher" size="1215" frame="2"/>
       <abc name="mx/containers/utilityClasses/Layout" size="1207" frame="2"/>
       <abc name="org/hamcrest/collection/EveryMatcher" size="1206" frame="2"/>
-      <abc name="me/imcj/as3object/responder/ResponderInsert" size="1202" frame="2"/>
       <abc name="org/flexunit/internals/runners/SuiteMethod" size="1201" frame="2"/>
       <abc name="mx/utils/DescribeTypeCacheRecord" size="1196" frame="2"/>
       <abc name="org/hamcrest/BaseMatcher" size="1195" frame="2"/>
@@ -510,7 +477,6 @@
       <abc name="mx/events/ScrollEventDetail" size="1193" frame="2"/>
       <abc name="_0011b63ce976bf2a836f31e8c76899f12fb13bf8c00bcc61eebb307001f43708_flash_display_Sprite" size="1192" frame="2"/>
       <abc name="_65758199e7523f8e3a2ed9b7af1939f00b5fc628f59e0c653f24ea2f6c200e79_flash_display_Sprite" size="1192" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/field/IntegerField" size="1189" frame="2"/>
       <abc name="mx/events/IndexChangedEvent" size="1184" frame="2"/>
       <abc name="mx/skins/halo/StatusBarBackgroundSkin" size="1180" frame="2"/>
       <abc name="me/imcj/as3object/core/DictIterator" size="1180" frame="2"/>
@@ -526,22 +492,17 @@
       <abc name="org/flexunit/internals/builders/IgnoredBuilder" size="1153" frame="2"/>
       <abc name="mx/core/IRepeaterClient" size="1150" frame="1"/>
       <abc name="mx/managers/IActiveWindowManager" size="1150" frame="2"/>
-      <abc name="me/imcj/as3object/hook/IgnoreSpriteHook" size="1145" frame="2"/>
+      <abc name="test/me/imcj/as3object/factory/FieldFactoryImplTest" size="1147" frame="2"/>
       <abc name="mx/logging/LogEvent" size="1142" frame="2"/>
       <abc name="mx/managers/ISystemManagerChildManager" size="1141" frame="1"/>
       <abc name="mx/events/ToolTipEvent" size="1137" frame="2"/>
       <abc name="spark/events/DisplayLayerObjectExistenceEvent" size="1136" frame="2"/>
       <abc name="org/hamcrest/Description" size="1135" frame="2"/>
-      <abc name="me/imcj/as3object/core/ArrayIterator" size="1135" frame="2"/>
-      <abc name="me/imcj/as3object/hook/POAOUpdateResponder" size="1134" frame="2"/>
       <abc name="org/flexunit/runner/external/IExternalDependencyRunner" size="1120" frame="2"/>
-      <abc name="me/imcj/as3object/responder/ResponderCreationStatement" size="1120" frame="2"/>
       <abc name="org/flexunit/experimental/theories/IPotentialAssignment" size="1117" frame="2"/>
-      <abc name="me/imcj/as3object/hook/POAOSaveResponder" size="1116" frame="2"/>
       <abc name="spark/components/supportClasses/InvalidatingSprite" size="1112" frame="2"/>
       <abc name="org/as3commons/reflect/AbstractTypeProvider" size="1102" frame="2"/>
       <abc name="mx/controls/listClasses/BaseListData" size="1101" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/field/RealField" size="1101" frame="2"/>
       <abc name="org/hamcrest/DiagnosingMatcher" size="1099" frame="2"/>
       <abc name="org/flexunit/internals/builders/FlexUnit4Builder" size="1098" frame="2"/>
       <abc name="mx/styles/IAdvancedStyleClient" size="1093" frame="2"/>
@@ -558,7 +519,6 @@
       <abc name="flexunit/utils/CollectionIterator" size="1067" frame="2"/>
       <abc name="mx/events/WindowExistenceEvent" size="1067" frame="2"/>
       <abc name="org/flexunit/token/IAsyncTestToken" size="1062" frame="2"/>
-      <abc name="me/imcj/as3object/Result" size="1062" frame="2"/>
       <abc name="mx/managers/IPopUpManager" size="1057" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/sortingInheritance/ISortingInheritanceCache" size="1056" frame="2"/>
       <abc name="org/fluint/sequence/ISequencePend" size="1055" frame="2"/>
@@ -568,10 +528,10 @@
       <abc name="mx/graphics/IStroke" size="1040" frame="2"/>
       <abc name="mx/validators/IValidatorListener" size="1036" frame="2"/>
       <abc name="org/hamcrest/StringDescription" size="1032" frame="2"/>
-      <abc name="me/imcj/as3object/Criteria" size="1032" frame="2"/>
       <abc name="mx/resources/ResourceManager" size="1030" frame="2"/>
       <abc name="mx/graphics/shaderClasses/LuminosityMaskShader" size="1030" frame="2"/>
       <abc name="mx/events/AIREvent" size="1028" frame="2"/>
+      <abc name="me/imcj/as3object/Field" size="1025" frame="2"/>
       <abc name="mx/utils/DensityUtil" size="1020" frame="1"/>
       <abc name="mx/core/IDeferredContentOwner" size="1019" frame="2"/>
       <abc name="org/flexunit/internals/requests/ClassRequest" size="1017" frame="2"/>
@@ -582,25 +542,20 @@
       <abc name="mx/events/ResourceEvent" size="1010" frame="1"/>
       <abc name="org/sonatype/flexmojos/test/monitor/CommConstraints" size="1010" frame="2"/>
       <abc name="org/hamcrest/TypeSafeMatcher" size="1006" frame="2"/>
-      <abc name="me/imcj/as3object/Connection" size="1002" frame="2"/>
       <abc name="org/flexunit/utils/DescriptionUtil" size="1001" frame="2"/>
       <abc name="org/flexunit/constants/AnnotationArgumentConstants" size="999" frame="2"/>
       <abc name="mx/core/DeferredInstanceFromFunction" size="998" frame="2"/>
       <abc name="mx/events/FlexChangeEvent" size="997" frame="2"/>
-      <abc name="me/imcj/as3object/hook/InstallDefaultHooks" size="997" frame="2"/>
       <abc name="mx/collections/errors/ItemPendingError" size="996" frame="2"/>
       <abc name="org/as3commons/reflect/Field" size="996" frame="2"/>
       <abc name="mx/events/StateChangeEvent" size="990" frame="2"/>
       <abc name="mx/events/StyleEvent" size="989" frame="2"/>
       <abc name="org/sonatype/flexmojos/unitestingsupport/util/ClassnameUtil" size="987" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/IFilter" size="985" frame="2"/>
-      <abc name="me/imcj/as3object/Order" size="976" frame="2"/>
-      <abc name="me/imcj/as3object/hook/HookManager" size="974" frame="2"/>
       <abc name="flex/lang/reflect/cache/ClassDataCache" size="969" frame="2"/>
       <abc name="flexunit/framework/Test" size="968" frame="2"/>
       <abc name="org/hamcrest/core/IsNotMatcher" size="964" frame="2"/>
       <abc name="flexunit/framework/WarningTestCase" size="958" frame="2"/>
-      <abc name="me/imcj/as3object/AS3Object" size="957" frame="2"/>
       <abc name="org/flexunit/internals/events/ExecutionCompleteEvent" size="954" frame="2"/>
       <abc name="org/flexunit/internals/runners/InitializationError" size="949" frame="2"/>
       <abc name="org/hamcrest/assertThatMatcher" size="949" frame="2"/>
@@ -609,27 +564,21 @@
       <abc name="org/flexunit/async/TestResponder" size="946" frame="2"/>
       <abc name="org/flexunit/experimental/theories/internals/error/CouldNotGenerateValueException" size="945" frame="2"/>
       <abc name="mx/events/ScrollEvent" size="945" frame="2"/>
-      <abc name="me/imcj/as3object/expression/EquationExpression" size="945" frame="2"/>
       <abc name="org/flexunit/runner/IRequest" size="943" frame="2"/>
       <abc name="mx/collections/ItemResponder" size="943" frame="2"/>
       <abc name="org/sonatype/flexmojos/unitestingsupport/UnitTestRunner" size="938" frame="2"/>
       <abc name="mx/logging/ILoggingTarget" size="931" frame="2"/>
-      <abc name="me/imcj/as3object/SQLField" size="930" frame="2"/>
       <abc name="org/flexunit/events/UnknownError" size="927" frame="2"/>
       <abc name="org/fluint/uiImpersonation/actionScript/ActionScriptVisualTestEnvironment" size="925" frame="2"/>
-      <abc name="me/imcj/as3object/AS3ObjectResponder" size="924" frame="2"/>
-      <abc name="me/imcj/as3object/SQL" size="923" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/IFixtureSorter" size="919" frame="2"/>
       <abc name="mx/core/UIComponentDescriptor" size="918" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/Fail" size="916" frame="2"/>
       <abc name="mx/binding/EvalBindingResponder" size="913" frame="2"/>
-      <abc name="me/imcj/as3object/expression/LikeExpression" size="909" frame="2"/>
       <abc name="mx/effects/IEffectTargetHost" size="907" frame="2"/>
       <abc name="mx/core/IStateClient2" size="906" frame="2"/>
       <abc name="mx/events/TweenEvent" size="905" frame="2"/>
       <abc name="org/as3commons/reflect/Constant" size="901" frame="2"/>
       <abc name="org/as3commons/reflect/Variable" size="901" frame="2"/>
-      <abc name="me/imcj/as3object/expression/InExpression" size="900" frame="2"/>
       <abc name="mx/controls/dataGridClasses/DataGridListData" size="896" frame="2"/>
       <abc name="mx/logging/ILogger" size="895" frame="2"/>
       <abc name="mx/core/FlexBitmap" size="893" frame="2"/>
@@ -642,12 +591,10 @@
       <abc name="mx/events/DynamicEvent" size="870" frame="1"/>
       <abc name="mx/core/IRectangularBorder" size="868" frame="2"/>
       <abc name="flexunit/framework/ProtectedStartTestCase" size="867" frame="2"/>
-      <abc name="me/imcj/as3object/Statement" size="866" frame="2"/>
       <abc name="org/hamcrest/object/IsNullMatcher" size="862" frame="2"/>
       <abc name="org/flexunit/runner/notification/IAsyncCompletionRunListener" size="862" frame="2"/>
       <abc name="mx/core/FlexTextField" size="860" frame="2"/>
       <abc name="mx/events/CollectionEventKind" size="860" frame="2"/>
-      <abc name="me/imcj/as3object/hook/HookImpl" size="860" frame="2"/>
       <abc name="org/as3commons/reflect/ITypeProvider" size="859" frame="2"/>
       <abc name="org/flexunit/runner/notification/ITemporalRunListener" size="858" frame="2"/>
       <abc name="mx/events/ResizeEvent" size="857" frame="2"/>
@@ -655,7 +602,6 @@
       <abc name="mx/core/ClassFactory" size="856" frame="2"/>
       <abc name="mx/core/FlexSprite" size="855" frame="1"/>
       <abc name="mx/core/FlexLoader" size="855" frame="2"/>
-      <abc name="me/imcj/as3object/ConnectionPool" size="850" frame="2"/>
       <abc name="org/flexunit/internals/runners/statements/IAsyncStatement" size="849" frame="2"/>
       <abc name="mx/events/Request" size="843" frame="1"/>
       <abc name="mx/core/RuntimeDPIProvider" size="843" frame="1"/>
@@ -670,14 +616,12 @@
       <abc name="org/sonatype/flexmojos/test/report/ErrorReport" size="821" frame="2"/>
       <abc name="org/flexunit/events/AsyncEvent" size="820" frame="2"/>
       <abc name="org/fluint/uiImpersonation/IVisualEnvironmentBuilder" size="819" frame="2"/>
-      <abc name="me/imcj/as3object/ConnectionFactoryImpl" size="817" frame="2"/>
       <abc name="_class_embed_css_Assets_swf_1957375318_mx_skins_cursor_DragReject_211847873" size="815" frame="2"/>
       <abc name="_class_embed_css_Assets_swf_1957375318_mx_skins_cursor_BusyCursor_957225227" size="815" frame="2"/>
       <abc name="org/flexunit/experimental/theories/IParameterSupplier" size="810" frame="2"/>
       <abc name="_class_embed_css_Assets_swf_1957375318_mx_skins_cursor_DragMove_1275692241" size="810" frame="2"/>
       <abc name="_class_embed_css_Assets_swf_1957375318_mx_skins_cursor_DragCopy_1275404661" size="810" frame="2"/>
       <abc name="_class_embed_css_Assets_swf_1957375318_mx_skins_cursor_DragLink_1275666666" size="810" frame="2"/>
-      <abc name="me/imcj/as3object/expression/LogicalExpression" size="806" frame="2"/>
       <abc name="mx/managers/IFocusManagerGroup" size="805" frame="2"/>
       <abc name="flexunit/framework/AssertionFailedError" size="803" frame="2"/>
       <abc name="mx/core/EdgeMetrics" size="801" frame="2"/>
@@ -695,32 +639,23 @@
       <abc name="mx/core/ILayoutDirectionElement" size="761" frame="2"/>
       <abc name="mx/effects/effectClasses/PropertyChanges" size="757" frame="2"/>
       <abc name="mx/controls/listClasses/IDropInListItemRenderer" size="753" frame="2"/>
-      <abc name="me/imcj/as3object/expression/GreaterThanEqualExpression" size="753" frame="2"/>
       <abc name="mx/skins/Border" size="750" frame="2"/>
       <abc name="_class_embed_css_Assets_swf_1957375318___brokenImage_188836363" size="749" frame="2"/>
       <abc name="org/flexunit/async/ITestResponder" size="747" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/SQLiteHierarchicalTable" size="747" frame="2"/>
       <abc name="me/imcj/as3object/core/Iterator" size="743" frame="2"/>
       <abc name="mx/validators/ValidationResult" size="742" frame="2"/>
-      <abc name="me/imcj/as3object/AS3ObjectErrorEvent" size="741" frame="2"/>
       <abc name="mx/logging/errors/InvalidCategoryError" size="737" frame="2"/>
-      <abc name="me/imcj/as3object/expression/LessThanEqualExpression" size="732" frame="2"/>
       <abc name="flashx/textLayout/compose/ISWFContext" size="727" frame="1"/>
       <abc name="mx/core/IInvalidating" size="724" frame="1"/>
       <abc name="org/as3commons/reflect/IMember" size="724" frame="2"/>
       <abc name="mx/logging/errors/InvalidFilterError" size="723" frame="2"/>
       <abc name="mx/core/ISWFBridgeProvider" size="721" frame="2"/>
-      <abc name="me/imcj/as3object/hook/Hook" size="719" frame="2"/>
-      <abc name="me/imcj/as3object/expression/GreaterThanExpression" size="718" frame="2"/>
       <abc name="mx/core/ApplicationDomainTarget" size="711" frame="1"/>
       <abc name="flexunit/utils/Iterator" size="710" frame="2"/>
       <abc name="org/flexunit/rules/IMethodRule" size="710" frame="2"/>
       <abc name="mx/logging/LogEventLevel" size="709" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/field/NumberField" size="703" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/field/StringField" size="703" frame="2"/>
       <abc name="mx/styles/ISimpleStyleClient" size="702" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/IFilterable" size="697" frame="2"/>
-      <abc name="me/imcj/as3object/expression/LessThanExpression" size="697" frame="2"/>
       <abc name="mx/core/EventPriority" size="696" frame="2"/>
       <abc name="mx/formatters/NumberBaseRoundType" size="693" frame="2"/>
       <abc name="mx/core/ISWFLoader" size="691" frame="2"/>
@@ -730,15 +665,12 @@
       <abc name="org/flexunit/internals/builders/NullBuilder" size="687" frame="2"/>
       <abc name="mx/core/ContainerCreationPolicy" size="687" frame="2"/>
       <abc name="spark/components/supportClasses/OverlayDepth" size="686" frame="2"/>
-      <abc name="me/imcj/as3object/sqlite/field/intField" size="685" frame="2"/>
       <abc name="org/flexunit/runner/notification/StoppedByUserException" size="684" frame="2"/>
       <abc name="org/flexunit/runner/manipulation/ISortable" size="682" frame="2"/>
       <abc name="mx/filters/BaseFilter" size="681" frame="2"/>
       <abc name="en_US$SharedResources_properties" size="681" frame="2"/>
       <abc name="en_US$layout_properties" size="680" frame="2"/>
       <abc name="mx/controls/scrollClasses/ScrollBarDirection" size="676" frame="2"/>
-      <abc name="me/imcj/as3object/expression/EqualExpression" size="676" frame="2"/>
-      <abc name="me/imcj/as3object/ConnectionEvent" size="676" frame="2"/>
       <abc name="mx/resources/IResourceBundle" size="675" frame="1"/>
       <abc name="mx/managers/PopUpManagerChildList" size="672" frame="2"/>
       <abc name="_class_embed_css_win_close_over_png__1435231444_2057535075" size="670" frame="2"/>
@@ -749,7 +681,6 @@
       <abc name="_class_embed_css_win_restore_down_png_151677604_732913579" size="665" frame="2"/>
       <abc name="org/flexunit/runners/model/IStatement" size="664" frame="2"/>
       <abc name="org/flexunit/token/ChildResult" size="663" frame="2"/>
-      <abc name="me/imcj/as3object/expression/NotExpression" size="662" frame="2"/>
       <abc name="org/hamcrest/Matcher" size="661" frame="2"/>
       <abc name="_class_embed_css_win_close_up_png__1262594893_244557990" size="655" frame="2"/>
       <abc name="_class_embed_css_mac_min_down_png_1343813581_1690287680" size="655" frame="2"/>
@@ -769,7 +700,6 @@
       <abc name="_class_embed_css_win_max_down_png__2031651954_61134213" size="650" frame="2"/>
       <abc name="_class_embed_css_mac_max_down_png_869387515_1687854882" size="650" frame="2"/>
       <abc name="_class_embed_css_mac_max_over_png__28607443_1556661408" size="650" frame="2"/>
-      <abc name="me/imcj/as3object/expression/AndExpression" size="649" frame="2"/>
       <abc name="spark/core/DisplayObjectSharingMode" size="648" frame="2"/>
       <abc name="mx/managers/CursorManagerPriority" size="648" frame="2"/>
       <abc name="mx/core/ITextFieldFactory" size="646" frame="2"/>
@@ -784,7 +714,6 @@
       <abc name="_class_embed_css_gripper_up_png_1355642877_1220366608" size="645" frame="2"/>
       <abc name="spark/layouts/supportClasses/DropLocation" size="644" frame="2"/>
       <abc name="mx/collections/errors/CollectionViewError" size="643" frame="2"/>
-      <abc name="me/imcj/as3object/PropertyChangeQueue" size="643" frame="2"/>
       <abc name="mx/skins/halo/WindowRestoreButtonSkin_winRestoreDownSkin" size="641" frame="2"/>
       <abc name="mx/skins/halo/WindowRestoreButtonSkin_winRestoreOverSkin" size="641" frame="2"/>
       <abc name="_class_embed_css_mac_max_up_png__179568140_473807643" size="640" frame="2"/>
@@ -795,7 +724,6 @@
       <abc name="mx/controls/IFlexContextMenu" size="633" frame="2"/>
       <abc name="org/hamcrest/object/hasPropertyWithValue" size="632" frame="2"/>
       <abc name="mx/core/UIComponentCachePolicy" size="632" frame="2"/>
-      <abc name="me/imcj/as3object/expression/OrExpression" size="632" frame="2"/>
       <abc name="mx/skins/halo/WindowRestoreButtonSkin_winRestoreUpSkin" size="631" frame="2"/>
       <abc name="mx/graphics/shaderClasses/LuminosityShader" size="630" frame="2"/>
       <abc name="mx/graphics/shaderClasses/ColorDodgeShader" size="630" frame="2"/>
@@ -818,7 +746,6 @@
       <abc name="mx/skins/halo/WindowCloseButtonSkin_macCloseOverSkin" size="621" frame="2"/>
       <abc name="mx/skins/halo/WindowCloseButtonSkin_macCloseDownSkin" size="621" frame="2"/>
       <abc name="mx/skins/halo/WindowCloseButtonSkin_winCloseOverSkin" size="621" frame="2"/>
-      <abc name="me/imcj/as3object/Responder" size="619" frame="2"/>
       <abc name="mx/core/ContainerLayout" size="618" frame="2"/>
       <abc name="spark/core/ISharedDisplayObject" size="618" frame="2"/>
       <abc name="mx/skins/halo/WindowMaximizeButtonSkin_winMaxUpSkin" size="616" frame="2"/>
@@ -826,19 +753,18 @@
       <abc name="mx/skins/halo/WindowMinimizeButtonSkin_winMinUpSkin" size="616" frame="2"/>
       <abc name="mx/skins/halo/WindowMinimizeButtonSkin_macMinUpSkin" size="616" frame="2"/>
       <abc name="mx/containers/errors/ConstraintError" size="614" frame="2"/>
+      <abc name="me/imcj/as3object/factory/FieldFactory" size="614" frame="2"/>
       <abc name="mx/core/IFontContextComponent" size="612" frame="2"/>
       <abc name="mx/skins/halo/WindowCloseButtonSkin_winCloseUpSkin" size="611" frame="2"/>
       <abc name="mx/skins/halo/WindowCloseButtonSkin_macCloseUpSkin" size="611" frame="2"/>
       <abc name="org/flexunit/runner/IDescribable" size="609" frame="2"/>
       <abc name="mx/events/ScrollEventDirection" size="608" frame="2"/>
       <abc name="mx/core/IConstraintClient" size="605" frame="2"/>
-      <abc name="me/imcj/as3object/core/newInstance" size="605" frame="2"/>
       <abc name="org/flexunit/AssertionError" size="603" frame="2"/>
       <abc name="mx/graphics/shaderClasses/ColorShader" size="595" frame="2"/>
       <abc name="mx/controls/ButtonPhase" size="595" frame="2"/>
       <abc name="mx/collections/errors/CursorError" size="595" frame="2"/>
       <abc name="org/flexunit/runner/notification/IAsyncRunListener" size="590" frame="2"/>
-      <abc name="me/imcj/as3object/ConnectionFactory" size="589" frame="2"/>
       <abc name="mx/collections/errors/SortError" size="583" frame="2"/>
       <abc name="mx/graphics/shaderClasses/HueShader" size="581" frame="2"/>
       <abc name="mx/containers/BoxDirection" size="580" frame="2"/>
@@ -849,7 +775,6 @@
       <abc name="mx/binding/IWatcherSetupUtil2" size="576" frame="2"/>
       <abc name="org/hamcrest/SelfDescribing" size="574" frame="2"/>
       <abc name="mx/core/ScrollPolicy" size="572" frame="2"/>
-      <abc name="me/imcj/as3object/AS3ObjectError" size="565" frame="2"/>
       <abc name="mx/styles/CSSConditionKind" size="562" frame="2"/>
       <abc name="org/flexunit/asserts/assertStrictlyEquals" size="561" frame="2"/>
       <abc name="mx/core/ByteArrayAsset" size="561" frame="2"/>
@@ -867,6 +792,7 @@
       <abc name="mx/graphics/shaderClasses/LuminosityShader_ShaderClass" size="540" frame="2"/>
       <abc name="mx/graphics/shaderClasses/ColorDodgeShader_ShaderClass" size="540" frame="2"/>
       <abc name="mx/graphics/shaderClasses/SaturationShader_ShaderClass" size="540" frame="2"/>
+      <abc name="me/imcj/as3object/fixture/Cat" size="538" frame="2"/>
       <abc name="org/as3commons/lang/IllegalStateError" size="538" frame="2"/>
       <abc name="mx/graphics/shaderClasses/ColorBurnShader_ShaderClass" size="535" frame="2"/>
       <abc name="mx/graphics/shaderClasses/ExclusionShader_ShaderClass" size="535" frame="2"/>
@@ -875,7 +801,6 @@
       <abc name="org/flexunit/asserts/assertNotNull" size="526" frame="2"/>
       <abc name="mx/core/ITransientDeferredInstance" size="525" frame="2"/>
       <abc name="org/flexunit/asserts/assertEquals" size="521" frame="2"/>
-      <abc name="me/imcj/as3object/FieldFactory" size="521" frame="2"/>
       <abc name="mx/core/DPIClassification" size="516" frame="1"/>
       <abc name="org/flexunit/asserts/assertFalse" size="516" frame="2"/>
       <abc name="mx/graphics/shaderClasses/ColorShader_ShaderClass" size="515" frame="2"/>
@@ -893,7 +818,6 @@
       <abc name="en_US$containers_properties" size="489" frame="2"/>
       <abc name="org/hamcrest/object/hasProperties" size="487" frame="2"/>
       <abc name="mx/core/IRawChildrenContainer" size="483" frame="1"/>
-      <abc name="me/imcj/as3proceeding/squence" size="483" frame="2"/>
       <abc name="org/hamcrest/assertThatBoolean" size="482" frame="2"/>
       <abc name="spark/components/ResizeMode" size="481" frame="2"/>
       <abc name="org/hamcrest/core/not" size="478" frame="2"/>
@@ -915,8 +839,6 @@
       <abc name="mx/core/IUID" size="397" frame="2"/>
       <abc name="mx/core/FlexGlobals" size="388" frame="2"/>
       <abc name="mx/core/IPropertyChangeNotifier" size="384" frame="2"/>
-      <abc name="me/imcj/as3proceeding/call" size="384" frame="2"/>
-      <abc name="me/imcj/as3object/Hierarchical" size="380" frame="2"/>
       <abc name="mx/core/IBorder" size="376" frame="2"/>
       <abc name="mx/core/IFactory" size="361" frame="2"/>
       <abc name="mx/effects/IAbstractEffect" size="347" frame="2"/>

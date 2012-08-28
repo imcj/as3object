@@ -1,15 +1,15 @@
 package test.me.imcj.as3object.hook
 {
-    import me.imcj.as3object.Table;
-    import me.imcj.as3object.hook.Hook;
-    import me.imcj.as3object.hook.DefaultExcludeHook;
-    import me.imcj.as3object.sqlite.SQLiteTable;
-    
-    import org.as3commons.reflect.Type;
-    
-    import test.me.imcj.as3object.fixture.GameObject;
+import me.imcj.as3object.Table;
+import me.imcj.as3object.hook.DefaultExcludeHook;
+import me.imcj.as3object.hook.Hook;
+import me.imcj.as3object.sqlite.SQLiteTable;
 
-public class IgnoreSpriteHookTest
+import org.as3commons.reflect.Type;
+
+import test.me.imcj.as3object.fixture.GameObject;
+
+public class DefaultExcludeHookTest
 {
     public var hook  : Hook;
     public var data  : Object;
