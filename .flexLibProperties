@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
-    <classEntry path="test.me.imcj.as3object.responder.ResponderSelectTest"/>
-    <classEntry path="me.imcj.as3object.hook.DefaultExcludeHook"/>
-    <classEntry path="test.me.imcj.as3object.hook.DefaultExcludeHookTest"/>
-    <classEntry path="me.imcj.as3object.PropertyChangedCache"/>
-    <classEntry path="test.me.imcj.as3object.PropertyChangedCacheTest"/>
-    <classEntry path="me.imcj.as3object.PropertyChangeQueue"/>
-    <classEntry path="me.imcj.as3object.hook.POAOSaveResponder"/>
-    <classEntry path="me.imcj.as3object.AS3ObjectErrorEvent"/>
-    <classEntry path="me.imcj.as3object.TableCache"/>
-    <classEntry path="me.imcj.as3object.hook.POAOUpdateResponder"/>
-    <classEntry path="me.imcj.as3object.NotFoundPrimaryError"/>
-    <classEntry path="me.imcj.as3object.FieldMetadata"/>
-    <classEntry path="test.me.imcj.as3object.FieldMetadataTest"/>
-    <classEntry path="test.me.imcj.as3object.core.DictTest"/>
-    <classEntry path="me.imcj.as3object.Field"/>
-    <classEntry path="me.imcj.as3object.factory.FieldFactoryImpl"/>
-    <classEntry path="me.imcj.as3object.factory.FieldFactory"/>
-    <classEntry path="test.me.imcj.as3object.factory.FieldFactoryImplTest"/>
-    <classEntry path="me.imcj.as3object.DDS"/>
-    <classEntry path="me.imcj.DMS"/>
+    <classEntry path="me.imcj.as3object.task.CreateTable"/>
+    <classEntry path="me.imcj.as3object.StatementSQLiteResponder"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

@@ -1,13 +1,13 @@
 package test.me.imcj.as3object.hook
 {
+import flash.display.Sprite;
+
 import me.imcj.as3object.Table;
-import me.imcj.as3object.hook.DefaultExcludeHook;
+import me.imcj.as3object.TableFactory;
+import me.imcj.as3object.hook.impl.DefaultExcludeHook;
 import me.imcj.as3object.hook.Hook;
-import me.imcj.as3object.sqlite.SQLiteTable;
 
-import org.as3commons.reflect.Type;
-
-import test.me.imcj.as3object.fixture.GameObject;
+import org.flexunit.asserts.assertTrue;
 
 public class DefaultExcludeHookTest
 {
@@ -18,7 +18,7 @@ public class DefaultExcludeHookTest
     [Before]
     public function setUp ( ) : void
     {
-        table = new SQLiteTable ( Type.forClass ( GameObject ) );
+        table = TableFactory.createFactory().create(Sprite);
         data = {
             "table": table
         };
@@ -31,10 +31,10 @@ public class DefaultExcludeHookTest
     }
     
     [Test]
-    public function testHook ( ) : void
+    public function testHookExecute ( ) : void
     {
         hook.execute ( data );
-//        assertFalse ( table.hasField ( "accessibilityProperties" ) );
+        assertTrue ( table.hasColumn ( "x" ) );
     }
 }
 }

@@ -26,7 +26,7 @@ package me.imcj.as3object.core
                 return null;
             
             var obj : Object = dict.get(keys[i]);
-            i++;
+            i += 1;
             return obj;
         }
         

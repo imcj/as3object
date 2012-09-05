@@ -4,7 +4,9 @@ package test.me.imcj.as3object
     import me.imcj.as3object.AsyncRepository;
     import me.imcj.as3object.Facade;
     import me.imcj.as3object.Table;
-    import me.imcj.as3object.fixture.Cat;
+    import test.me.imcj.as3object.fixture.Cat;
+    
+    import org.flexunit.asserts.assertEquals;
 
     public class TestFacade
     {
@@ -25,27 +27,8 @@ package test.me.imcj.as3object
         public function testGetTable ( ) : void
         {
             var table : Table = facade.cache.getWithType ( Cat );
-            trace ( table );
+            assertEquals ( table.name, "Cat" );
         }
         
-        [Test(async)]
-        public function TestCreateRepository ( ) : void
-        {
-            facade.createRepository (
-                new AS3ObjectResponder (
-                    function ( repository : AsyncRepository ) : void
-                    {
-                        facade.createRepository (
-                            new AS3ObjectResponder (
-                                function ( repository2 : AsyncRepository ) : void
-                                {
-                                    trace ( "2" );
-                                }
-                            )
-                        );
-                    }
-                )
-            );
-        }
     }
 }

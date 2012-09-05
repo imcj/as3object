@@ -13,7 +13,7 @@ package me.imcj.as3object
         {
             _result = result;
             _fault  = fault;
-            
+        
             super ( result, fault );
         }
         

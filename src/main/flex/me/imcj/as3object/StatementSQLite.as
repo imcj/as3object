@@ -24,28 +24,8 @@ package me.imcj.as3object
         
         override public function execute ( responder : me.imcj.as3object.Responder ) : void
         {
-            trace ( text );
-            _statement.execute (
-                -1,
-                new flash.net.Responder (
-                    function ( result : SQLResult ) : void
-                    {
-                        var r : Result = new Result ( result.data );
-                        r.lastInsertRowID = result.lastInsertRowID;
-                        r.rowsAffected = result.rowsAffected;
-                        
-                        responder.result ( r );
-                    },
-                    function ( error : SQLError ) : void
-                    {
-                        var as3objectError : AS3ObjectError = new AS3ObjectError ( error.details, error.detailID );
-                        if ( responder.fault != null )
-                            responder.fault ( as3objectError );
-                        else
-                            throw as3objectError;
-                    }
-                )
-            );
+            
+            _statement.execute ( -1, new StatementSQLiteResponder ( this, responder ) );
         }
     }
 }

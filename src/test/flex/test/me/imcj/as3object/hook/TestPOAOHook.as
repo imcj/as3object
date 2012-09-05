@@ -7,10 +7,9 @@ package test.me.imcj.as3object.hook
     import me.imcj.as3object.Config;
     import me.imcj.as3object.Facade;
     import me.imcj.as3object.Table;
-    import me.imcj.as3object.fixture.Blog;
-    import me.imcj.as3object.fixture.Comment;
-    import me.imcj.as3object.hook.POAOHook;
-    import me.imcj.as3object.sqlite.SQLiteTable;
+    import test.me.imcj.as3object.fixture.Blog;
+    import test.me.imcj.as3object.fixture.Comment;
+    import me.imcj.as3object.hook.impl.POAOHook;
     import me.imcj.as3proceeding.AS3ProceedingResponder;
     import me.imcj.as3proceeding.SequenceImpl;
     import me.imcj.as3proceeding.call;
@@ -18,7 +17,6 @@ package test.me.imcj.as3object.hook
     
     import mx.events.CollectionEvent;
     
-    import org.as3commons.reflect.Type;
     import org.flexunit.async.Async;
 
     public class TestPOAOHook
@@ -27,43 +25,34 @@ package test.me.imcj.as3object.hook
         public var table : Table;
         public var blog : Blog;
         public var comment : Comment;
+        public var facade : Facade = Facade.instance;
+        public var seq : SequenceImpl;
         
         [Before(async)]
         public function setUp():void
         {
             Facade.instance.config = Config.createInMemory ( );
-            table = new SQLiteTable ( Type.forClass ( Blog ) );
             poaoHook = new POAOHook ( );
             blog  = new Blog ( );
             comment = new Comment ( );
             
-            Facade.instance.createRepository ( new AS3ObjectResponder ( createRepository ) );
-            
-            Async.proceedOnEvent ( this, blog, Event.COMPLETE );
-            trace ( "setUp1" );
-        }
-        
-        [Before(async)]
-        public function setUp2 ( ) : void
-        {
-             
+            seq = squence (
+                [
+                    call ( facade.createTable, Blog, new AS3ProceedingResponder ( null, null ), true ),
+                    call ( facade.createTable, Comment, new AS3ProceedingResponder ( null, null ), true )
+                ]
+            );
+            Async.proceedOnEvent ( this, seq, Event.COMPLETE );
         }
         
         protected function createRepository ( repository : AsyncRepository ) : void
         {
-            var responder : AS3ProceedingResponder = new AS3ProceedingResponder ( );
-            var seq : SequenceImpl = squence (
-                [
-                    call ( repository.creationStatement, Blog, responder, true ),
-                    call ( repository.creationStatement, Comment, responder, true )
-                ]
-            );
             seq.addEventListener ( Event.COMPLETE, createTableComplete );
         }
         
         protected function createTableComplete(event:Event):void
         {
-            blog.dispatchEvent ( new Event ( Event.COMPLETE ) );
+            seq.dispatchEvent ( new Event ( Event.COMPLETE ) );
         }
         
         [After]

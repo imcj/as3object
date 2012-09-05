@@ -41,6 +41,9 @@
         <extensions>true</extensions>
         <configuration>
           <debug>true</debug>
+          <compilerWarnings>
+            <warn-no-constructor>true</warn-no-constructor>
+          </compilerWarnings>
         <sourceFile>./as3object.as</sourceFile>
         </configuration>
       </plugin>
@@ -72,7 +75,7 @@
     <dependency>
       <groupId>com.adobe.flexunit</groupId>
       <artifactId>flexunit</artifactId>
-      <version>4.1.0-8</version>
+      <version>4.0-rc-1</version>
       <type>swc</type>
       <scope>test</scope>
     </dependency>
@@ -80,6 +83,18 @@
       <groupId>org.as3commons</groupId>
       <artifactId>as3commons-reflect</artifactId>
       <version>1.5.1-SNAPSHOT</version>
+      <type>swc</type>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.cairngorm</groupId>
+      <artifactId>task</artifactId>
+      <version>1.9</version>
+      <type>swc</type>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <version>1.2.0</version>
       <type>swc</type>
     </dependency>
   </dependencies>

@@ -9,12 +9,12 @@
                        creationComplete="onCreationComplete()" showStatusBar="false">
     <fx:Script>
         <![CDATA[
-            import test.me.imcj.as3object.factory.FieldFactoryImplTest;
+            import test.me.imcj.as3object.ColumnMetadataTest;
             
             public function currentRunTestSuite():Array
             {
                 var testsToRun:Array = new Array();
-                testsToRun.push(test.me.imcj.as3object.factory.FieldFactoryImplTest);
+                testsToRun.push(test.me.imcj.as3object.ColumnMetadataTest);
                 return testsToRun;
             }
             

@@ -6,9 +6,8 @@ package test.me.imcj.as3object
     import me.imcj.as3object.Criteria;
     import me.imcj.as3object.Facade;
     import me.imcj.as3object.Order;
-    import me.imcj.as3object.Repository;
     import me.imcj.as3object.expression.eq;
-    import me.imcj.as3object.fixture.Cat;
+    import test.me.imcj.as3object.fixture.Cat;
     
     import org.flexunit.asserts.assertEquals;
     import org.flexunit.async.Async;
@@ -30,23 +29,6 @@ package test.me.imcj.as3object
                         function ( _criteria : Criteria ) : void
                         {
                             criteria = _criteria;
-                        }
-                    ),
-                    10
-                )
-            );
-        }
-        
-        [Before(async,order=2)]
-        public function setUp2 ( ) : void
-        {
-            Facade.instance.createRepository (
-                Async.asyncResponder (
-                    this,
-                    new AS3ObjectResponder (
-                        function ( _repository : Repository ) : void
-                        {
-                            repository = _repository;
                         }
                     ),
                     10

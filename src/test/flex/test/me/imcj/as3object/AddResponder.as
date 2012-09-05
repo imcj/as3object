@@ -1,6 +1,6 @@
 package test.me.imcj.as3object 
 {
-    import me.imcj.as3object.fixture.Cat;
+    import test.me.imcj.as3object.fixture.Cat;
     import me.imcj.as3object.AS3ObjectResponder;
     
     import mx.rpc.IResponder;

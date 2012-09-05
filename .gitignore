@@ -8,3 +8,4 @@ src/*.mxml
 .FlexUnitSettings
 *.swp
 html-template
+target

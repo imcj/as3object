@@ -1,30 +1,28 @@
 package me.imcj.as3object
 {
     
-import flash.utils.Dictionary;
+import me.imcj.as3object.core.Dict;
 
 import org.as3commons.reflect.Type;
 
-public class TableCache
+public class TableCache extends Dict
 {
-    protected var cache : Dictionary = new Dictionary ( true );
     public var factory : TableFactory;
     
     public function TableCache ( )
     {
     }
     
-    public function has ( name : String ) : Boolean
-    {
-        return cache.hasOwnProperty ( name );
-    }
-    
     public function getWithName ( name : String ) : Table
     {
+        var table : Table;
         if ( has ( name ) )
-            return cache[name];
-        else
-            return cache[name] = factory.create ( name );
+            return get ( name ) as Table;
+        else {
+            table = factory.create ( name );
+            add ( name, table );
+            return table;
+        }
     }
     
     public function getWithObject ( object : Object ) : Table

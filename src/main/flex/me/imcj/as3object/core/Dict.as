@@ -2,7 +2,6 @@ package me.imcj.as3object.core
 {
     import flash.utils.Dictionary;
     
-    
     public class Dict extends Object
     {
         protected var _data : Dictionary = new Dictionary ( true );
@@ -25,6 +24,7 @@ package me.imcj.as3object.core
             _keys = keys;
             return keys;
         }
+        
         
         public function get ( key : String ) : Object
         {
@@ -66,6 +66,28 @@ package me.imcj.as3object.core
         public function createIterator ( ) : DictIterator
         {
             return new DictIterator ( this );
+        }
+        
+        public function remove(columnName:String):void
+        {
+            delete _data[columnName];
+        }
+        
+        public function removeAll():void
+        {
+            var key : String;
+            for each ( key in keys )
+                remove ( key );
+        }
+        
+        public function clone():Dict
+        {
+            var dict : Dict = new Dict ( );
+            var key : String;
+            for each ( key in keys )
+                dict.add ( key, get ( key ) );
+                
+            return dict;
         }
     }
 }

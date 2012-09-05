@@ -1,6 +1,6 @@
 package test.me.imcj.as3object.core
 {
-    import me.imcj.as3object.fixture.Blog;
+    import test.me.imcj.as3object.fixture.Blog;
     
     import org.flexunit.asserts.assertEquals;
     import me.imcj.as3object.core.newInstance;

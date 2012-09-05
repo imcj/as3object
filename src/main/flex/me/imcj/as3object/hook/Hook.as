@@ -5,5 +5,8 @@ package me.imcj.as3object.hook
     public interface Hook
     {
         function execute ( data : Object ) : void;
+        
+        function set hookManager ( value : HookManager ) : void;
+        function get hookManager ( ) : HookManager;
     }
 }

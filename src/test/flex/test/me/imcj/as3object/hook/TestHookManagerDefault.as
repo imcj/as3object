@@ -4,7 +4,7 @@ package test.me.imcj.as3object.hook
     import org.flexunit.asserts.assertEquals;
     import me.imcj.as3object.hook.Hook;
     import me.imcj.as3object.hook.HookManager;
-    import me.imcj.as3object.hook.HookManagerDefault;
+    import me.imcj.as3object.hook.impl.HookManagerImpl;
 
     public class TestHookManagerDefault
     {
@@ -16,7 +16,7 @@ package test.me.imcj.as3object.hook
         [Before]
         public function setUp():void
         {
-            manager = new HookManagerDefault ( );
+            manager = new HookManagerImpl ( );
         }
         
         [After]
@@ -46,18 +46,19 @@ package test.me.imcj.as3object.hook
     }
 }
 import me.imcj.as3object.hook.Hook;
+import me.imcj.as3object.hook.impl.HookImpl;
 
-class Hook1 implements Hook
+class Hook1 extends HookImpl
 {
-    public function execute ( data : Object ) : void
+    override public function execute ( data : Object ) : void
     {
         data['age'] = 1;
     }
 }
 
-class Hook2 implements Hook
+class Hook2 extends HookImpl
 {
-    public function execute ( data : Object ) : void
+    override public function execute ( data : Object ) : void
     {
         data['name'] = "2B";
     }
