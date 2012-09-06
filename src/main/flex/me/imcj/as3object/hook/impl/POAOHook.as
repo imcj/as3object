@@ -43,6 +43,7 @@ package me.imcj.as3object.hook.impl
         
         override public function execute ( data : Object ) : void
         {
+            return;
             var table : Table = data['table'];
             var instance : EventDispatcher;
             

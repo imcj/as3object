@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+<flexLibProperties version="3">
   <includeClasses>
-    <classEntry path="me.imcj.as3object.task.CreateTable"/>
-    <classEntry path="me.imcj.as3object.StatementSQLiteResponder"/>
   </includeClasses>
-  <includeResources/>
+  <includeResources>
+  </includeResources>
   <namespaceManifests/>
 </flexLibProperties>

@@ -60,11 +60,11 @@ package me.imcj.as3object.responder
             tree[table.getPrimaryValue ( instance )] = instance;
             
             var parent : int;
-            if ( result.hasOwnProperty ( 'parent' ) )
-                if ( result['parent'] )
-                    parent = result['parent'] as int;
+            if ( result.hasOwnProperty ( 'parent_id' ) )
+                if ( result['parent_id'] )
+                    parent = result['parent_id'] as int;
             
-            if ( parent ) {
+            if ( parent > 0 ) {
                 if ( tree.hasOwnProperty ( parent ) )
                     AS3ObjectHierachical ( tree[parent] ).addChild ( instance as AS3ObjectHierachical );
             }
