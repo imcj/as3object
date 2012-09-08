@@ -1,13 +1,16 @@
 .actionScriptProperties
 .flexProperties
 .flexLibProperties
-.flexConfig
+.flexConfig.xml
 .project
 .settings
 bin-debug
+libs
 src/*-app.xml
 src/*.mxml
 .FlexUnitSettings
 *.swp
 html-template
 target
+FlexUnitApplication-app.xml
+FlexUnitApplication.mxml

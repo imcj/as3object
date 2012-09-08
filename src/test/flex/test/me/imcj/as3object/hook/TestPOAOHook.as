@@ -19,6 +19,7 @@ package test.me.imcj.as3object.hook
     
     import org.flexunit.async.Async;
 
+	[Ignore]
     public class TestPOAOHook
     {		
         public var poaoHook : POAOHook;

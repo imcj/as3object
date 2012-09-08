@@ -10,6 +10,7 @@ package test.me.imcj.as3object.responder
     
     import test.me.imcj.as3object.fixture.Comment;
 
+	[Ignore]
     public class HierarchicalSelectResponderTest
     {
         public var responder : HierarchicalResponder;

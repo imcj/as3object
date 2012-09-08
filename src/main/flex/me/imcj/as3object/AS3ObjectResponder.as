@@ -3,6 +3,8 @@ package me.imcj.as3object
     import flash.net.Responder;
     
     import mx.rpc.IResponder;
+    
+    import org.as3commons.reflect.Type;
 
     public class AS3ObjectResponder extends Responder implements IResponder
     {
@@ -24,7 +26,11 @@ package me.imcj.as3object
         
         public function fault ( info : Object ) : void
         {
-            _fault ( info );
+            try {
+                _fault ( info );
+            } catch ( error : TypeError ) {
+                trace ( error.message );
+            }
         }
     }
 }
