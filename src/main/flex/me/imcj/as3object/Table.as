@@ -37,8 +37,9 @@ public class Table
         
         var superClass : String;
         _isHierarchical = false;
-        for each ( superClass in type.extendsClasses ) {
-            if ( superClass == "me.imcj.as3object::AS3ObjectHierachical" ) {
+        
+        for each ( superClass in type.interfaces ) {
+            if ( superClass == "mx.controls.treeClasses.ITreeDataDescriptor" ) {
                 _isHierarchical = true;
                 break;
             }

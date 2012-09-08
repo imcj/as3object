@@ -1,6 +1,6 @@
 package me.imcj.as3object.responder
 {
-    import me.imcj.as3object.AS3ObjectHierachical;
+    import me.imcj.as3object.Hierarchical;
     import me.imcj.as3object.Column;
     import me.imcj.as3object.Result;
     import me.imcj.as3object.Table;
@@ -30,7 +30,7 @@ package me.imcj.as3object.responder
             var instance : Object;
             var key : String;
             var children : Object;
-            var top : AS3ObjectHierachical;
+            var top : Hierarchical;
             var parent : Object;
             var result : Object;
             
@@ -44,7 +44,7 @@ package me.imcj.as3object.responder
                 hook.execute ( "rebuild_instance", { "instance" : instance, "table" : table } );
                 
                 if ( 0 == i )
-                    top = AS3ObjectHierachical ( instance );
+                    top = Hierarchical(instance);
 //                if (  instance.hasOwnProperty ( "id" )  )
 //                    key = "id";
 //                else if ( instance.hasOwnProperty ( "uuid" ) )
@@ -66,7 +66,7 @@ package me.imcj.as3object.responder
             
             if ( parent > 0 ) {
                 if ( tree.hasOwnProperty ( parent ) )
-                    AS3ObjectHierachical ( tree[parent] ).addChild ( instance as AS3ObjectHierachical );
+                    Hierarchical ( tree[parent] ).addChild ( instance as Hierarchical );
             }
             return instance;
         }

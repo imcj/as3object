@@ -62,15 +62,5 @@ public class TableFactory
         hook.execute ( "build_column", { "table" : table } );
         return table;
     }
-    
-    protected function isHierachical ( extendClasses : Array ) : Boolean
-    {
-        var extendClass : String;
-        for each ( extendClass in extendClasses )
-            if ( extendClass == "me.imcj.as3object::AS3ObjectHierachical" )
-                return true;
-            
-        return false;
-    }
 }
 }
