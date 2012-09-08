@@ -1,5 +1,7 @@
 .actionScriptProperties
 .flexProperties
+.flexLibProperties
+.flexConfig
 .project
 .settings
 bin-debug
