@@ -16,10 +16,9 @@ import test.me.imcj.as3object.fixture.Cat;
 
 public class PropertyChangedCacheTest
 {
-    // commit时修改和超时修改
-    //单例
     public var changed : PropertyChangedCache;
     public var table : Table;
+    public var cat : Cat;
     
     [Before]
     public function setUp():void
@@ -27,6 +26,15 @@ public class PropertyChangedCacheTest
         var factory : TableFactory = TableFactory.createFactory();
         changed = new PropertyChangedCache ( factory.tableCache );
         table = factory.create(Cat);
+        
+        cat = new Cat ( );
+        
+        cat.name = "2B";
+        cat.id = 1;
+        cat.setAge ( 2 );
+        
+        changed.push ( cat, "name" );
+        changed.push ( cat, "age" );
     }
     
     [After]
@@ -37,17 +45,16 @@ public class PropertyChangedCacheTest
     [Test]
     public function testPush ( ) : void
     {
-        var cat : Cat = new Cat ( );
-        
-        cat.name = "2B";
-        cat.id = 1;
-        cat.setAge ( 2 );
-        
-        changed.push ( cat, "name" );
-        changed.push ( cat, "age" );
-        
         var properties : Array = changed.getChangedProperties ( table.name, table.getPrimary ( cat ) ).keys;
         assertEquals ( 2, properties.length );
+    }
+    
+    [Test]
+    public function testUpdater ( ) : void
+    {
+        var objcat : Object = changed.getUpdaterWithObject ( cat );
+        assertEquals ( "2B", objcat['name'] );
+        assertEquals ( 2, objcat['age'] );
     }
 }
 

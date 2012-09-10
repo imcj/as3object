@@ -73,7 +73,7 @@ public class PropertyChangedCache
         var changedProperty : String;
         
         for each ( changedProperty in changedProperties )
-            table.getColumn ( changedProperty ).setValue ( updater, object );
+            updater[changedProperty] = table.getColumn ( changedProperty ).getValue ( object );
             
         return updater;
     }
