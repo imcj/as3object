@@ -1,8 +1,9 @@
 package me.imcj.as3object.hook.impl
 {
-    import mx.core.ClassFactory;
     import me.imcj.as3object.hook.Hook;
     import me.imcj.as3object.hook.HookManager;
+    
+    import mx.core.ClassFactory;
 
     public class InstallDefaultHooks
     {
@@ -13,9 +14,9 @@ package me.imcj.as3object.hook.impl
             this.hookManager = hookManager;
             var hookPOAO : Hook = newInstance ( POAOHook );
             
-            hookManager.add ( "create_instance",  hookPOAO );
-            hookManager.add ( "rebuild_instance", hookPOAO );
-            hookManager.add ( "build_column",     newInstance ( DefaultExcludeHook ) );
+            hookManager.add ( HookManager.CREATE_INSTANCE,  hookPOAO );
+            hookManager.add ( HookManager.REBUILD_INSTANCE, hookPOAO );
+            hookManager.add ( HookManager.CREATE_COLUMN,    newInstance ( DefaultExcludeHook ) );
         }
         
         protected function newInstance ( type : Class ) : Hook

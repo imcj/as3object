@@ -18,6 +18,8 @@ package me.imcj.as3object.hook.impl
     import mx.events.CollectionEventKind;
     import mx.events.PropertyChangeEvent;
     
+    import test.me.imcj.as3object.hook.HookAction;
+    
     public class POAOHook extends HookImpl
     {
         protected var delay : ArrayCollection = new ArrayCollection ( );
@@ -41,20 +43,24 @@ package me.imcj.as3object.hook.impl
             super.hookManager = value;
         }
         
-        override public function execute ( data : Object ) : void
+        override public function execute ( data : Object ) : HookAction
         {
-            return;
             var table : Table = data['table'];
             var instance : EventDispatcher;
             
+            var nothing : Boolean = false;
+            
             if ( null == table )
-                return;
+                nothing = true;
             
             if ( null == data['instance'] )
-                return;
+                nothing = true;
             
             if ( ! ( data['instance'] is IEventDispatcher ) )
-                return;
+                nothing = true;
+            
+            if ( nothing )
+                return HookAction.createNothing ( );
             
             if ( null == tableCache )
                 tableCache = Facade.instance.cache;
@@ -71,6 +77,8 @@ package me.imcj.as3object.hook.impl
             
             for each ( column in table.oneToManyColumns )
                 collectionBind ( instance, column.name );
+                
+            return HookAction.createNothing ( );
         }
         
         protected function handlerPorpertyChange ( changeEvent : PropertyChangeEvent ) : void
@@ -81,8 +89,8 @@ package me.imcj.as3object.hook.impl
             if ( ! column )
                 return;
             
-            if ( column.primary )
-                return;
+//            if ( column.primary )
+//                return;
             
             if ( column.isNotBaseDataType ( ) )
                 return;

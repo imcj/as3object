@@ -52,7 +52,7 @@ public class Facade
         if ( instance.hasOwnProperty ( "uid" ) )
             instance['uid'] = UIDUtil.createUID ( );
         
-        hook.execute ( "create_instance", { "table" : table, "instance" : instance } );
+        hook.execute ( HookManager.CREATE_INSTANCE, { "table" : table, "instance" : instance } );
         return instance;
     }
     
@@ -85,6 +85,11 @@ public class Facade
         ) );
         
         return object;
+    }
+    
+    public function save ( object : Object, responder : IResponder, addNew : Boolean = true ) : Object
+    {
+        add ( object, responder );
     }
     
     public function update ( data : Object, object : Object, responder : IResponder ) : void

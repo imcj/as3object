@@ -1,10 +1,11 @@
 package test.me.imcj.as3object.hook
 {
     
-    import org.flexunit.asserts.assertEquals;
     import me.imcj.as3object.hook.Hook;
     import me.imcj.as3object.hook.HookManager;
     import me.imcj.as3object.hook.impl.HookManagerImpl;
+    
+    import org.flexunit.asserts.assertEquals;
 
     public class TestHookManagerDefault
     {
@@ -12,6 +13,7 @@ package test.me.imcj.as3object.hook
         public var theCat  : Object = { "age" : 2 };
         public var hook1   : Hook = new Hook1 ( );
         public var hook2   : Hook = new Hook2 ( );
+        public var hook3   : Hook = new Hook3 ( );
         
         [Before]
         public function setUp():void
@@ -43,14 +45,34 @@ package test.me.imcj.as3object.hook
             assertEquals ( 1, theCat['age'] );
             assertEquals ( "2B", theCat['name'] );
         }
+        
+        [Test]
+        public function testPriority ( ) : void
+        {
+            hook3.priority = 1;
+            manager.add ( "setAge", hook1 );
+            manager.add ( "setAge", hook3 );
+            
+            manager.execute ( "setAge", theCat );
+            
+            assertEquals ( 1, theCat['age'] );
+        }
+        
+        [Test]
+        public function testInterrupting ( ) : void
+        {
+            
+        }
     }
 }
 import me.imcj.as3object.hook.Hook;
 import me.imcj.as3object.hook.impl.HookImpl;
 
+import test.me.imcj.as3object.hook.HookAction;
+
 class Hook1 extends HookImpl
 {
-    override public function execute ( data : Object ) : void
+    override public function execute ( data : Object ) : HookAction
     {
         data['age'] = 1;
     }
@@ -58,8 +80,16 @@ class Hook1 extends HookImpl
 
 class Hook2 extends HookImpl
 {
-    override public function execute ( data : Object ) : void
+    override public function execute ( data : Object ) : HookAction
     {
         data['name'] = "2B";
+    }
+}
+
+class Hook3 extends HookImpl
+{
+    override public function execute ( data : Object ) : HookAction
+    {
+        data['age'] = 2;
     }
 }

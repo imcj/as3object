@@ -9,10 +9,12 @@ import flash.display.Sprite;
 import me.imcj.as3object.ColumnMetadata;
 import me.imcj.as3object.Table;
 import me.imcj.as3object.hook.Hook;
+
+import test.me.imcj.as3object.hook.HookAction;
     
 public class DefaultExcludeHook extends HookImpl
 {
-    override public function execute ( data : Object ) : void
+    override public function execute ( data : Object ) : HookAction
     {
         var table : Table = data["table"];
         var i : int = 0, size : int = table.type.extendsClasses.length;
@@ -21,6 +23,8 @@ public class DefaultExcludeHook extends HookImpl
         filter ( table.type.fullName, columnMetadata );
         for ( ; i < size; i++ )
             filter ( table.type.extendsClasses[i], columnMetadata );
+        
+        return HookAction.createNothing ( );
     }
     
     protected function filter ( typeName : String, columnMetadata : ColumnMetadata ) : void

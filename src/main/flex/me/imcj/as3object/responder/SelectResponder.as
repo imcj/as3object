@@ -34,7 +34,7 @@ public class SelectResponder extends ErrorResponder
         
         for each ( object in result.data ) {
             objects[objects.length] = instance = table.createInstance ( object );
-            hook.execute ( "rebuild_instance", { "instance" : instance, "table" : table } );
+            hook.execute ( HookManager.REBUILD_INSTANCE, { "instance" : instance, "table" : table } );
         }
         
         responder.result ( objects );

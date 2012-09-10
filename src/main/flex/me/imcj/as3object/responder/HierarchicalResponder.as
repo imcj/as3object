@@ -41,7 +41,7 @@ package me.imcj.as3object.responder
                 result = data[i];
                 instance = create ( result );
                 
-                hook.execute ( "rebuild_instance", { "instance" : instance, "table" : table } );
+                hook.execute ( HookManager.REBUILD_INSTANCE, { "instance" : instance, "table" : table } );
                 
                 if ( 0 == i )
                     top = Hierarchical(instance);

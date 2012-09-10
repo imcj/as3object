@@ -11,6 +11,8 @@ import me.imcj.as3object.TableFactory;
 import me.imcj.as3object.hook.Hook;
 import me.imcj.as3object.hook.HookManager;
 
+import test.me.imcj.as3object.hook.HookAction;
+
 public class HookManagerImpl implements HookManager
 {
     protected var hooks : Dictionary;
@@ -46,8 +48,11 @@ public class HookManagerImpl implements HookManager
         h = hooks [ name ];
         size = h.length;
         data [ "$name" ] = name;
-        for ( ; i < size; i++ )
-            Hook ( h[i] ).execute ( data );
+        for ( ; i < size; i++ ) {
+            var hookAction : HookAction = Hook ( h[i] ).execute ( data );
+            if ( hookAction.interrupting )
+                break;
+        }
     }
     
     public function add ( name : String, hook : Hook ) : void
@@ -59,6 +64,20 @@ public class HookManagerImpl implements HookManager
             hooks [ name ] = h = new Array ( );
         
         h[h.length] = hook;
+        h.sort ( sortOnPriority );
+    }
+    
+    protected function sortOnPriority ( a : Hook, b : Hook ) : Number
+    {
+        var aPriority : int = a.priority;
+        var bPriority : int = b.priority;
+        
+        if ( aPriority > bPriority )
+            return 1;
+        else if ( aPriority < bPriority )
+            return -1;
+        else
+            return 0;
     }
 
     public function get tableFactory():TableFactory

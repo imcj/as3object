@@ -59,7 +59,7 @@ public class TableFactory
         
         tableCache.add ( table.type.fullName, table );
         
-        hook.execute ( "build_column", { "table" : table } );
+        hook.execute ( HookManager.CREATE_COLUMN, { "table" : table } );
         return table;
     }
 }
