@@ -1,10 +1,11 @@
 package me.imcj.as3object.responder
 {
-    import me.imcj.as3object.Hierarchical;
     import me.imcj.as3object.Column;
+    import me.imcj.as3object.Hierarchical;
     import me.imcj.as3object.Result;
     import me.imcj.as3object.Table;
     import me.imcj.as3object.core.Iterator;
+    import me.imcj.as3object.hook.HookEntry;
     import me.imcj.as3object.hook.HookManager;
     
     import mx.rpc.IResponder;
@@ -41,7 +42,7 @@ package me.imcj.as3object.responder
                 result = data[i];
                 instance = create ( result );
                 
-                hook.execute ( HookManager.REBUILD_INSTANCE, { "instance" : instance, "table" : table } );
+                hook.execute ( HookEntry.REBUILD_INSTANCE, { "instance" : instance, "table" : table } );
                 
                 if ( 0 == i )
                     top = Hierarchical(instance);

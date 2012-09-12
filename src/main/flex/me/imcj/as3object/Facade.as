@@ -1,6 +1,7 @@
 package me.imcj.as3object {
 import me.imcj.as3object.core.newInstance;
 import me.imcj.as3object.expression.Expression;
+import me.imcj.as3object.hook.HookEntry;
 import me.imcj.as3object.hook.HookManager;
 import me.imcj.as3object.hook.impl.HookManagerImpl;
 import me.imcj.as3object.responder.CreateTableResponder;
@@ -24,14 +25,11 @@ public class Facade
     public function Facade ( config : Config )
     {
         _config = config;
-        pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( ) );
-        
         cache = new TableCache ( );
-        
         tableFactory = new TableFactory ( config, cache );
         hook = HookManagerImpl.create ( config, tableFactory, cache );
         tableFactory.hook = hook;
-        
+        pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( hook ) );
     }
     
     public function addTable ( table : Table ) : void
@@ -52,7 +50,7 @@ public class Facade
         if ( instance.hasOwnProperty ( "uid" ) )
             instance['uid'] = UIDUtil.createUID ( );
         
-        hook.execute ( HookManager.CREATE_INSTANCE, { "table" : table, "instance" : instance } );
+        hook.execute ( HookEntry.CREATE_INSTANCE, { "table" : table, "instance" : instance } );
         return instance;
     }
     
@@ -80,7 +78,7 @@ public class Facade
             function ( connection : Connection ) : void
             {
                 var statement : Statement = connection.createStatement ( text );
-                statement.execute ( new InsertResponder ( object, responder ) );
+                statement.execute ( new InsertResponder ( object, responder, hook ) );
             }
         ) );
         
@@ -89,7 +87,7 @@ public class Facade
     
     public function save ( object : Object, responder : IResponder, addNew : Boolean = true ) : Object
     {
-        add ( object, responder );
+        return add ( object, responder );
     }
     
     public function update ( data : Object, object : Object, responder : IResponder ) : void
@@ -106,7 +104,7 @@ public class Facade
             function ( connection : Connection ) : void
             {
                 var statement : Statement = connection.createStatement ( text );
-                statement.execute ( new InsertResponder ( object, responder ) );
+                statement.execute ( new InsertResponder ( object, responder, hook ) );
             }
         ) );
     }

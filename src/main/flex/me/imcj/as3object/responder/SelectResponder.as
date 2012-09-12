@@ -1,15 +1,10 @@
 package me.imcj.as3object.responder {
     
-import me.imcj.as3object.AS3ObjectField;
-import me.imcj.as3object.Column;
-import me.imcj.as3object.Responder;
 import me.imcj.as3object.Result;
 import me.imcj.as3object.Table;
-import me.imcj.as3object.core.DictIterator;
+import me.imcj.as3object.hook.HookEntry;
 import me.imcj.as3object.hook.HookManager;
-import me.imcj.as3object.hook.impl.HookManagerImpl;
 
-import mx.core.ClassFactory;
 import mx.rpc.IResponder;
 
 
@@ -34,7 +29,7 @@ public class SelectResponder extends ErrorResponder
         
         for each ( object in result.data ) {
             objects[objects.length] = instance = table.createInstance ( object );
-            hook.execute ( HookManager.REBUILD_INSTANCE, { "instance" : instance, "table" : table } );
+            hook.execute ( HookEntry.REBUILD_INSTANCE, { "instance" : instance, "table" : table } );
         }
         
         responder.result ( objects );

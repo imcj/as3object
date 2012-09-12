@@ -75,6 +75,8 @@ class Hook1 extends HookImpl
     override public function execute ( data : Object ) : HookAction
     {
         data['age'] = 1;
+        
+        return HookAction.createNothing ( );
     }
 }
 
@@ -83,6 +85,8 @@ class Hook2 extends HookImpl
     override public function execute ( data : Object ) : HookAction
     {
         data['name'] = "2B";
+        
+        return HookAction.createNothing ( );
     }
 }
 
@@ -91,5 +95,7 @@ class Hook3 extends HookImpl
     override public function execute ( data : Object ) : HookAction
     {
         data['age'] = 2;
+        
+        return HookAction.createNothing ( );
     }
 }

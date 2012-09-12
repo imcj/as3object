@@ -7,6 +7,8 @@ package me.imcj.as3object
     import flash.events.EventDispatcher;
     import flash.filesystem.File;
     
+    import me.imcj.as3object.hook.HookManager;
+    
     import mx.rpc.IResponder;
     
     public class ConnectionSQLite extends EventDispatcher implements Connection
@@ -14,12 +16,13 @@ package me.imcj.as3object
         protected var _connection : SQLConnection;
         protected var _config:Config;
         protected var db : File;
+        private var hook:HookManager;
         
-        public function ConnectionSQLite ( config : Config )
+        public function ConnectionSQLite ( config : Config, hook : HookManager )
         {
             _config = config;
             _connection = new SQLConnection ( );
-            
+            this.hook = hook;
             if ( _config.IN_MEMORY )
                 db = null;
             else
@@ -55,6 +58,7 @@ package me.imcj.as3object
             var wrapper : Statement;
             wrapper = new StatementSQLite ( real );
             wrapper.text = text;
+            wrapper.hook = hook;
             
             return wrapper;
         }

@@ -1,6 +1,7 @@
 package me.imcj.as3object {
 import me.imcj.as3object.factory.ColumnFactory;
 import me.imcj.as3object.factory.ColumnFactoryImpl;
+import me.imcj.as3object.hook.HookEntry;
 import me.imcj.as3object.hook.HookManager;
 import me.imcj.as3object.hook.impl.HookManagerImpl;
 
@@ -59,7 +60,7 @@ public class TableFactory
         
         tableCache.add ( table.type.fullName, table );
         
-        hook.execute ( HookManager.CREATE_COLUMN, { "table" : table } );
+        hook.execute ( HookEntry.CREATE_COLUMN, { "table" : table } );
         return table;
     }
 }
