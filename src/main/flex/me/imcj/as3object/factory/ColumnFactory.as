@@ -7,6 +7,6 @@ package me.imcj.as3object.factory
 
     public interface ColumnFactory
     {
-        function create ( table : Table ) : Dict;
+        function create ( table : Table ) : void;
     }
 }

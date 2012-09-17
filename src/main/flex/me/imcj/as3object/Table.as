@@ -10,7 +10,6 @@ import org.as3commons.reflect.Type;
 
 public class Table
 {
-    protected var _columns     : Dict;
     protected var _name       : String;
 	protected var _type       : Type;
     
@@ -19,8 +18,13 @@ public class Table
     public var ddl : DDL;
     public var dml : DML;
     
-    protected var _oneToManyColumns : Array = new Array ( );
-    protected var tableCache:TableCache;
+    protected var _columns   : Dict = new Dict ( );
+    protected var _base      : Dict = new Dict ( );
+    protected var _oneToMany : Dict = new Dict ( );
+    protected var _foreign   : Dict = new Dict ( );
+    protected var _source    : Dict = new Dict ( );
+    
+    protected var tableCache : TableCache;
     
     static public var _id : int = 0;
     public var id : int;
@@ -55,45 +59,72 @@ public class Table
         return false;
     }
     
-    public function addField ( column : Column ) : Column
+    public function addColumn ( column : Column ) : Column
     {
+        if ( column.primary )
+            primaryKey = column;
+        
+        columnCollection ( column ).add ( column.name, column );
         _columns.add ( column.name, column );
+        
+        _source.add ( column.name, column );
         return column;
+    }
+    
+    public function addColumnOfSource ( column : String ) : Column
+    {
+        if ( ! hasColumn ( column ) )
+            if ( _source.has ( column ) )
+                return addColumn ( _source.get ( column ) as Column );
+            else
+                return null;
+        else
+            return getColumn ( column );    
+    }
+    
+    public function removeColumn ( column : Column ) : Column
+    {
+        columnCollection ( column ).remove ( column.name );
+        _columns.remove ( column.name );
+        
+        return column;
+    }
+    
+    public function removeColumnWithName ( columnName : String ) : Column
+    {
+        var column : Column = getColumn ( columnName );
+        columnCollection ( column ).remove ( columnName );
+        _columns.remove ( columnName );
+        
+        return column;
+    }
+    
+    public function columnCollection ( column : Column ) : Dict
+    {
+        var collection : Dict;
+        switch ( column.sqlType ) {
+            case "Foreign":
+                collection = _foreign;
+                break;
+            case "OneToMany":
+                collection = _oneToMany;
+                break;
+            default:
+                collection = _base;
+        }
+        
+        return collection;
     }
     
     public function getColumn ( fieldName : String ) : Column
     {
-        return Column ( _columns.get ( fieldName ) );
-    }
-    
-    public function get oneToManyColumns ( ) : Array
-    {
-        return _oneToManyColumns;
+        var column : Column = _columns.get ( fieldName ) as Column;
+        return column;
     }
     
     public function hasColumn ( column : String ) : Boolean
     {
         return _columns.has ( column );
-    }
-    
-    public function get columns ( ) : Dict
-    {
-        return _columns;
-    }
-    
-    public function set columns ( value : Dict ) : void
-    {
-        _columns = value;
-//        _oneToManyColumns = new Array ( );
-//        
-//        var column : Column;
-//        var iter : DictIterator = _columns.createIterator ( );
-//        while ( iter.hasNext ) {
-//            column = Column ( iter.next ( ) );
-//            
-//            if ( column.type.name == "ArrayCollection" )
-//                _oneToManyColumns[_oneToManyColumns.length] = column;
-//        }
     }
     
     public function get type() : Type
@@ -150,13 +181,10 @@ public class Table
         var factory : ClassFactory = new ClassFactory ( type.clazz );
         var instance : Object = factory.newInstance ( );
         
-        
-        var iter : DictIterator = columns.createIterator ( );
-        var column : Column;
-        while ( iter.hasNext ) {
-            column = Column ( iter.next ( ) );
+        eachAllColumn ( function ( column : Column ) : void
+        {
             column.setValue ( instance, result );
-        }
+        } );
         
         return instance;
     }
@@ -165,6 +193,132 @@ public class Table
     {
         return _isHierarchical;
     }
-
+    
+    public function addOneToMany ( value : Column ) : void
+    {
+        _oneToMany.add ( value.name, value );
+    }
+    
+    public function removeOneToMany ( value : Column ) : void
+    {
+        _oneToMany.remove ( value.name );
+    }
+    
+    public function getOneToManyWithName ( value : String ) : Column
+    {
+        return _oneToMany.get ( value ) as Column;;
+    }
+    
+    public function getOneToMany ( value : String ) : Column
+    {
+        return getOneToManyWithName ( value );
+    }
+    
+    public function eachOneToMany ( func : Function ) : void
+    {
+        _oneToMany.forEach ( function ( kv : KeyValue ) : void
+            {
+                func ( Column ( kv.value ) );
+            } );
+    }
+    
+    public function addForeign ( value : Column ) : void
+    {
+        _foreign.add ( value.name, value );
+    }
+    
+    public function removeForeign ( value : Column ) : void
+    {
+        _foreign.remove ( value.name );
+    }
+    
+    public function getForeignWithName ( value : String ) : Column
+    {
+        return _foreign.get ( value ) as Column;
+    }
+    
+    public function getForeign ( value : String ) : Column
+    {
+        return getForeignWithName ( value );
+    }
+    
+    public function eachForeign ( func : Function ) : void
+    {
+        _foreign.forEach ( function ( kv : KeyValue ) : void
+        {
+            func ( Column ( kv.value ) );
+        } );
+    }
+    
+    public function eachAllColumn ( func : Function ) : void
+    {
+        _columns.merge ( _foreign ).forEach ( function ( kv : KeyValue ) : void
+        {
+            func ( Column ( kv.value ) );
+        } );
+    }
+    
+    protected function eachSource ( func : Function ) : void
+    {
+        _source.merge ( _foreign ).forEach ( function ( kv : KeyValue ) : void
+        {
+            func ( Column ( kv.value ) );
+        } );
+    }
+    
+    public function excludeDeclaringType ( type : Class ) : void
+    {
+        var declaringType : Type = Type.forClass ( type );
+        eachAllColumn ( function ( column : Column ) : void
+        {
+            try {
+                if ( declaringType.getField ( column.name ).declaringType.fullName == declaringType.fullName )
+                    excludeField ( column.name );
+            } catch ( error : TypeError ) { }
+        } );
+    }
+    
+    public function excludeWithType ( type : Class ) : void
+    {
+        var as3commonType : Type = Type.forClass ( type );
+        
+        eachAllColumn ( function ( column : Column ) : void
+        {
+            if ( as3commonType.fullName == column.type.fullName )
+                removeColumn ( column );
+        } );
+    }
+    
+    public function excludeProperty ( property : String ) : void
+    {
+        excludeField ( property );
+    }
+    
+    public function excludeField ( field : String ) : void
+    {
+        if ( hasColumn ( field ) )
+            removeColumnWithName ( field );
+    }
+    
+    public function includeDeclaringType ( type : Class ) : void
+    {
+        var declaringType : Type = Type.forClass ( type );
+        eachSource ( function ( column : Column ) : void {
+            try {
+                if ( declaringType.getField ( column.name ).declaringType.fullName == declaringType.fullName )
+                    includeField ( column.name );
+            } catch ( error : TypeError ) {}
+        } );
+    }
+    
+    public function includeProperty ( property : String ) : void
+    {
+        includeField ( property );
+    }
+    
+    public function includeField ( field : String ) : void
+    {
+        addColumnOfSource ( field );
+    }
 }
 }

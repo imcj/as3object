@@ -14,10 +14,9 @@ import org.as3commons.reflect.Type;
 
 public class ColumnFactoryImpl implements ColumnFactory
 {
-    public function create ( table : Table ) : Dict
+    public function create ( table : Table ) : void
     {
         var f : ColumnFactoryX = new ColumnFactoryX ( table );
-        return f.columns;
     }
 }
 
@@ -52,27 +51,12 @@ class ColumnFactoryX
             if ( areAvailable ( accessor ) ) {
                 field = createInstance ( accessor.name, accessor.type, accessor );
                 if ( field ) {
-                    addColumn ( field );
+                    table.addColumn ( field );
                 }
             }
         }
         
         createWithMethods ( );
-    }
-    
-    protected function addColumn ( column : Column ) : void
-    {
-        if ( column.primary )
-            table.primaryKey = column;
-        
-        
-        if ( column.sqlType == "OneToMany" ) {
-            table.oneToManyColumns.push ( column );
-            return;
-        } else if ( column.sqlType == "Foreign" )
-            return;
-        
-        columns.add ( column.name, column );
     }
     
     protected function createInstance ( name : String, type : Type, metadataContainer : MetadataContainer ) : me.imcj.as3object.Column
@@ -148,7 +132,7 @@ class ColumnFactoryX
             field.getMethod = getterMethod.name;
             field.setMethod = setterMethod.name;
             
-            addColumn ( field );
+            table.addColumn ( field );
         }
     }
 }

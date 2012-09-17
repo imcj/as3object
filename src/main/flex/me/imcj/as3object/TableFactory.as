@@ -54,7 +54,7 @@ public class TableFactory
             type = Type( param );
         
         table = new Table ( type, tableCache );
-        table.columns = columnFactory.create ( table );
+        columnFactory.create ( table );
         table.ddl = new DDLImpl ( table );
         table.dml = new DMLImpl ( table );
         

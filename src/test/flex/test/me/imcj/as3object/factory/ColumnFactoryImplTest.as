@@ -22,11 +22,10 @@ public class ColumnFactoryImplTest
     [Test]
     public function testConstrator ( ) : void
     {
-        var columns : Dict = table.columns;
         
-        var id   : Column = columns.get ( "id" )   as Column;
-        var age  : Column = columns.get ( "age" )  as Column;
-        var food : Column = columns.get ( "food" ) as Column;
+        var id   : Column = table.getColumn ( "id" )   as Column;
+        var age  : Column = table.getColumn ( "age" )  as Column;
+        var food : Column = table.getColumn ( "food" ) as Column;
         
         assertNotNull ( id );
         assertNotNull ( age );
