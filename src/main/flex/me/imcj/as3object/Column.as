@@ -66,6 +66,8 @@ public class Column
         if ( v is String )
             return v as String;
         // else if ( null == v && mappedType )
+        else if ( type.name == "Boolean" )
+            return v ? "1" : "0";
         else if ( null == v && v is String )
             return "";
         else if ( null == v && isNotBaseDataType ( ) )
@@ -78,7 +80,7 @@ public class Column
         else
             return v.toString ( );
         
-        return null;
+        return "";
     }
     
     public function getValue ( instance : Object ) : Object
@@ -124,10 +126,10 @@ public class Column
             case "Boolean":
             case "int":
                 return "INTEGER";
+            case "Array":
             case "ArrayCollection":
                 return "OneToMany";
             default:
-                trace ( "Relation", type.name );
                 return "Foreign";
         }
         
@@ -140,8 +142,11 @@ public class Column
             case "String":
             case "Number":
             case "Boolean":
+            case "Date":
             case "int":
+            case "Object":
                 return false;
+            case "Array":
             case "ArrayCollection":
                 return true;
             default:
