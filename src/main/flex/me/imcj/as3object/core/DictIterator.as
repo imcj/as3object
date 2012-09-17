@@ -6,10 +6,14 @@ package me.imcj.as3object.core
         private var keys:Array;
         private var i:int;
         
+        protected var _value : KeyValue;
+        
         public function DictIterator ( dict : Dict )
         {
             this.dict = dict;
-            this.keys = dict.keys;
+            this.keys = new Array ( );
+            for each ( var key : String in dict.keys )
+                keys[keys.length] = key;
             i = 0;
         }
         
@@ -20,12 +24,19 @@ package me.imcj.as3object.core
             return false;
         }
         
+        public function get value ( ) : KeyValue
+        {
+            return _value;
+        }
+        
         public function next():Object
         {
             if ( ! hasNext )
                 return null;
             
             var obj : Object = dict.get(keys[i]);
+            
+            _value = new KeyValue ( keys[i], obj );
             i += 1;
             return obj;
         }

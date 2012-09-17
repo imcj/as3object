@@ -11,14 +11,15 @@ package me.imcj.as3object.hook.impl
     import me.imcj.as3object.PropertyChangedCache;
     import me.imcj.as3object.Table;
     import me.imcj.as3object.TableCache;
+    import me.imcj.as3object.core.KeyValue;
+    import me.imcj.as3object.hook.HookAction;
+    import me.imcj.as3object.hook.HookEntry;
     import me.imcj.as3object.hook.HookManager;
     
     import mx.collections.ArrayCollection;
     import mx.events.CollectionEvent;
     import mx.events.CollectionEventKind;
     import mx.events.PropertyChangeEvent;
-    
-    import test.me.imcj.as3object.hook.HookAction;
     
     public class POAOHook extends HookImpl
     {
@@ -60,7 +61,7 @@ package me.imcj.as3object.hook.impl
                 nothing = true;
             
             if ( nothing )
-                return HookAction.createNothing ( );
+                return HookAction.nothing ( );
             
             if ( null == tableCache )
                 tableCache = Facade.instance.cache;
@@ -73,12 +74,11 @@ package me.imcj.as3object.hook.impl
             instance.addEventListener ( PropertyChangeEvent.PROPERTY_CHANGE, handlerPorpertyChange );
             instance.addEventListener ( AS3Object.COMMIT,  handlerCommit );
             
-            var column : Column;
-            
-            for each ( column in table.oneToManyColumns )
+            table.eachOneToMany ( function ( column : Column ) {
                 collectionBind ( instance, column.name );
+            } );
                 
-            return HookAction.createNothing ( );
+            return HookAction.nothing ( );
         }
         
         protected function handlerPorpertyChange ( changeEvent : PropertyChangeEvent ) : void
@@ -127,9 +127,8 @@ package me.imcj.as3object.hook.impl
         protected function save ( object : Object ) : void
         {
             var table : Table = tableCache.getWithObject ( object );
-            
             if ( null == table.getPrimaryValue ( object ) )
-                facade.add ( object, new POAOSaveResponder ( object ) );
+                facade.add ( object ).addResponder ( new POAOSaveResponder ( object ) );
             else
                 facade.update ( propertyChanged.getUpdaterWithObject ( object ), object, new POAOUpdateResponder ( object ) );
         }
