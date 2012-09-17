@@ -1,16 +1,14 @@
 package me.imcj.as3object.hook.impl
 {
     
+import flash.display.BitmapData;
 import flash.display.DisplayObject;
 import flash.display.DisplayObjectContainer;
 import flash.display.InteractiveObject;
 import flash.display.Sprite;
 
-import me.imcj.as3object.ColumnMetadata;
 import me.imcj.as3object.Table;
-import me.imcj.as3object.hook.Hook;
-
-import test.me.imcj.as3object.hook.HookAction;
+import me.imcj.as3object.hook.HookAction;
     
 public class DefaultExcludeHook extends HookImpl
 {
@@ -19,66 +17,66 @@ public class DefaultExcludeHook extends HookImpl
         var table : Table = data["table"];
         var i : int = 0, size : int = table.type.extendsClasses.length;
         
-        var columnMetadata : ColumnMetadata = new ColumnMetadata ( table.type, table.columns );
-        filter ( table.type.fullName, columnMetadata );
+        filter ( table.type.fullName, table );
         for ( ; i < size; i++ )
-            filter ( table.type.extendsClasses[i], columnMetadata );
+            filter ( table.type.extendsClasses[i], table );
         
-        return HookAction.createNothing ( );
+        table.excludeWithType ( flash.display.BitmapData );
+        return HookAction.nothing ( );
     }
     
-    protected function filter ( typeName : String, columnMetadata : ColumnMetadata ) : void
+    protected function filter ( typeName : String, table : Table ) : void
     {
         switch ( typeName ) {
             case "flash.display::Sprite":
-                excludeFieldsWithSprite ( columnMetadata );
+                excludeFieldsWithSprite ( table );
                 break;
             case "flash.display::DisplayObjectContainer":
-                excludeFieldsWithDisplayObjectContainer ( columnMetadata );
+                excludeFieldsWithDisplayObjectContainer ( table );
                 break;
             case "flash.display::InteractiveObject":
-                excludeFieldsWithInteractiveObject ( columnMetadata );
+                excludeFieldsWithInteractiveObject ( table );
                 break;
             case "flash.display::DisplayObject":
-                excludeFieldsWithDisplayObject ( columnMetadata );
+                excludeFieldsWithDisplayObject ( table );
                 break;
             case "Object":
-                excludeFieldsWithObject ( columnMetadata );
+                excludeFieldsWithObject ( table );
                 break;
         }
     }
     
-    protected function excludeFieldsWithSprite ( columnMetadta : ColumnMetadata ) : void
+    protected function excludeFieldsWithSprite ( table : Table ) : void
     {
-        columnMetadta.excludeDeclaringType ( flash.display.Sprite );
+        table.excludeDeclaringType ( flash.display.Sprite );
     }
     
-    protected function excludeFieldsWithDisplayObjectContainer( columnMetadta : ColumnMetadata ) : void
+    protected function excludeFieldsWithDisplayObjectContainer( table : Table ) : void
     {
-        columnMetadta.excludeDeclaringType ( flash.display.DisplayObjectContainer );
+        table.excludeDeclaringType ( flash.display.DisplayObjectContainer );
     }
     
-    protected function excludeFieldsWithInteractiveObject( columnMetadta : ColumnMetadata ) : void
+    protected function excludeFieldsWithInteractiveObject( table : Table ) : void
     {
-        columnMetadta.excludeDeclaringType ( flash.display.InteractiveObject );
+        table.excludeDeclaringType ( flash.display.InteractiveObject );
     }
     
-    protected function excludeFieldsWithDisplayObject( columnMetadta : ColumnMetadata ) : void
+    protected function excludeFieldsWithDisplayObject( table : Table ) : void
     {
-        columnMetadta.excludeDeclaringType ( flash.display.DisplayObject );
-        columnMetadta.includeProperty ( "alpha" );
-        columnMetadta.includeProperty ( "height" );
-        columnMetadta.includeProperty ( "name" );
-        columnMetadta.includeProperty ( "rotation" );
-        columnMetadta.includeProperty ( "width" );
-        columnMetadta.includeProperty ( "x" );
-        columnMetadta.includeProperty ( "y" );
-        columnMetadta.includeProperty ( "z" );
+        table.excludeDeclaringType ( flash.display.DisplayObject );
+        table.includeProperty ( "alpha" );
+        table.includeProperty ( "height" );
+        table.includeProperty ( "name" );
+        table.includeProperty ( "rotation" );
+        table.includeProperty ( "width" );
+        table.includeProperty ( "x" );
+        table.includeProperty ( "y" );
+        table.includeProperty ( "z" );
     }
     
-    protected function excludeFieldsWithObject( columnMetadta : ColumnMetadata ) : void
+    protected function excludeFieldsWithObject( table : Table ) : void
     {
-        columnMetadta.excludeDeclaringType ( Object );
+        table.excludeDeclaringType ( Object );
     }
 }
 
