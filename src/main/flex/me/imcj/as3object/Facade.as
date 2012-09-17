@@ -1,12 +1,14 @@
 package me.imcj.as3object {
 import me.imcj.as3object.core.newInstance;
 import me.imcj.as3object.expression.Expression;
+import me.imcj.as3object.hook.Hook;
 import me.imcj.as3object.hook.HookEntry;
 import me.imcj.as3object.hook.HookManager;
 import me.imcj.as3object.hook.impl.HookManagerImpl;
 import me.imcj.as3object.responder.CreateTableResponder;
 import me.imcj.as3object.responder.InsertResponder;
 
+import mx.rpc.AsyncToken;
 import mx.rpc.IResponder;
 import mx.utils.UIDUtil;
 
@@ -30,6 +32,12 @@ public class Facade
         hook = HookManagerImpl.create ( config, tableFactory, cache );
         tableFactory.hook = hook;
         pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( hook ) );
+    }
+    
+    public function addHook ( hookName : String, hook : Hook ) : Hook
+    {
+        this.hook.add ( hookName, hook );
+        return hook;
     }
     
     public function addTable ( table : Table ) : void
@@ -71,27 +79,30 @@ public class Facade
         );
     }
     
-    public function add ( object : Object, responder : IResponder ) : Object
+    public function add ( object : Object, addNew : Boolean = true ) : AsyncToken
     {
+        hook.execute ( HookEntry.ADD, { "data" : object } );
+        var token : AsyncToken = new AsyncToken ( null );
         var text : String = cache.getWithObject ( object ).dml.insert ( object );
         pool.getConnection ( new AS3ObjectResponder (
             function ( connection : Connection ) : void
             {
                 var statement : Statement = connection.createStatement ( text );
-                statement.execute ( new InsertResponder ( object, responder, hook ) );
+                statement.execute ( new InsertResponder ( object, token, hook ) );
             }
         ) );
         
-        return object;
+        return token;
     }
     
-    public function save ( object : Object, responder : IResponder, addNew : Boolean = true ) : Object
+    public function save ( object : Object, addNew : Boolean = true ) : AsyncToken
     {
-        return add ( object, responder );
+        return add ( object, addNew );
     }
     
     public function update ( data : Object, object : Object, responder : IResponder ) : void
     {
+        var token : AsyncToken = new AsyncToken ( null );
         var table : Table = cache.getWithObject ( object );
         var expression : Expression;
         var primary : String = table.primaryKey.name;
@@ -104,7 +115,7 @@ public class Facade
             function ( connection : Connection ) : void
             {
                 var statement : Statement = connection.createStatement ( text );
-                statement.execute ( new InsertResponder ( object, responder, hook ) );
+                statement.execute ( new InsertResponder ( object, token, hook ) );
             }
         ) );
     }
@@ -145,6 +156,5 @@ public class Facade
         pool.config = value;
         tableFactory.config = value;
     }
-
 }
 }
