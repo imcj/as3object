@@ -3,12 +3,12 @@ package me.imcj.as3object.hook.impl
     import me.imcj.as3object.hook.Hook;
     import me.imcj.as3object.hook.HookManager;
     
-    import test.me.imcj.as3object.hook.HookAction;
+    import me.imcj.as3object.hook.HookAction;
 
     public class HookImpl implements Hook
     {
         protected var _priority : int = 100;
-        protected var _hookManager:HookManager;
+        protected var _hookManager : HookManager;
         
         public function execute(data:Object):HookAction
         {

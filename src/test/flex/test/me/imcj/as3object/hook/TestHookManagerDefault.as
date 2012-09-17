@@ -68,7 +68,7 @@ package test.me.imcj.as3object.hook
 import me.imcj.as3object.hook.Hook;
 import me.imcj.as3object.hook.impl.HookImpl;
 
-import test.me.imcj.as3object.hook.HookAction;
+import me.imcj.as3object.hook.HookAction;
 
 class Hook1 extends HookImpl
 {
@@ -76,7 +76,7 @@ class Hook1 extends HookImpl
     {
         data['age'] = 1;
         
-        return HookAction.createNothing ( );
+        return HookAction.nothing ( );
     }
 }
 
@@ -86,7 +86,7 @@ class Hook2 extends HookImpl
     {
         data['name'] = "2B";
         
-        return HookAction.createNothing ( );
+        return HookAction.nothing ( );
     }
 }
 
@@ -96,6 +96,6 @@ class Hook3 extends HookImpl
     {
         data['age'] = 2;
         
-        return HookAction.createNothing ( );
+        return HookAction.nothing ( );
     }
 }

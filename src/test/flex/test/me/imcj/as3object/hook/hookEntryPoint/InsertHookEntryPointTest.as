@@ -4,6 +4,7 @@ package test.me.imcj.as3object.hook.hookEntryPoint
     
     import test.me.imcj.as3object.fixture.Cat;
 
+    [Ignore]
     public class InsertHookEntryPointTest
     {		
         public var facade : Facade

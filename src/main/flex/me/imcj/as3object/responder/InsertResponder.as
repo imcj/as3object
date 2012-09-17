@@ -1,35 +1,48 @@
 package me.imcj.as3object.responder {
-import flash.events.EventDispatcher;
 
+import me.imcj.as3object.AS3ObjectResponder;
 import me.imcj.as3object.Responder;
 import me.imcj.as3object.Result;
 import me.imcj.as3object.hook.HookEntry;
 import me.imcj.as3object.hook.HookManager;
 
+import mx.rpc.AsyncToken;
 import mx.rpc.IResponder;
 
-public class InsertResponder extends ErrorResponder
+public class InsertResponder implements Responder
 {
-    protected var _object : Object;
-    protected var hook  :HookManager;
+    protected var object : Object;
+    protected var hook   : HookManager;
+    protected var token  : AsyncToken;
     
-    public function InsertResponder ( object : Object, responder : IResponder, hook : HookManager )
+    public function InsertResponder ( object : Object, token : AsyncToken, hook : HookManager )
     {
-        _object = object;
-        this.hook = hook;
+        this.token  = token;
+        this.object = object;
+        this.hook   = hook;
         
-        super ( responder );
     }
     
-    override public function result ( data : Result ) : void
+    public function result ( data : Result ) : void
     {
-        if ( _object.hasOwnProperty ( "id" ) && data.lastInsertRowID )
-            _object["id"] = data.lastInsertRowID;
+        if ( object.hasOwnProperty ( "id" ) && data.lastInsertRowID )
+            object["id"] = data.lastInsertRowID;
         
-        responder.result ( _object );
+        hook.execute ( HookEntry.ADD_SUCCESS, { "data" : object } );
         
-//        if ( _object is EventDispatcher )
-//            hook.execute ( HookEntry
+        var responder : IResponder;
+        for each ( responder in token.responders )
+            responder.result ( object );
+    }
+    
+    public function fault ( info : Object ) : void
+    {
+        var responder : IResponder;
+        for each ( responder in token.responders )
+            responder.fault ( info );
+            
+        hook.execute ( HookEntry.ADD_FAULT, { "error" : info } );
     }
 }
+
 }

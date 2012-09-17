@@ -1,6 +1,5 @@
 package me.imcj.as3object.hook
 {
-    import test.me.imcj.as3object.hook.HookAction;
 
     public interface Hook
     {

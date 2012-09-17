@@ -2,7 +2,7 @@ package test.me.imcj.as3object.hook.hookEntryPoint
 {
     import me.imcj.as3object.hook.impl.HookImpl;
     
-    import test.me.imcj.as3object.hook.HookAction;
+    import me.imcj.as3object.hook.HookAction;
     
     public class InsertHook extends HookImpl
     {
@@ -10,7 +10,7 @@ package test.me.imcj.as3object.hook.hookEntryPoint
         {
             data['pass'] = true;
             
-            return HookAction.createNothing ( );
+            return HookAction.nothing ( );
         }
     }
 }

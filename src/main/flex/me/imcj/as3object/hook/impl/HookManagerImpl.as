@@ -11,7 +11,7 @@ import me.imcj.as3object.TableFactory;
 import me.imcj.as3object.hook.Hook;
 import me.imcj.as3object.hook.HookManager;
 
-import test.me.imcj.as3object.hook.HookAction;
+import me.imcj.as3object.hook.HookAction;
 
 public class HookManagerImpl implements HookManager
 {
@@ -50,7 +50,7 @@ public class HookManagerImpl implements HookManager
         data [ "$name" ] = name;
         for ( ; i < size; i++ ) {
             var hookAction : HookAction = Hook ( h[i] ).execute ( data );
-            if ( hookAction.interrupting )
+            if ( hookAction.equalInterrupting ( ) )
                 break;
         }
     }
