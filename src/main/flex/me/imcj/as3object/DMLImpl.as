@@ -21,7 +21,6 @@ public class DMLImpl implements DML
     {
         var buffer    : ByteArray = new ByteArray ( );
         var objects   : Iterator;
-        var column    : Column;
         var iter : DictIterator;
         
         if ( object is Array )
@@ -33,39 +32,26 @@ public class DMLImpl implements DML
         buffer.writeUTFBytes ( table.name );
         buffer.writeUTFBytes ( " ( " );
         
-        iter = table.columns.createIterator ( );
-        while ( iter.hasNext ) {
-            column = Column ( iter.next ( ) );
-            
-            if ( "OneToMany" == column.sqlType )
-                continue;
-            
-            if ( column == null )
-                continue;
-            
+        table.eachAllColumn ( function ( column : Column ) : void {
             buffer.writeUTFBytes ( column.sqlName );
-            if ( iter.hasNext )
-                buffer.writeUTFBytes ( ", " );
-        }
+            buffer.writeUTFBytes ( ", " );
+        } );
+        
+        buffer.position -= 2;
         
         buffer.writeUTFBytes ( " ) " );
-        
         buffer.writeUTFBytes ( "VALUES " );
         
         while ( objects.hasNext ) {
             object = objects.next ( );
             buffer.writeUTFBytes ( " ( " );
             
-            iter = table.columns.createIterator ( );
-            while ( iter.hasNext ) {
-                column = Column ( iter.next ( ) );
-                if ( "OneToMany" == column.sqlType )
-                    continue;
-                
+            table.eachAllColumn ( function ( column : Column ) : void {
                 buffer.writeUTFBytes ( getValue ( column, object ) );
-                if ( iter.hasNext )
-                    buffer.writeUTFBytes ( ", " );
-            }
+                buffer.writeUTFBytes ( ", " );
+            } );
+            
+            buffer.position -= 2;
             buffer.writeUTFBytes ( " )" );
             
             if ( objects.hasNext )
@@ -84,6 +70,8 @@ public class DMLImpl implements DML
         if ( "TEXT" == column.sqlType )
             return "'" + value + "'";
         else ( "INTEGER" == column.sqlType )
+            if ( column.primary && null == value )
+                return 'NULL';
             return value;
     }
     
@@ -109,31 +97,32 @@ public class DMLImpl implements DML
         buffer.writeUTFBytes ( table.name );
         buffer.writeUTFBytes ( " SET " );
         
-        var column : Column;
-        var value : String;
-        var iter : DictIterator = table.columns.createIterator ( );
-        while ( iter.hasNext ) {
-            
-            column = Column ( iter.next ( ) );
+        
+        
+        table.eachAllColumn ( function ( column : Column ) : void
+        {
+            var value : String;
             
             if ( ! object.hasOwnProperty ( column.name ) )
-                continue;
+                return;
             
             try {
                 value = column.getSqlValue ( object );
             } catch ( e : Error ) {
-                continue;
+                return;
             }
+            
             if ( ! value )
-                continue;
+                return;
             
             buffer.writeUTFBytes ( column.name );
             buffer.writeUTFBytes ( " = " );
             buffer.writeUTFBytes ( "'" + value + "'" );
             
-            if ( iter.hasNext )
-                buffer.writeUTFBytes ( ", " );
-        }
+            buffer.writeUTFBytes ( ", " );
+        } );
+        
+        buffer.position -= 2;
         
         if ( expression ) {
             buffer.writeUTFBytes ( " WHERE " );

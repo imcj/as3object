@@ -16,11 +16,6 @@ public class DDLImpl implements DDL
     
     public function createTable ( ifNotExists : Boolean ) : String
     {
-        var fields : Dict = table.columns;
-        var field : Column;
-        var i : int = 0, size : int = fields.length;
-        var keys : Array = fields.keys;
-        
         var statement : ByteArray = new ByteArray ( );
         statement.writeUTFBytes ( "CREATE TABLE " );
         if ( ifNotExists )
@@ -28,12 +23,12 @@ public class DDLImpl implements DDL
         statement.writeUTFBytes ( table.name );
         statement.writeUTFBytes ( " ( " );
         
-        for ( ; i < size; i++ ) {
-            field = Column ( fields.get ( keys[i] ) );
-            cloumnDefine ( statement, field );
-            if ( size - 1 > i )
-                statement.writeUTFBytes ( ", " );
-        }
+        table.eachAllColumn ( function ( column : Column ) : void {
+            cloumnDefine ( statement, column );
+            statement.writeUTFBytes ( ", " );
+        } );
+        
+        statement.position -= 2;
         
         statement.writeUTFBytes ( " );" );
         statement.position = 0;
@@ -60,6 +55,7 @@ public class DDLImpl implements DDL
     protected function getDataType ( type : Type ) : String
     {
         switch ( type.name ) {
+            case "Date":
             case "String":
                 return "TEXT";
             case "Number":
