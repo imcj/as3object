@@ -44,6 +44,7 @@ public class Facade extends EventDispatcher
     public function addHook ( hookName : String, hook : Hook ) : Hook
     {
         this.hook.add ( hookName, hook );
+        hook.hookManager = this.hook;
         return hook;
     }
     
