@@ -1,4 +1,6 @@
 package me.imcj.as3object {
+import flash.events.EventDispatcher;
+
 import me.imcj.as3object.core.newInstance;
 import me.imcj.as3object.expression.Expression;
 import me.imcj.as3object.hook.Hook;
@@ -12,7 +14,7 @@ import mx.rpc.AsyncToken;
 import mx.rpc.IResponder;
 import mx.utils.UIDUtil;
 
-public class Facade
+public class Facade extends EventDispatcher
 {
     static protected var _instance : Facade;
     
@@ -32,6 +34,11 @@ public class Facade
         hook = HookManagerImpl.create ( config, tableFactory, cache );
         tableFactory.hook = hook;
         pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( hook ) );
+    }
+    
+    public function open ( ) : void
+    {
+        pool.getConnection ( new ConnectionResponder ( this ) );
     }
     
     public function addHook ( hookName : String, hook : Hook ) : Hook
@@ -77,6 +84,11 @@ public class Facade
                 }
             )
         );
+    }
+    
+    public function createCriteriaSync ( type : Class ) : Criteria
+    {
+        return new CriteriaImpl ( cache.getWithType ( type ), connection, hook );
     }
     
     public function add ( object : Object, addNew : Boolean = true ) : AsyncToken
@@ -157,4 +169,31 @@ public class Facade
         tableFactory.config = value;
     }
 }
+}
+import me.imcj.as3object.AS3ObjectResponder;
+import me.imcj.as3object.Connection;
+import me.imcj.as3object.ConnectionEvent;
+import me.imcj.as3object.Facade;
+
+class ConnectionResponder extends AS3ObjectResponder
+{
+    private var facade:Facade;
+    
+    public function ConnectionResponder ( facade : Facade )
+    {
+        this.facade = facade;
+        
+        super ( success, fault2 );
+    }
+    
+    public function success ( connection : Connection ) : void
+    {
+        facade.connection = connection;
+        facade.dispatchEvent ( new ConnectionEvent ( ConnectionEvent.OPEN ) );
+    }
+    
+    public function fault2 ( info : Object ) : void
+    {
+        throw new Error ( info.message );
+    }
 }

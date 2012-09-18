@@ -39,7 +39,7 @@ package me.imcj.as3object
             var rsp : AS3ObjectResponder = new AS3ObjectResponder (
                 function ( data : Object ) : void
                 {
-                    responder.result ( new ConnectionEvent ( ConnectionEvent.CONNECT ) );
+                    responder.result ( new ConnectionEvent ( ConnectionEvent.OPEN ) );
                 }
             );
             _connection.openAsync ( db, SQLMode.CREATE, rsp );
