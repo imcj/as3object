@@ -22,6 +22,7 @@ public class DefaultExcludeHook extends HookImpl
             filter ( table.type.extendsClasses[i], table );
         
         table.excludeWithType ( flash.display.BitmapData );
+
         return HookAction.nothing ( );
     }
     

@@ -64,8 +64,7 @@ public class Table
         if ( column.primary )
             primaryKey = column;
         
-        columnCollection ( column ).add ( column.name, column );
-        _columns.add ( column.name, column );
+        getDict ( column ).add ( column.name, column );
         
         _source.add ( column.name, column );
         return column;
@@ -84,7 +83,7 @@ public class Table
     
     public function removeColumn ( column : Column ) : Column
     {
-        columnCollection ( column ).remove ( column.name );
+        getDict ( column ).remove ( column.name );
         _columns.remove ( column.name );
         
         return column;
@@ -93,27 +92,27 @@ public class Table
     public function removeColumnWithName ( columnName : String ) : Column
     {
         var column : Column = getColumn ( columnName );
-        columnCollection ( column ).remove ( columnName );
+        getDict ( column ).remove ( columnName );
         _columns.remove ( columnName );
         
         return column;
     }
     
-    public function columnCollection ( column : Column ) : Dict
+    protected function getDict ( column : Column ) : Dict
     {
-        var collection : Dict;
+        var dict : Dict;
         switch ( column.sqlType ) {
             case "Foreign":
-                collection = _foreign;
+                dict = _foreign;
                 break;
             case "OneToMany":
-                collection = _oneToMany;
+                dict = _oneToMany;
                 break;
             default:
-                collection = _base;
+                dict = _columns;
         }
         
-        return collection;
+        return dict;
     }
     
     public function getColumn ( fieldName : String ) : Column
@@ -214,7 +213,7 @@ public class Table
         return getOneToManyWithName ( value );
     }
     
-    public function eachOneToMany ( func : Function ) : void
+    public function findColumnsWithOneToMany ( func : Function ) : void
     {
         _oneToMany.forEach ( function ( kv : KeyValue ) : void
             {

@@ -74,7 +74,7 @@ package me.imcj.as3object.hook.impl
             instance.addEventListener ( PropertyChangeEvent.PROPERTY_CHANGE, handlerPorpertyChange );
             instance.addEventListener ( AS3Object.COMMIT,  handlerCommit );
             
-            table.eachOneToMany ( function ( column : Column ) {
+            table.findColumnsWithOneToMany ( function ( column : Column ) : void {
                 collectionBind ( instance, column.name );
             } );
                 
@@ -100,7 +100,8 @@ package me.imcj.as3object.hook.impl
         
         protected function handlerCommit ( event : Event ) : void
         {
-            save ( event.currentTarget );
+            var object : Object = event.currentTarget;
+            facade.update ( propertyChanged.getUpdaterWithObject ( object ), object, new POAOUpdateResponder ( object ) );
         }
         
         protected function handlerSave ( event : Event ) : void
@@ -129,8 +130,6 @@ package me.imcj.as3object.hook.impl
             var table : Table = tableCache.getWithObject ( object );
             if ( null == table.getPrimaryValue ( object ) )
                 facade.add ( object ).addResponder ( new POAOSaveResponder ( object ) );
-            else
-                facade.update ( propertyChanged.getUpdaterWithObject ( object ), object, new POAOUpdateResponder ( object ) );
         }
         
         protected function collectionBind ( poao : Object, property : String ) : void

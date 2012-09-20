@@ -37,35 +37,19 @@ public class DDLImpl implements DDL
         return statementSQL;
     }
     
-    protected function cloumnDefine ( buffer : ByteArray, field : Column ) : void
+    protected function cloumnDefine ( buffer : ByteArray, column : Column ) : void
     {
-        buffer.writeUTFBytes ( field.sqlName );
+        buffer.writeUTFBytes ( column.sqlName );
         buffer.writeUTFBytes ( " " );
-        buffer.writeUTFBytes ( getDataType ( field.type ) );
+        buffer.writeUTFBytes ( column.sqlType );
         
-        if ( field.primary ) {
+        if ( column.primary ) {
             buffer.writeUTFBytes ( " " );
             buffer.writeUTFBytes ( "PRIMARY KEY" );
             
-            if ( field.autoIncrement )
+            if ( column.autoIncrement )
                 buffer.writeUTFBytes ( " AUTOINCREMENT" );
         }
-    }
-    
-    protected function getDataType ( type : Type ) : String
-    {
-        switch ( type.name ) {
-            case "Date":
-            case "String":
-                return "TEXT";
-            case "Number":
-                return "REAL";
-            case "uint":
-            case "int":
-            default:
-                return "INTEGER";
-        }
-        return null;
     }
 }
 

@@ -112,6 +112,8 @@ public class Column
     
     public function get sqlName ( ) : String
     {
+//        if ( RelationColumn.equals ( this ) )
+            
         if ( type.name == "ArrayCollection" || isNotBaseDataType ( ) )
             return name + "_id";
         return name;
@@ -120,6 +122,11 @@ public class Column
     public function get sqlType ( ) : String
     {
         switch ( type.name ) {
+            // Blob
+            case "BitmapData":
+            case "DisplayObject":
+                return "TEXT";
+                
             case "String":
                 return "TEXT";
             case "Number":
@@ -129,6 +136,7 @@ public class Column
             case "Array":
             case "ArrayCollection":
                 return "OneToMany";
+                
             default:
                 return "Foreign";
         }
