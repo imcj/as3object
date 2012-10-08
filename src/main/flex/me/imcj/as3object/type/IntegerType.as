@@ -1,4 +1,5 @@
 package me.imcj.as3object.type {
+    import me.imcj.as3object.Column;
 
 public class IntegerType implements Type
 {
@@ -6,15 +7,12 @@ public class IntegerType implements Type
 	{
 	}
 	
-	public function objectToString ( object : Object ) : String
+	public function objectToString ( column : Column, object : Object ) : String
 	{
-		return null;
-	}
-	
-	
-	public function fromString ( string : String ) : Object
-	{
-		return null;
+        if ( column.primary && int ( object ) == 0 )
+            return 'NULL';
+        
+        return new String ( object );
 	}
 }
 

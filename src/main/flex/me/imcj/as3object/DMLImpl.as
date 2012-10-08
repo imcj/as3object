@@ -22,6 +22,7 @@ public class DMLImpl implements DML
         var buffer    : ByteArray = new ByteArray ( );
         var objects   : Iterator;
         var iter : DictIterator;
+        var columnValue : String;
         
         if ( object is Array )
             objects = new ArrayIterator ( object as Array );
@@ -33,6 +34,9 @@ public class DMLImpl implements DML
         buffer.writeUTFBytes ( " ( " );
         
         table.eachAllColumn ( function ( column : Column ) : void {
+            if ( column.isOneToMany )
+                return;
+            
             buffer.writeUTFBytes ( column.sqlName );
             buffer.writeUTFBytes ( ", " );
         } );
@@ -47,7 +51,10 @@ public class DMLImpl implements DML
             buffer.writeUTFBytes ( " ( " );
             
             table.eachAllColumn ( function ( column : Column ) : void {
-                buffer.writeUTFBytes ( getValue ( column, object ) );
+                if ( column.isOneToMany )
+                    return;
+                columnValue = getValue ( column, object );
+                buffer.writeUTFBytes ( columnValue );
                 buffer.writeUTFBytes ( ", " );
             } );
             
@@ -66,13 +73,7 @@ public class DMLImpl implements DML
     
     protected function getValue ( column : Column, object : Object ) : String
     {
-        var value : String = column.getSqlValue ( object );
-        if ( "TEXT" == column.sqlType )
-            return "'" + value + "'";
-        else ( "INTEGER" == column.sqlType )
-            if ( column.primary && null == value )
-                return 'NULL';
-            return value;
+        return column.getSqlValue ( object );
     }
     
     public function remove ( object : Object, expression : Expression ) : String

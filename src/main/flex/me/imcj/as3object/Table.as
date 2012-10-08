@@ -143,12 +143,14 @@ public class Table
     {
         var relationTable : Table = tableCache.getWithType ( column.type.clazz );
         var relation : Object;
+        
+        // not exists primary
         if ( ! object.hasOwnProperty ( column.name ) )
             return null;
         
         relation = object[column.name];
         if ( null == relation )
-            return null;
+            return 'NULL';
         
         return relationTable.getPrimaryValue ( relation );
     }

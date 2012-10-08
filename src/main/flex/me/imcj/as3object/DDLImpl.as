@@ -24,6 +24,9 @@ public class DDLImpl implements DDL
         statement.writeUTFBytes ( " ( " );
         
         table.eachAllColumn ( function ( column : Column ) : void {
+            if ( column.isOneToMany )
+                return;
+            
             cloumnDefine ( statement, column );
             statement.writeUTFBytes ( ", " );
         } );

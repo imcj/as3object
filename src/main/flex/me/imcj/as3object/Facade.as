@@ -96,9 +96,22 @@ public class Facade extends EventDispatcher
     
     public function add ( object : Object, addNew : Boolean = true ) : AsyncToken
     {
+        var table : Table = cache.getWithObject ( object );
+        // Save all object
+//        var missSavedForeign : int = 0;
+//        table.eachForeign ( function ( column : Column ) : void
+//        {
+//            var foreign : int = column.getValue ( object );
+//            if ( foreign == 0 )
+//                missSavedForeign += 1
+//        } );
+//        
+//        if ( missSavedForeign > 1 )
+//            return;
+        
         hook.execute ( HookEntry.ADD, { "data" : object } );
         var token : AsyncToken = new AsyncToken ( null );
-        var text : String = cache.getWithObject ( object ).dml.insert ( object );
+        var text : String = table.dml.insert ( object );
         pool.getConnection ( new AS3ObjectResponder (
             function ( connection : Connection ) : void
             {

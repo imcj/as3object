@@ -1,6 +1,7 @@
 package me.imcj.as3object {
     
 import me.imcj.as3object.core.KeyValue;
+import me.imcj.as3object.type.Type;
 
 import org.as3commons.reflect.Metadata;
 import org.as3commons.reflect.MetadataArgument;
@@ -10,9 +11,10 @@ import org.as3commons.reflect.Type;
 public class Column
 {
     protected var _name : String;
-    protected var _type : Type;
+    protected var _type : org.as3commons.reflect.Type;
     protected var _metadataContainer : MetadataContainer;
     protected var table : Table;
+    protected var mapping : Mapping;
     
     public var primary : Boolean = false;
     public var autoIncrement : Boolean = false;
@@ -20,14 +22,19 @@ public class Column
     public var setMethod : String;
     public var getMethod : String;
     
-    public function Column ( name : String, type : Type, metadata : MetadataContainer, table : Table )
+    protected var as3objectType : me.imcj.as3object.type.Type;
+    
+    public function Column ( name : String, type : org.as3commons.reflect.Type, metadata : MetadataContainer, table : Table )
     {
         _name = name;
         _type = type;
         _metadataContainer = metadata;
         this.table = table;
         
+        mapping = Mapping.instance;
         isPrimary ( );
+
+        as3objectType = mapping.getAS3ObjectType ( type.fullName );
     }
     
     protected function isPrimary():void
@@ -54,33 +61,33 @@ public class Column
         return _name;
     }
 
-    public function get type():Type
+    public function get type():org.as3commons.reflect.Type
     {
         return _type;
     }
     
     public function getSqlValue ( instance : Object ) : String
     {
-        var v : Object = isNotBaseDataType ( ) ? table.getPrimaryWithRelation ( this, instance ) : getValue ( instance );
+        if ( isForeign )
+            return table.getPrimaryWithRelation ( this, instance );
         
-        if ( v is String )
-            return v as String;
-        // else if ( null == v && mappedType )
-        else if ( type.name == "Boolean" )
-            return v ? "1" : "0";
-        else if ( null == v && v is String )
-            return "";
-        else if ( null == v && isNotBaseDataType ( ) )
-            return 'NULL';
-        else if ( v is Number )
-            if ( isNaN ( Number ( v ) ) )
-                return 'NULL';
-        else if ( 0 == v || null == v )
-            return "NULL";
-        else
-            return v.toString ( );
-        
-        return "";
+        return as3objectType.objectToString ( this, getValue ( instance ) );
+//        if ( v is String )
+//            return v as String;
+//        // else if ( null == v && mappedType )
+//        else if ( type.name == "Boolean" )
+//            return v ? "1" : "0";
+//        else if ( null == v && v is String )
+//            return "";
+//        else if ( null == v && isNotBaseDataType ( ) )
+//            return 'NULL';
+//        else if ( v is Number )
+//            if ( isNaN ( Number ( v ) ) )
+//                return 'NULL';
+//        else if ( 0 == v || null == v )
+//            return "NULL";
+//        else
+//            return v.toString ( );
     }
     
     public function getValue ( instance : Object ) : Object
@@ -112,44 +119,36 @@ public class Column
 	
 	public function get isForeign ( ) : Boolean
 	{
+        if ( as3objectType == null )
+            return true;
 		return false;
 	}
 	
+    // isCollection
 	public function get isOneToMany ( ) : Boolean
 	{
+        switch ( type.fullName )
+        {
+            case "Array":
+            case "mx.collections::ArrayCollection":
+                return true;
+            default:
+                return false;
+        }
 		return false;
 	}
     
     public function get sqlName ( ) : String
     {
-//        if ( RelationColumn.equals ( this ) )
-            
-        if ( type.name == "ArrayCollection" || isNotBaseDataType ( ) )
+        if ( isForeign )
             return name + "_id";
+        
         return name;
     }
     
     public function get sqlType ( ) : String
     {
-        switch ( type.name ) {
-            // Blob
-            case "BitmapData":
-            case "DisplayObject":
-                return "TEXT";
-                
-            case "String":
-                return "TEXT";
-            case "Number":
-            case "Boolean":
-            case "int":
-                return "INTEGER";
-            case "Array":
-            case "ArrayCollection":
-                return "OneToMany";
-                
-            default:
-                return "Foreign";
-        }
+        return mapping.getColumnTypeWithType ( type.fullName );
         
         return null;
     }

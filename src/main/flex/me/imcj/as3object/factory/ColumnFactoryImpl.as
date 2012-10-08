@@ -21,16 +21,16 @@ public class ColumnFactoryImpl implements ColumnFactory
 }
 
 }
+import me.imcj.as3object.Column;
 import me.imcj.as3object.Table;
-
-import org.as3commons.reflect.Type;
 import me.imcj.as3object.core.Dict;
-import org.as3commons.reflect.Method;
+
+import org.as3commons.reflect.Accessor;
 import org.as3commons.reflect.Metadata;
 import org.as3commons.reflect.MetadataArgument;
-import org.as3commons.reflect.Accessor;
-import me.imcj.as3object.Column;
 import org.as3commons.reflect.MetadataContainer;
+import org.as3commons.reflect.Method;
+import org.as3commons.reflect.Type;
 
 class ColumnFactoryX
 {
