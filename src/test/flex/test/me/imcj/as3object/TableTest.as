@@ -3,11 +3,12 @@ package test.me.imcj.as3object {
 import flash.display.DisplayObject;
 import flash.display.Sprite;
 
+import me.imcj.as3object.Table;
 import me.imcj.as3object.TableFactory;
 
+import org.as3commons.reflect.Type;
 import org.flexunit.asserts.assertFalse;
 import org.flexunit.asserts.assertTrue;
-import me.imcj.as3object.Table;
     
 public class TableTest
 {		
@@ -17,6 +18,7 @@ public class TableTest
     public function setUp():void
     {
         table = TableFactory.createFactory ( ).create ( TestCat );
+		trace ( Type.forClass ( int ).fullName );
     }
     
     [After]

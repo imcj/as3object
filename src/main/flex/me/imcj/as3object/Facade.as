@@ -34,8 +34,10 @@ public class Facade extends EventDispatcher
         hook = HookManagerImpl.create ( config, tableFactory, cache );
         tableFactory.hook = hook;
         pool = new ConnectionPoolImpl ( config, new ConnectionFactoryImpl ( hook ) );
+		
     }
-    
+	
+	
     public function open ( ) : void
     {
         pool.getConnection ( new ConnectionResponder ( this ) );

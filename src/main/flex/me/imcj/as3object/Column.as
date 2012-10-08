@@ -109,6 +109,16 @@ public class Column
     {
         return _metadataContainer;
     }
+	
+	public function get isForeign ( ) : Boolean
+	{
+		return false;
+	}
+	
+	public function get isOneToMany ( ) : Boolean
+	{
+		return false;
+	}
     
     public function get sqlName ( ) : String
     {
