@@ -17,5 +17,9 @@ package me.imcj.as3object.hook
         static public const SAVE         : String = "SAVE";
         static public const SAVE_SUCCESS : String = "SAVE_SUCCESS";
         static public const SAVE_FAULT   : String = "SAVE_FAULT";
+        
+        static public const CREATE_TABLE : String = "CREATE_TABLE";
+        static public const CREATE_TABLE_SUCCESS : String = "CREATE_TABLE_SUCCESS";
+        static public const CREATE_TABLE_FAULT : String = "CREATE_TABLE_FAULT";
     }
 }
