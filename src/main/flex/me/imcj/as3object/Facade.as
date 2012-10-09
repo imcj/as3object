@@ -14,6 +14,8 @@ import mx.rpc.AsyncToken;
 import mx.rpc.IResponder;
 import mx.utils.UIDUtil;
 
+import org.as3commons.reflect.Type;
+
 public class Facade extends EventDispatcher
 {
     static protected var _instance : Facade;
@@ -152,17 +154,26 @@ public class Facade extends EventDispatcher
     {
     }
     
-    public function createTable ( type : Class, responder:IResponder, ifNotExists:Boolean=false):void
+    public function createTable ( type : Class, ifNotExists : Boolean = false ) : AsyncToken
     {
+        var token : AsyncToken = new AsyncToken ( );
         var text : String = cache.getWithType ( type ).ddl.createTable ( ifNotExists );
         
         pool.getConnection ( new AS3ObjectResponder (
             function ( connection : Connection ) : void
             {
                 var statement : Statement = connection.createStatement ( text );
-                statement.execute ( new CreateTableResponder ( responder ) );
+                statement.execute ( new CreateTableResponder ( type, token, hook ) );
             }
         ) );
+        
+        return token;
+    }
+    
+    public function createTableWithName ( name : String, ifNotExists : Boolean = false ) : AsyncToken
+    {
+        var cls : Class = Type.forName ( name ).clazz;
+        return createTable ( cls, ifNotExists );
     }
     
     static public function get instance ( ) : Facade
