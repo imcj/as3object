@@ -13,7 +13,7 @@ package test.me.imcj.as3object.hook.hookEntryPoint
         public function setUp():void
         {
             facade = Facade.instance;
-            facade.createTable ( Cat, new InsertHookEntryPointResponder ( this ) , true );
+            facade.createTable ( Cat, true ).addResponder ( new InsertHookEntryPointResponder ( this ) );
         }
         
         [After]
